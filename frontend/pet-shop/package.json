@@ -10,8 +10,13 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"bootstrap": "^5.3.8",
+		"bootstrap-icons": "^1.13.1",
+		"formik": "^2.4.9",
 		"react": "^19.2.7",
-		"react-dom": "^19.2.7"
+		"react-bootstrap": "^2.10.10",
+		"react-dom": "^19.2.7",
+		"yup": "^1.7.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
