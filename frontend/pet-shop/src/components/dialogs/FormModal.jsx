@@ -50,4 +50,3 @@ const FormModal = (props) => {
 };
 
 export default FormModal;
-

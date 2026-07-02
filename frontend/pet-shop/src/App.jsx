@@ -7,13 +7,16 @@ import FoodForm from "./components/forms/FoodForm";
 import { BrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/auth/login";
 import RegisterPage from "./pages/auth/Register";
+import ManageGrooming from "./pages/admin/ManageGrooming";
+
 
 function App() {
 	return (
 		<BrowserRouter>
+			<ManageGrooming />
 			<LoginPage />
 		</BrowserRouter>
-	);
+	);	
 }
 
 export default App;
