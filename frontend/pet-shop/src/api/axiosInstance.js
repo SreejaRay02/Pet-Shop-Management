@@ -12,12 +12,12 @@ axiosInstance.interceptors.request.use(
   (config) => {
     // Get the current token from our Zustand global state
     const token = useAuthStore.getState().token;
-    
+
     // If the user has a token, add it to the Authorization header
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
-    
+
     // Return the modified configuration so Axios can proceed with the request
     return config;
   },
@@ -29,7 +29,7 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   // If the response is successful, just pass it through
   (response) => response,
-  
+
   // If the server returns an error
   (error) => {
     // Check if it's a 401 Unauthorized error
