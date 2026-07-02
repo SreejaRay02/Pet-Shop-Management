@@ -1,11 +1,10 @@
 /*
+Flow of execution
 1. Receives 'pet' object via props.
 2. Uses useNavigate to allow clicking the card to go to the pet's details page.
-3. Renders Material UI <Card> with the pet's photo and info.
 */
 
 import React from 'react';
-import { Card, Button, Badge } from 'react-bootstrap';
 // useNavigate is a React Router hook that lets us change pages using JavaScript
 import { useNavigate } from 'react-router-dom';
 import { formatCurrency } from '../../utils/helpers';
@@ -30,8 +29,8 @@ const PetCard = (props) => {
   };
 
   return (
-    <Card
-      className="h-100 shadow-sm border-0"
+    <div className="card h-100 shadow-sm border-0"
+      
       style={{ transition: 'transform 0.2s, box-shadow 0.2s', cursor: 'pointer' }}
       onClick={handleCardClick}
       onMouseOver={(e) => {
@@ -44,8 +43,8 @@ const PetCard = (props) => {
       }}
     >
       {/* Pet Image */}
-      <Card.Img
-        variant="top"
+      <img className="card-img-top"
+        
         style={{ height: '200px', objectFit: 'cover' }}
         // If the pet has no image, we generate a random placeholder using their ID
         src={pet.image_url || `https://picsum.photos/seed/${pet.id}/400/200`}
@@ -54,20 +53,20 @@ const PetCard = (props) => {
       />
       
       {/* Pet Details */}
-      <Card.Body className="d-flex flex-column pb-2">
-        <div className="d-flex justify-content-between align-items-start mb-2">
-          <Card.Title className="fw-bold mb-0 text-truncate" style={{ maxWidth: '70%' }}>
+      <div className="card-body d-flex flex-column pb-2" >
+        <div className="d-flex justify-content-between align-items-start mb-2" >
+          <h5 className="card-title fw-bold mb-0 text-truncate"  style={{ maxWidth: '70%' }}>
             {pet.name}
-          </Card.Title>
-          <Badge bg="primary" className="fs-6 px-2 py-1">
+          </h5>
+          <span className="badge bg-primary fs-6 px-2 py-1"  >
             {formatCurrency(pet.price)}
-          </Badge>
+          </span>
         </div>
-        <Card.Text className="text-muted small mb-2">
+        <p className="card-text text-muted small mb-2" >
           🐾 {pet.breed} • {pet.age} yr{pet.age !== 1 ? 's' : ''}
-        </Card.Text>
-        <Card.Text 
-          className="text-muted small flex-grow-1"
+        </p>
+        <p className="card-text text-muted small flex-grow-1" 
+          
           style={{
             overflow: 'hidden',
             display: '-webkit-box',
@@ -77,24 +76,21 @@ const PetCard = (props) => {
           }}
         >
           {pet.description}
-        </Card.Text>
-      </Card.Body>
+        </p>
+      </div>
 
       {/* Optional Buy Button */}
       {showBuyButton && (
-        <Card.Footer className="bg-transparent border-0 px-3 pb-3 pt-0">
-          <Button
-            variant="primary"
-            className="w-100 fw-bold d-flex justify-content-center align-items-center gap-2"
-            onClick={handleBuyClick}
-          >
-            <i className="bi bi-suit-heart-fill"></i> Adopt Now
-          </Button>
-        </Card.Footer>
+        <div className="card-footer bg-transparent border-0 px-3 pb-3 pt-0" >
+          <button className="btn btn-primary w-100 fw-bold d-flex justify-content-center align-items-center gap-2"  onClick={handleBuyClick} >
+            <i className="bi bi-suit-heart-fill" ></i> Adopt Now
+          </button>
+        </div>
       )}
-    </Card>
+    </div>
   );
 };
 
 export default PetCard;
+
 
