@@ -1,7 +1,5 @@
-// Axios library for making HTTP requests
 import axios from 'axios';
 
-// Import our Zustand store to get the authentication token
 import { useAuthStore } from '../stores/authStore';
 
 const axiosInstance = axios.create({
