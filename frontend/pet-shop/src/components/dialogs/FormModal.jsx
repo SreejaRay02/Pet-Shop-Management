@@ -1,5 +1,4 @@
 import React from 'react';
-import { Modal, Button, Spinner } from 'react-bootstrap';
 
 // FormModal component accepts props from its parent
 const FormModal = (props) => {
@@ -15,40 +14,36 @@ const FormModal = (props) => {
     maxWidth = 'md',      // String: controls how wide the modal is (sm, md, lg)
   } = props;
 
+  if (!open) return null;
+
   return (
-    <Modal
-      show={open}
-      onHide={onClose}
-      size={maxWidth === 'sm' ? 'sm' : maxWidth === 'lg' ? 'lg' : 'md'}
-      centered
-      backdrop="static" // Prevent clicking outside to close by default to avoid losing form data
-    >
-      {/* Modal Header */}
-      <Modal.Header closeButton>
-        <Modal.Title className="fw-bold">{title}</Modal.Title>
-      </Modal.Header>
+    <div className="modal d-block"  tabIndex="-1" style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+      <div className={` ${`modal-dialog modal-${maxWidth === 'sm' ? 'sm' : maxWidth === 'lg' ? 'lg' : 'md'} modal-dialog-centered`}`.trim()} >
+        <div className="modal-content" >
+          {/* Modal Header */}
+          <div className="modal-header" >
+            <h5 className="modal-title fw-bold" >{title}</h5>
+            <button className="btn-close" type="button"  onClick={onClose} aria-label="Close"></button>
+          </div>
 
-      {/* Modal Body: This is where the form inputs will magically appear */}
-      <Modal.Body className="py-4">
-        {children}
-      </Modal.Body>
+          {/* Modal Body: This is where the form inputs will magically appear */}
+          <div className="modal-body py-4" >
+            {children}
+          </div>
 
-      {/* Modal Footer: Cancel and Save buttons */}
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onClose} disabled={loading}>
-          Cancel
-        </Button>
-        <Button
-          variant="primary"
-          onClick={onSubmit}
-          disabled={loading} // Prevent clicking multiple times
-          className="d-flex align-items-center gap-2"
-        >
-          {loading && <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" />}
-          {submitLabel}
-        </Button>
-      </Modal.Footer>
-    </Modal>
+          {/* Modal Footer: Cancel and Save buttons */}
+          <div className="modal-footer" >
+            <button className="btn btn-secondary"  onClick={onClose} disabled={loading}>
+              Cancel
+            </button>
+            <button className="btn btn-primary d-flex align-items-center gap-2"  onClick={onSubmit} disabled={loading}>
+              {loading && <div className="spinner-border spinner-border-sm"  role="status" aria-hidden="true"></div>}
+              {submitLabel}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
