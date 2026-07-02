@@ -7,6 +7,8 @@
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.2",
 		"@testing-library/user-event": "^13.5.0",
+		"json-server": "^0.17.4",
+		"json-server-auth": "^2.1.0",
 		"react": "^19.2.7",
 		"react-dom": "^19.2.7",
 		"react-scripts": "5.0.1",
@@ -17,7 +19,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"server-json": "json-server --watch db.json --port 4567"
+		"server": "json-server-auth db.json --port 3001 --routes routes.json"
 	},
 	"eslintConfig": {
 		"extends": [

@@ -1,4 +1,3 @@
-// Import our custom axios configuration (Yet to be configured)
 import axiosInstance from '../api/axiosInstance';
 import { ENDPOINTS } from '../api/endpoints';
 
