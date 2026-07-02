@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function CustomerForm({ formik, addresses }) {
+export default function CustomerForm({
+	formik,
+	addresses,
+	emailEditable = true,
+}) {
 	return (
 		<div className="row g-3">
 			<div className="col-6">
@@ -50,18 +54,31 @@ export default function CustomerForm({ formik, addresses }) {
 			<div className="col-12">
 				<div className="mb-3">
 					<label className="form-label">Email</label>
+
 					<input
-						className={` ${`form-control ${formik.touched.email && !!formik.errors.email ? "is-invalid" : ""}`}`.trim()}
+						className={`form-control ${
+							formik.touched.email && !!formik.errors.email
+								? "is-invalid"
+								: ""
+						}`}
 						type="email"
 						name="email"
 						value={formik.values.email || ""}
 						onChange={formik.handleChange}
 						onBlur={formik.handleBlur}
 						size="sm"
+						disabled={!emailEditable}
 					/>
+
 					<div className="invalid-feedback">
 						{formik.touched.email && formik.errors.email}
 					</div>
+
+					{!emailEditable && (
+						<div className="form-text">
+							Email address cannot be changed.
+						</div>
+					)}
 				</div>
 			</div>
 			<div className="col-12">
@@ -89,7 +106,14 @@ export default function CustomerForm({ formik, addresses }) {
 						className={` ${`form-select ${formik.touched.address_id && !!formik.errors.address_id ? "is-invalid" : ""}`}`.trim()}
 						name="address_id"
 						value={formik.values.address_id || ""}
-						onChange={formik.handleChange}
+						onChange={(e) =>
+							formik.setFieldValue(
+								"address_id",
+								!!e.target.value
+									? Number(e.target.value)
+									: null,
+							)
+						}
 						onBlur={formik.handleBlur}
 						size="sm"
 					>

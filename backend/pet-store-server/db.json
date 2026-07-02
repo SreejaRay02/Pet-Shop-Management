@@ -1,2339 +1,2538 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "username": "admin",
-      "email": "admin@petshop.com",
-      "password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
-      "role": "Admin"
-    },
-    {
-      "id": 2,
-      "username": "supplier1",
-      "email": "supplier1@petshop.com",
-      "password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
-      "role": "Supplier"
-    },
-    {
-      "id": 3,
-      "username": "customer1",
-      "email": "alice.johnson@example.com",
-      "password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
-      "role": "Customer"
-    },
-    {
-      "id": 4,
-      "username": "customer2",
-      "email": "bob.smith@example.com",
-      "password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
-      "role": "Customer"
-    },
-    {
-      "id": 5,
-      "username": "supplier2",
-      "email": "supplier2@petshop.com",
-      "password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
-      "role": "Supplier"
-    },
-    {
-      "email": "test@petshop.com",
-      "password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
-      "id": 6
-    },
-    {
-      "email": "employee1@petshop.com",
-      "password": "$2a$10$hWfcTJHjFNYVCIB3JS75ZOwSsGrNjzdVVHWDtvs/bilgyV2ZcgBDu",
-      "role": "Employee",
-      "name": "John Employee",
-      "id": 7
-    }
-  ],
-  "addresses": [
-    {
-      "id": 1,
-      "street": "123 Oak Street",
-      "city": "Springfield",
-      "state": "Illinois",
-      "zip_code": "62701"
-    },
-    {
-      "id": 2,
-      "street": "456 Pine Avenue",
-      "city": "Maplewood",
-      "state": "New Jersey",
-      "zip_code": "07040"
-    },
-    {
-      "id": 3,
-      "street": "789 Elm Lane",
-      "city": "Lexington",
-      "state": "Kentucky",
-      "zip_code": "40502"
-    },
-    {
-      "id": 4,
-      "street": "321 Maple Street",
-      "city": "Boulder",
-      "state": "Colorado",
-      "zip_code": "80302"
-    },
-    {
-      "id": 5,
-      "street": "654 Cedar Avenue",
-      "city": "Portland",
-      "state": "Oregon",
-      "zip_code": "97201"
-    },
-    {
-      "id": 6,
-      "street": "987 Birch Lane",
-      "city": "Austin",
-      "state": "Texas",
-      "zip_code": "78701"
-    },
-    {
-      "id": 7,
-      "street": "147 Redwood Street",
-      "city": "Raleigh",
-      "state": "North Carolina",
-      "zip_code": "27601"
-    },
-    {
-      "id": 8,
-      "street": "258 Walnut Avenue",
-      "city": "Madison",
-      "state": "Wisconsin",
-      "zip_code": "53703"
-    },
-    {
-      "id": 9,
-      "street": "369 Oak Lane",
-      "city": "Bozeman",
-      "state": "Montana",
-      "zip_code": "59715"
-    },
-    {
-      "id": 10,
-      "street": "951 Pine Street",
-      "city": "Santa Fe",
-      "state": "New Mexico",
-      "zip_code": "87501"
-    },
-    {
-      "id": 11,
-      "street": "753 Elm Avenue",
-      "city": "Asheville",
-      "state": "North Carolina",
-      "zip_code": "28801"
-    },
-    {
-      "id": 12,
-      "street": "864 Birch Lane",
-      "city": "Burlington",
-      "state": "Vermont",
-      "zip_code": "05401"
-    },
-    {
-      "id": 13,
-      "street": "246 Cedar Street",
-      "city": "Savannah",
-      "state": "Georgia",
-      "zip_code": "31401"
-    },
-    {
-      "id": 14,
-      "street": "135 Oak Avenue",
-      "city": "Ann Arbor",
-      "state": "Michigan",
-      "zip_code": "48104"
-    },
-    {
-      "id": 15,
-      "street": "579 Pine Lane",
-      "city": "Bellingham",
-      "state": "Washington",
-      "zip_code": "98225"
-    },
-    {
-      "id": 16,
-      "street": "802 Maple Street",
-      "city": "Ithaca",
-      "state": "New York",
-      "zip_code": "14850"
-    },
-    {
-      "id": 17,
-      "street": "714 Cedar Avenue",
-      "city": "San Luis Obispo",
-      "state": "California",
-      "zip_code": "93401"
-    },
-    {
-      "id": 18,
-      "street": "625 Oak Lane",
-      "city": "Providence",
-      "state": "Rhode Island",
-      "zip_code": "02903"
-    },
-    {
-      "id": 19,
-      "street": "937 Birch Street",
-      "city": "Charleston",
-      "state": "South Carolina",
-      "zip_code": "29401"
-    },
-    {
-      "id": 20,
-      "street": "648 Maple Avenue",
-      "city": "Athens",
-      "state": "Georgia",
-      "zip_code": "30601"
-    },
-    {
-      "id": 21,
-      "street": "360 Elm Lane",
-      "city": "Eugene",
-      "state": "Oregon",
-      "zip_code": "97401"
-    },
-    {
-      "id": 22,
-      "street": "720 Pine Street",
-      "city": "Knoxville",
-      "state": "Tennessee",
-      "zip_code": "37902"
-    },
-    {
-      "id": 23,
-      "street": "489 Cedar Avenue",
-      "city": "Fayetteville",
-      "state": "Arkansas",
-      "zip_code": "72701"
-    },
-    {
-      "id": 24,
-      "street": "271 Oak Lane",
-      "city": "Flagstaff",
-      "state": "Arizona",
-      "zip_code": "86001"
-    },
-    {
-      "id": 25,
-      "street": "146 Maple Street",
-      "city": "Missoula",
-      "state": "Montana",
-      "zip_code": "59801"
-    },
-    {
-      "id": 26,
-      "street": "582 Birch Avenue",
-      "city": "Lawrence",
-      "state": "Kansas",
-      "zip_code": "66044"
-    },
-    {
-      "id": 27,
-      "street": "793 Pine Lane",
-      "city": "Sarasota",
-      "state": "Florida",
-      "zip_code": "34236"
-    },
-    {
-      "id": 28,
-      "street": "902 Oak Street",
-      "city": "Birmingham",
-      "state": "Alabama",
-      "zip_code": "35203"
-    },
-    {
-      "id": 29,
-      "street": "115 Elm Avenue",
-      "city": "Spokane",
-      "state": "Washington",
-      "zip_code": "99201"
-    },
-    {
-      "id": 30,
-      "street": "223 Pine Lane",
-      "city": "Tallahassee",
-      "state": "Florida",
-      "zip_code": "32301"
-    }
-  ],
-  "petCategories": [
-    {
-      "id": 1,
-      "name": "Cats"
-    },
-    {
-      "id": 2,
-      "name": "Dogs"
-    },
-    {
-      "id": 3,
-      "name": "Cows"
-    },
-    {
-      "id": 4,
-      "name": "Buffaloes"
-    },
-    {
-      "id": 5,
-      "name": "Horses"
-    },
-    {
-      "id": 6,
-      "name": "Donkeys"
-    },
-    {
-      "id": 7,
-      "name": "Ducks"
-    },
-    {
-      "id": 8,
-      "name": "Hens"
-    },
-    {
-      "id": 9,
-      "name": "Goats"
-    },
-    {
-      "id": 10,
-      "name": "Sheep"
-    },
-    {
-      "id": 11,
-      "name": "Fishes"
-    },
-    {
-      "id": 12,
-      "name": "Parrots"
-    },
-    {
-      "id": 13,
-      "name": "Turtles"
-    },
-    {
-      "id": 14,
-      "name": "Guinea Pigs"
-    },
-    {
-      "id": 15,
-      "name": "Hamsters"
-    },
-    {
-      "id": 16,
-      "name": "Chickens"
-    },
-    {
-      "id": 17,
-      "name": "Geckos"
-    },
-    {
-      "id": 18,
-      "name": "Rats"
-    },
-    {
-      "id": 19,
-      "name": "Snakes"
-    },
-    {
-      "id": 20,
-      "name": "Rabbits"
-    }
-  ],
-  "pets": [
-    {
-      "id": 1,
-      "name": "Bella",
-      "breed": "Labrador Retriever",
-      "age": 2,
-      "price": 45000,
-      "category_id": 2,
-      "description": "Friendly and energetic Labrador Retriever",
-      "image_url": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=400"
-    },
-    {
-      "id": 2,
-      "name": "Whiskers",
-      "breed": "Persian Cat",
-      "age": 3,
-      "price": 32000,
-      "category_id": 1,
-      "description": "Fluffy and calm Persian Cat",
-      "image_url": "https://images.unsplash.com/photo-1548247416-ec66f4900b2e?w=400"
-    },
-    {
-      "id": 3,
-      "name": "Max",
-      "breed": "German Shepherd",
-      "age": 3,
-      "price": 55000,
-      "category_id": 2,
-      "description": "Intelligent and loyal German Shepherd",
-      "image_url": "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=400"
-    },
-    {
-      "id": 4,
-      "name": "Simba",
-      "breed": "Sphynx Cat",
-      "age": 2,
-      "price": 38000,
-      "category_id": 1,
-      "description": "Hairless and affectionate Sphynx Cat",
-      "image_url": "https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=400"
-    },
-    {
-      "id": 5,
-      "name": "Luna",
-      "breed": "Golden Retriever",
-      "age": 1,
-      "price": 42000,
-      "category_id": 2,
-      "description": "Playful and affectionate Golden Retriever",
-      "image_url": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400"
-    },
-    {
-      "id": 6,
-      "name": "Mochi",
-      "breed": "Siamese Cat",
-      "age": 1,
-      "price": 28000,
-      "category_id": 1,
-      "description": "Elegant and vocal Siamese Cat",
-      "image_url": "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=400"
-    },
-    {
-      "id": 7,
-      "name": "Charlie",
-      "breed": "Beagle",
-      "age": 2,
-      "price": 35000,
-      "category_id": 2,
-      "description": "Curious and friendly Beagle",
-      "image_url": "https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=400"
-    },
-    {
-      "id": 8,
-      "name": "Rocky",
-      "breed": "Doberman Pinscher",
-      "age": 2,
-      "price": 60000,
-      "category_id": 2,
-      "description": "Alert and loyal Doberman Pinscher",
-      "image_url": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=400"
-    },
-    {
-      "id": 9,
-      "name": "Lucy",
-      "breed": "French Bulldog",
-      "age": 1,
-      "price": 75000,
-      "category_id": 2,
-      "description": "Adorable and easygoing French Bulldog",
-      "image_url": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400"
-    },
-    {
-      "id": 10,
-      "name": "Zoe",
-      "breed": "Shetland Sheepdog",
-      "age": 2,
-      "price": 40000,
-      "category_id": 2,
-      "description": "Smart and energetic Shetland Sheepdog",
-      "image_url": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400"
-    },
-    {
-      "id": 11,
-      "name": "Cooper",
-      "breed": "Bulldog",
-      "age": 3,
-      "price": 50000,
-      "category_id": 2,
-      "description": "Determined and gentle Bulldog",
-      "image_url": "https://images.unsplash.com/photo-1529511582893-2d7e684dd128?w=400"
-    },
-    {
-      "id": 12,
-      "name": "Lola",
-      "breed": "Pomeranian",
-      "age": 1,
-      "price": 30000,
-      "category_id": 2,
-      "description": "Fluffy and lively Pomeranian",
-      "image_url": "https://images.unsplash.com/photo-1593134257782-e89567b7718a?w=400"
-    },
-    {
-      "id": 13,
-      "name": "Duke",
-      "breed": "Poodle",
-      "age": 2,
-      "price": 45000,
-      "category_id": 2,
-      "description": "Intelligent and hypoallergenic Poodle",
-      "image_url": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400"
-    },
-    {
-      "id": 14,
-      "name": "Mia",
-      "breed": "Bernese Mountain Dog",
-      "age": 1,
-      "price": 65000,
-      "category_id": 2,
-      "description": "Gentle and strong Bernese Mountain Dog",
-      "image_url": "https://images.unsplash.com/photo-1568572933382-74d440642117?w=400"
-    },
-    {
-      "id": 15,
-      "name": "Oscar",
-      "breed": "Corgi",
-      "age": 3,
-      "price": 48000,
-      "category_id": 2,
-      "description": "Adorable and outgoing Corgi",
-      "image_url": "https://images.unsplash.com/photo-1596671736898-5a5c6c0cdf24?w=400"
-    },
-    {
-      "id": 16,
-      "name": "Lily",
-      "breed": "Pug",
-      "age": 1,
-      "price": 33000,
-      "category_id": 2,
-      "description": "Charming and mischievous Pug",
-      "image_url": "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400"
-    },
-    {
-      "id": 17,
-      "name": "Rocky Jr",
-      "breed": "Ragdoll Cat",
-      "age": 2,
-      "price": 36000,
-      "category_id": 1,
-      "description": "Gentle and laid-back Ragdoll Cat",
-      "image_url": "https://images.unsplash.com/photo-1561948955-570b270e7c36?w=400"
-    },
-    {
-      "id": 18,
-      "name": "Sophie",
-      "breed": "Chihuahua",
-      "age": 1,
-      "price": 22000,
-      "category_id": 2,
-      "description": "Tiny and spirited Chihuahua",
-      "image_url": "https://images.unsplash.com/photo-1583512603806-077998240c7a?w=400"
-    },
-    {
-      "id": 19,
-      "name": "Milo",
-      "breed": "Australian Shepherd",
-      "age": 2,
-      "price": 52000,
-      "category_id": 2,
-      "description": "Intelligent and energetic Australian Shepherd",
-      "image_url": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400"
-    },
-    {
-      "id": 20,
-      "name": "Ziggy",
-      "breed": "Maine Coon Cat",
-      "age": 3,
-      "price": 40000,
-      "category_id": 1,
-      "description": "Fluffy and friendly Maine Coon Cat",
-      "image_url": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=400"
-    },
-    {
-      "id": 21,
-      "name": "Penny",
-      "breed": "Cocker Spaniel",
-      "age": 2,
-      "price": 38000,
-      "category_id": 2,
-      "description": "Gentle and affectionate Cocker Spaniel",
-      "image_url": "https://images.unsplash.com/photo-1581888227599-779811939961?w=400"
-    },
-    {
-      "id": 22,
-      "name": "Daisy",
-      "breed": "Holstein",
-      "age": 3,
-      "price": 85000,
-      "category_id": 3,
-      "description": "Gentle and productive Holstein cow",
-      "image_url": "https://images.unsplash.com/photo-1545468900-8c26b9ec1de8?w=400"
-    },
-    {
-      "id": 23,
-      "name": "Thunder",
-      "breed": "Thoroughbred",
-      "age": 4,
-      "price": 95000,
-      "category_id": 5,
-      "description": "Elegant and fast Thoroughbred horse",
-      "image_url": "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=400"
-    },
-    {
-      "id": 24,
-      "name": "Nemo",
-      "breed": "Clownfish",
-      "age": 1,
-      "price": 1500,
-      "category_id": 11,
-      "description": "Colorful and playful Clownfish",
-      "image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400"
-    },
-    {
-      "id": 25,
-      "name": "Thumper",
-      "breed": "Holland Lop",
-      "age": 1,
-      "price": 8000,
-      "category_id": 20,
-      "description": "Adorable and gentle Holland Lop rabbit",
-      "image_url": "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=400"
-    },
-    {
-      "id": 26,
-      "name": "Rio",
-      "breed": "African Grey Parrot",
-      "age": 2,
-      "price": 45000,
-      "category_id": 12,
-      "description": "Intelligent and talkative African Grey Parrot",
-      "image_url": "https://images.unsplash.com/photo-1612024782955-49fae79e42bb?w=400"
-    },
-    {
-      "id": 27,
-      "name": "Shelly",
-      "breed": "Red-Eared Slider Turtle",
-      "age": 3,
-      "price": 3500,
-      "category_id": 13,
-      "description": "Colorful and aquatic Red-Eared Slider Turtle",
-      "image_url": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400"
-    },
-    {
-      "id": 28,
-      "name": "Billy",
-      "breed": "Boer Goat",
-      "age": 2,
-      "price": 12000,
-      "category_id": 9,
-      "description": "Hardy and productive Boer Goat",
-      "image_url": "https://images.unsplash.com/photo-1533318087102-944a8515a7e7?w=400"
-    },
-    {
-      "id": 29,
-      "name": "Snowflake",
-      "breed": "Dorset Sheep",
-      "age": 1,
-      "price": 9500,
-      "category_id": 10,
-      "description": "White and woolly Dorset Sheep",
-      "image_url": "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?w=400"
-    },
-    {
-      "id": 30,
-      "name": "Aqua",
-      "breed": "Goldfish",
-      "age": 1,
-      "price": 800,
-      "category_id": 11,
-      "description": "Classic and graceful Goldfish",
-      "image_url": "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=400"
-    }
-  ],
-  "groomingServices": [
-    {
-      "id": 1,
-      "name": "Cat Brushing",
-      "description": "Gentle brushing for your furry feline friend",
-      "price": 1200,
-      "available": true
-    },
-    {
-      "id": 2,
-      "name": "Dog Bathing",
-      "description": "Refreshing bath for your loyal canine companion",
-      "price": 1800,
-      "available": true
-    },
-    {
-      "id": 3,
-      "name": "Cow Grooming",
-      "description": "Professional grooming for your friendly cow",
-      "price": 4500,
-      "available": true
-    },
-    {
-      "id": 4,
-      "name": "Horse Mane Styling",
-      "description": "Stylish mane grooming for your majestic horse",
-      "price": 5500,
-      "available": true
-    },
-    {
-      "id": 5,
-      "name": "Donkey Hoof Trimming",
-      "description": "Expert trimming for your dependable donkey",
-      "price": 3200,
-      "available": true
-    },
-    {
-      "id": 6,
-      "name": "Rabbit Fur Trim",
-      "description": "Delicate fur trimming for your adorable rabbit",
-      "price": 900,
-      "available": true
-    },
-    {
-      "id": 7,
-      "name": "Parrot Feather Styling",
-      "description": "Colorful feather styling for your talkative parrot",
-      "price": 1500,
-      "available": true
-    },
-    {
-      "id": 8,
-      "name": "Rat Spa Day",
-      "description": "Relaxing spa day for your sociable rat",
-      "price": 700,
-      "available": true
-    },
-    {
-      "id": 9,
-      "name": "Pig Mud Bath",
-      "description": "Enjoyable mud bath for your playful pig",
-      "price": 2000,
-      "available": true
-    },
-    {
-      "id": 10,
-      "name": "Turtle Shell Polishing",
-      "description": "Polishing service for your patient turtle",
-      "price": 800,
-      "available": true
-    },
-    {
-      "id": 11,
-      "name": "Goat Horn Grooming",
-      "description": "Gentle grooming for your horned goat",
-      "price": 1100,
-      "available": true
-    },
-    {
-      "id": 12,
-      "name": "Sheep Wool Shearing",
-      "description": "Skillful wool shearing for your fluffy sheep",
-      "price": 2500,
-      "available": true
-    },
-    {
-      "id": 13,
-      "name": "Fish Fin Trim",
-      "description": "Precise fin trimming for your aquatic fish",
-      "price": 600,
-      "available": false
-    },
-    {
-      "id": 14,
-      "name": "Hen Feather Fluffing",
-      "description": "Fluffing service for your busy hen",
-      "price": 750,
-      "available": true
-    },
-    {
-      "id": 15,
-      "name": "Duck Bill Cleaning",
-      "description": "Cleaning service for your quacking duck",
-      "price": 850,
-      "available": true
-    },
-    {
-      "id": 16,
-      "name": "Gecko Scale Polishing",
-      "description": "Gentle scale polishing for your small gecko",
-      "price": 950,
-      "available": false
-    },
-    {
-      "id": 17,
-      "name": "Snake Shedding Assistance",
-      "description": "Assistance for your snake during shedding",
-      "price": 1300,
-      "available": true
-    },
-    {
-      "id": 18,
-      "name": "Guinea Pig Grooming",
-      "description": "Personalized grooming for your guinea pig",
-      "price": 850,
-      "available": true
-    },
-    {
-      "id": 19,
-      "name": "Hamster Fur Fluffing",
-      "description": "Fluffing service for your tiny hamster",
-      "price": 650,
-      "available": true
-    },
-    {
-      "id": 20,
-      "name": "Chicken Beak Trimming",
-      "description": "Careful beak trimming for your clucking chicken",
-      "price": 700,
-      "available": true
-    },
-    {
-      "id": 21,
-      "name": "Siamese Cat Haircut",
-      "description": "Specialized haircut for your elegant Siamese cat",
-      "price": 1400,
-      "available": true
-    },
-    {
-      "id": 22,
-      "name": "German Shepherd Bath",
-      "description": "Refreshing bath for your loyal German Shepherd",
-      "price": 2200,
-      "available": true
-    },
-    {
-      "id": 23,
-      "name": "Arabian Horse Mane Braiding",
-      "description": "Intricate mane braiding for your Arabian horse",
-      "price": 6500,
-      "available": true
-    },
-    {
-      "id": 24,
-      "name": "African Grey Parrot Feather Styling",
-      "description": "Feather styling for your intelligent African Grey parrot",
-      "price": 1800,
-      "available": true
-    },
-    {
-      "id": 25,
-      "name": "Potbelly Pig Spa Day",
-      "description": "Relaxing spa day for your potbelly pig",
-      "price": 2800,
-      "available": false
-    }
-  ],
-  "vaccinations": [
-    {
-      "id": 1,
-      "name": "Feline Distemper Vaccine",
-      "description": "Protects against feline distemper",
-      "price": 1500,
-      "available": true
-    },
-    {
-      "id": 2,
-      "name": "Canine Parvovirus Vaccine",
-      "description": "Prevents canine parvovirus infection",
-      "price": 1800,
-      "available": true
-    },
-    {
-      "id": 3,
-      "name": "Bovine Respiratory Syncytial Virus Vaccine",
-      "description": "Vaccination for bovine respiratory syncytial virus",
-      "price": 3500,
-      "available": true
-    },
-    {
-      "id": 4,
-      "name": "Equine Influenza Vaccine",
-      "description": "Protects horses from equine influenza",
-      "price": 4200,
-      "available": true
-    },
-    {
-      "id": 5,
-      "name": "Donkey Tetanus Shot",
-      "description": "Tetanus protection for donkeys",
-      "price": 2200,
-      "available": true
-    },
-    {
-      "id": 6,
-      "name": "Rabbit Calicivirus Vaccination",
-      "description": "Vaccination against rabbit calicivirus",
-      "price": 1200,
-      "available": true
-    },
-    {
-      "id": 7,
-      "name": "Parrot Polyomavirus Vaccine",
-      "description": "Protects parrots from polyomavirus",
-      "price": 2500,
-      "available": true
-    },
-    {
-      "id": 8,
-      "name": "Rat Infectious Disease Vaccine",
-      "description": "Vaccine for common infectious diseases in rats",
-      "price": 800,
-      "available": true
-    },
-    {
-      "id": 9,
-      "name": "Swine Flu Vaccine for Pigs",
-      "description": "Vaccination against swine flu in pigs",
-      "price": 1800,
-      "available": false
-    },
-    {
-      "id": 10,
-      "name": "Turtle Shell Rot Vaccine",
-      "description": "Protects turtles from shell rot disease",
-      "price": 900,
-      "available": true
-    },
-    {
-      "id": 11,
-      "name": "Goat Clostridium Perfringens Vaccine",
-      "description": "Vaccination for Clostridium perfringens in goats",
-      "price": 1100,
-      "available": true
-    },
-    {
-      "id": 12,
-      "name": "Sheep Foot Rot Vaccine",
-      "description": "Vaccine to prevent foot rot in sheep",
-      "price": 1300,
-      "available": true
-    },
-    {
-      "id": 13,
-      "name": "Beta Fish Fin Rot Vaccine",
-      "description": "Protects Betta fish from fin rot disease",
-      "price": 500,
-      "available": false
-    },
-    {
-      "id": 14,
-      "name": "Chicken Newcastle Disease Vaccine",
-      "description": "Prevents Newcastle disease in chickens",
-      "price": 750,
-      "available": true
-    },
-    {
-      "id": 15,
-      "name": "Duck Avian Influenza Vaccination",
-      "description": "Vaccination for avian influenza in ducks",
-      "price": 1600,
-      "available": true
-    },
-    {
-      "id": 16,
-      "name": "Gecko Metabolic Bone Disease Vaccine",
-      "description": "Vaccine to prevent metabolic bone disease in geckos",
-      "price": 950,
-      "available": true
-    },
-    {
-      "id": 17,
-      "name": "Snake Respiratory Infection Vaccine",
-      "description": "Vaccination against respiratory infections in snakes",
-      "price": 1400,
-      "available": true
-    },
-    {
-      "id": 18,
-      "name": "Guinea Pig Bordetella Vaccine",
-      "description": "Vaccine for Bordetella in guinea pigs",
-      "price": 850,
-      "available": true
-    },
-    {
-      "id": 19,
-      "name": "Hamster Tyzzer Disease Vaccine",
-      "description": "Vaccination for Tyzzer's disease in hamsters",
-      "price": 700,
-      "available": true
-    },
-    {
-      "id": 20,
-      "name": "Feline Leukemia Vaccine",
-      "description": "Protects against feline leukemia",
-      "price": 2000,
-      "available": true
-    },
-    {
-      "id": 21,
-      "name": "Canine Coronavirus Vaccine",
-      "description": "Prevents canine coronavirus infection",
-      "price": 1700,
-      "available": true
-    },
-    {
-      "id": 22,
-      "name": "Bovine Brucellosis Vaccine",
-      "description": "Vaccine for bovine brucellosis",
-      "price": 4000,
-      "available": true
-    },
-    {
-      "id": 23,
-      "name": "Equine West Nile Virus Vaccine",
-      "description": "Protects horses from West Nile virus",
-      "price": 5000,
-      "available": false
-    },
-    {
-      "id": 24,
-      "name": "Rabbit Myxomatosis Shot",
-      "description": "Vaccination for rabbit myxomatosis",
-      "price": 1100,
-      "available": true
-    },
-    {
-      "id": 25,
-      "name": "Parrot Psittacosis Vaccine",
-      "description": "Protects parrots from psittacosis",
-      "price": 2800,
-      "available": true
-    }
-  ],
-  "petFoods": [
-    {
-      "id": 1,
-      "name": "Royal Canin Adult",
-      "brand": "Royal Canin",
-      "type": "Dry",
-      "quantity": 150,
-      "price": 2500
-    },
-    {
-      "id": 2,
-      "name": "Pedigree Puppy",
-      "brand": "Pedigree",
-      "type": "Dry",
-      "quantity": 200,
-      "price": 1200
-    },
-    {
-      "id": 3,
-      "name": "Whiskas Ocean Fish",
-      "brand": "Whiskas",
-      "type": "Wet",
-      "quantity": 300,
-      "price": 450
-    },
-    {
-      "id": 4,
-      "name": "Hill's Science Diet",
-      "brand": "Hill's",
-      "type": "Dry",
-      "quantity": 80,
-      "price": 3200
-    },
-    {
-      "id": 5,
-      "name": "Purina Pro Plan",
-      "brand": "Purina",
-      "type": "Dry",
-      "quantity": 120,
-      "price": 2800
-    },
-    {
-      "id": 6,
-      "name": "Friskies Mixed Grill",
-      "brand": "Friskies",
-      "type": "Wet",
-      "quantity": 250,
-      "price": 380
-    },
-    {
-      "id": 7,
-      "name": "Iams ProActive Health",
-      "brand": "Iams",
-      "type": "Dry",
-      "quantity": 90,
-      "price": 1800
-    },
-    {
-      "id": 8,
-      "name": "Blue Buffalo Life Protection",
-      "brand": "Blue Buffalo",
-      "type": "Dry",
-      "quantity": 65,
-      "price": 3500
-    },
-    {
-      "id": 9,
-      "name": "Cesar Gourmet Filets",
-      "brand": "Cesar",
-      "type": "Wet",
-      "quantity": 180,
-      "price": 520
-    },
-    {
-      "id": 10,
-      "name": "Orijen Original",
-      "brand": "Orijen",
-      "type": "Dry",
-      "quantity": 40,
-      "price": 5500
-    },
-    {
-      "id": 11,
-      "name": "Acana Heritage Grains",
-      "brand": "Acana",
-      "type": "Dry",
-      "quantity": 55,
-      "price": 4800
-    },
-    {
-      "id": 12,
-      "name": "Tetra TetraFin Flakes",
-      "brand": "Tetra",
-      "type": "Flakes",
-      "quantity": 500,
-      "price": 350
-    },
-    {
-      "id": 13,
-      "name": "Kaytee Fiesta Rabbit Food",
-      "brand": "Kaytee",
-      "type": "Pellets",
-      "quantity": 200,
-      "price": 680
-    },
-    {
-      "id": 14,
-      "name": "Zupreem Bird Food",
-      "brand": "Zupreem",
-      "type": "Pellets",
-      "quantity": 150,
-      "price": 1200
-    },
-    {
-      "id": 15,
-      "name": "Vitakraft Guinea Pig Food",
-      "brand": "Vitakraft",
-      "type": "Pellets",
-      "quantity": 180,
-      "price": 550
-    },
-    {
-      "id": 16,
-      "name": "Oxbow Timothy Hay",
-      "brand": "Oxbow",
-      "type": "Hay",
-      "quantity": 300,
-      "price": 750
-    },
-    {
-      "id": 17,
-      "name": "Mazuri Tortoise Diet",
-      "brand": "Mazuri",
-      "type": "Pellets",
-      "quantity": 80,
-      "price": 1800
-    },
-    {
-      "id": 18,
-      "name": "ZuPreem Natural Large Bird",
-      "brand": "ZuPreem",
-      "type": "Pellets",
-      "quantity": 100,
-      "price": 2200
-    },
-    {
-      "id": 19,
-      "name": "Wellness CORE Dog Food",
-      "brand": "Wellness",
-      "type": "Dry",
-      "quantity": 75,
-      "price": 3800
-    },
-    {
-      "id": 20,
-      "name": "Taste of the Wild Pacific Stream",
-      "brand": "Taste of the Wild",
-      "type": "Dry",
-      "quantity": 60,
-      "price": 3200
-    }
-  ],
-  "suppliers": [
-    {
-      "id": 1,
-      "name": "PetWorld Suppliers Co.",
-      "contact_person": "John Martinez",
-      "phone_number": "5551234567",
-      "email": "john@petworld.com",
-      "address_id": 1
-    },
-    {
-      "id": 2,
-      "name": "Happy Paws Wholesale",
-      "contact_person": "Sarah Lee",
-      "phone_number": "5559876543",
-      "email": "sarah@happypaws.com",
-      "address_id": 2
-    },
-    {
-      "id": 3,
-      "name": "Animal Kingdom Dist.",
-      "contact_person": "Michael Brown",
-      "phone_number": "5554567890",
-      "email": "michael@animalkingdom.com",
-      "address_id": 3
-    },
-    {
-      "id": 4,
-      "name": "Premium Pet Imports",
-      "contact_person": "Emily Davis",
-      "phone_number": "5552345678",
-      "email": "emily@premiumpet.com",
-      "address_id": 4
-    },
-    {
-      "id": 5,
-      "name": "FarmFresh Animals LLC",
-      "contact_person": "Robert Wilson",
-      "phone_number": "5556789012",
-      "email": "robert@farmfresh.com",
-      "address_id": 5
-    },
-    {
-      "id": 6,
-      "name": "Exotic Creatures Supply",
-      "contact_person": "Jennifer Garcia",
-      "phone_number": "5553456789",
-      "email": "jennifer@exoticcreatures.com",
-      "address_id": 6
-    },
-    {
-      "id": 7,
-      "name": "AquaLife Breeders",
-      "contact_person": "David Thompson",
-      "phone_number": "5557890123",
-      "email": "david@aqualife.com",
-      "address_id": 7
-    },
-    {
-      "id": 8,
-      "name": "Feathered Friends Supply",
-      "contact_person": "Lisa Anderson",
-      "phone_number": "5550123456",
-      "email": "lisa@featheredfriends.com",
-      "address_id": 8
-    },
-    {
-      "id": 9,
-      "name": "Fur & Scales Breeders",
-      "contact_person": "James Taylor",
-      "phone_number": "5554321098",
-      "email": "james@furscales.com",
-      "address_id": 9
-    },
-    {
-      "id": 10,
-      "name": "Nature's Companions Inc.",
-      "contact_person": "Amanda White",
-      "phone_number": "5558765432",
-      "email": "amanda@naturescompanions.com",
-      "address_id": 10
-    }
-  ],
-  "employees": [
-    {
-      "id": 1,
-      "first_name": "Thomas",
-      "last_name": "Anderson",
-      "position": "Store Manager",
-      "hire_date": "2020-01-15",
-      "phone_number": "5551110001",
-      "email": "thomas.anderson@petshop.com",
-      "address_id": 1,
-      "role": "Admin"
-    },
-    {
-      "id": 2,
-      "first_name": "Jessica",
-      "last_name": "Martinez",
-      "position": "Veterinarian",
-      "hire_date": "2020-03-22",
-      "phone_number": "5552220002",
-      "email": "jessica.martinez@petshop.com",
-      "address_id": 2,
-      "role": "Admin"
-    },
-    {
-      "id": 3,
-      "first_name": "Kevin",
-      "last_name": "Johnson",
-      "position": "Groomer",
-      "hire_date": "2021-05-10",
-      "phone_number": "5553330003",
-      "email": "kevin.johnson@petshop.com",
-      "address_id": 3,
-      "role": "Admin"
-    },
-    {
-      "id": 4,
-      "first_name": "Michelle",
-      "last_name": "Lee",
-      "position": "Sales Associate",
-      "hire_date": "2021-07-18",
-      "phone_number": "5554440004",
-      "email": "michelle.lee@petshop.com",
-      "address_id": 4,
-      "role": "Admin"
-    },
-    {
-      "id": 5,
-      "first_name": "Daniel",
-      "last_name": "Williams",
-      "position": "Pet Care Specialist",
-      "hire_date": "2022-01-05",
-      "phone_number": "5555550005",
-      "email": "daniel.williams@petshop.com",
-      "address_id": 5,
-      "role": "Admin"
-    },
-    {
-      "id": 6,
-      "first_name": "Rachel",
-      "last_name": "Brown",
-      "position": "Cashier",
-      "hire_date": "2022-03-14",
-      "phone_number": "5556660006",
-      "email": "rachel.brown@petshop.com",
-      "address_id": 6,
-      "role": "Supplier"
-    },
-    {
-      "id": 7,
-      "first_name": "Christopher",
-      "last_name": "Davis",
-      "position": "Inventory Manager",
-      "hire_date": "2019-11-20",
-      "phone_number": "5557770007",
-      "email": "christopher.davis@petshop.com",
-      "address_id": 7,
-      "role": "Supplier"
-    },
-    {
-      "id": 8,
-      "first_name": "Amanda",
-      "last_name": "Wilson",
-      "position": "Marketing Coordinator",
-      "hire_date": "2023-02-08",
-      "phone_number": "5558880008",
-      "email": "amanda.wilson@petshop.com",
-      "address_id": 8,
-      "role": "Admin"
-    },
-    {
-      "id": 9,
-      "first_name": "Brian",
-      "last_name": "Thompson",
-      "position": "Nutritionist",
-      "hire_date": "2021-09-30",
-      "phone_number": "5559990009",
-      "email": "brian.thompson@petshop.com",
-      "address_id": 9,
-      "role": "Admin"
-    },
-    {
-      "id": 10,
-      "first_name": "Stephanie",
-      "last_name": "Garcia",
-      "position": "Customer Relations",
-      "hire_date": "2022-06-15",
-      "phone_number": "5550000010",
-      "email": "stephanie.garcia@petshop.com",
-      "address_id": 10,
-      "role": "Admin"
-    }
-  ],
-  "customers": [
-    {
-      "id": 1,
-      "first_name": "Alice",
-      "last_name": "Johnson",
-      "email": "alice.johnson@example.com",
-      "phone_number": "5551234000",
-      "address_id": 5
-    },
-    {
-      "id": 2,
-      "first_name": "Bob",
-      "last_name": "Smith",
-      "email": "bob.smith@example.com",
-      "phone_number": "5555678001",
-      "address_id": 12
-    },
-    {
-      "id": 3,
-      "first_name": "Charlie",
-      "last_name": "Williams",
-      "email": "charlie.williams@example.com",
-      "phone_number": "5559012002",
-      "address_id": 8
-    },
-    {
-      "id": 4,
-      "first_name": "David",
-      "last_name": "Davis",
-      "email": "david.davis@example.com",
-      "phone_number": "5553456003",
-      "address_id": 3
-    },
-    {
-      "id": 5,
-      "first_name": "Emma",
-      "last_name": "Brown",
-      "email": "emma.brown@example.com",
-      "phone_number": "5557890004",
-      "address_id": 17
-    },
-    {
-      "id": 6,
-      "first_name": "Frank",
-      "last_name": "Taylor",
-      "email": "frank.taylor@example.com",
-      "phone_number": "5552345005",
-      "address_id": 22
-    },
-    {
-      "id": 7,
-      "first_name": "Grace",
-      "last_name": "Miller",
-      "email": "grace.miller@example.com",
-      "phone_number": "5556789006",
-      "address_id": 9
-    },
-    {
-      "id": 8,
-      "first_name": "Henry",
-      "last_name": "Wilson",
-      "email": "henry.wilson@example.com",
-      "phone_number": "5550123007",
-      "address_id": 14
-    },
-    {
-      "id": 9,
-      "first_name": "Ivy",
-      "last_name": "Moore",
-      "email": "ivy.moore@example.com",
-      "phone_number": "5554567008",
-      "address_id": 6
-    },
-    {
-      "id": 10,
-      "first_name": "Jack",
-      "last_name": "Anderson",
-      "email": "jack.anderson@example.com",
-      "phone_number": "5558901009",
-      "address_id": 19
-    },
-    {
-      "id": 11,
-      "first_name": "Katie",
-      "last_name": "Thomas",
-      "email": "katie.thomas@example.com",
-      "phone_number": "5551234010",
-      "address_id": 25
-    },
-    {
-      "id": 12,
-      "first_name": "Leo",
-      "last_name": "Martinez",
-      "email": "leo.martinez@example.com",
-      "phone_number": "5555678011",
-      "address_id": 2
-    },
-    {
-      "id": 13,
-      "first_name": "Mia",
-      "last_name": "Jones",
-      "email": "mia.jones@example.com",
-      "phone_number": "5559012012",
-      "address_id": 11
-    },
-    {
-      "id": 14,
-      "first_name": "Noah",
-      "last_name": "Hernandez",
-      "email": "noah.hernandez@example.com",
-      "phone_number": "5553456013",
-      "address_id": 7
-    },
-    {
-      "id": 15,
-      "first_name": "Olivia",
-      "last_name": "Young",
-      "email": "olivia.young@example.com",
-      "phone_number": "5557890014",
-      "address_id": 20
-    }
-  ],
-  "transactions": [
-    {
-      "id": 1,
-      "customer_id": 1,
-      "pet_id": 1,
-      "transaction_date": "2024-01-15",
-      "amount": 45000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 2,
-      "customer_id": 2,
-      "pet_id": 2,
-      "transaction_date": "2024-01-22",
-      "amount": 32000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 3,
-      "customer_id": 3,
-      "pet_id": 5,
-      "transaction_date": "2024-02-05",
-      "amount": 42000,
-      "transaction_status": "Failed"
-    },
-    {
-      "id": 4,
-      "customer_id": 4,
-      "pet_id": 9,
-      "transaction_date": "2024-02-14",
-      "amount": 75000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 5,
-      "customer_id": 5,
-      "pet_id": 3,
-      "transaction_date": "2024-02-28",
-      "amount": 55000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 6,
-      "customer_id": 6,
-      "pet_id": 15,
-      "transaction_date": "2024-03-10",
-      "amount": 48000,
-      "transaction_status": "Failed"
-    },
-    {
-      "id": 7,
-      "customer_id": 7,
-      "pet_id": 24,
-      "transaction_date": "2024-03-18",
-      "amount": 1500,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 8,
-      "customer_id": 8,
-      "pet_id": 26,
-      "transaction_date": "2024-04-02",
-      "amount": 45000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 9,
-      "customer_id": 9,
-      "pet_id": 11,
-      "transaction_date": "2024-04-20",
-      "amount": 50000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 10,
-      "customer_id": 10,
-      "pet_id": 7,
-      "transaction_date": "2024-05-05",
-      "amount": 35000,
-      "transaction_status": "Failed"
-    },
-    {
-      "id": 11,
-      "customer_id": 11,
-      "pet_id": 25,
-      "transaction_date": "2024-05-15",
-      "amount": 8000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 12,
-      "customer_id": 12,
-      "pet_id": 17,
-      "transaction_date": "2024-05-22",
-      "amount": 36000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 13,
-      "customer_id": 13,
-      "pet_id": 30,
-      "transaction_date": "2024-06-01",
-      "amount": 800,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 14,
-      "customer_id": 14,
-      "pet_id": 23,
-      "transaction_date": "2024-06-12",
-      "amount": 95000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 15,
-      "customer_id": 15,
-      "pet_id": 19,
-      "transaction_date": "2024-06-25",
-      "amount": 52000,
-      "transaction_status": "Failed"
-    },
-    {
-      "id": 16,
-      "customer_id": 1,
-      "pet_id": 6,
-      "transaction_date": "2024-07-08",
-      "amount": 28000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 17,
-      "customer_id": 2,
-      "pet_id": 16,
-      "transaction_date": "2024-07-19",
-      "amount": 33000,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 18,
-      "customer_id": 3,
-      "pet_id": 27,
-      "transaction_date": "2024-08-03",
-      "amount": 3500,
-      "transaction_status": "Success"
-    },
-    {
-      "id": 19,
-      "customer_id": 4,
-      "pet_id": 28,
-      "transaction_date": "2024-08-14",
-      "amount": 12000,
-      "transaction_status": "Failed"
-    },
-    {
-      "id": 20,
-      "customer_id": 5,
-      "pet_id": 14,
-      "transaction_date": "2024-08-28",
-      "amount": 65000,
-      "transaction_status": "Success"
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 6,
-      "transaction_date": "2026-06-30",
-      "amount": 28000,
-      "transaction_status": "Success",
-      "id": 21
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 3,
-      "transaction_date": "2026-06-30",
-      "amount": 55000,
-      "transaction_status": "Success",
-      "id": 22
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 3,
-      "transaction_date": "2026-06-30",
-      "amount": 55000,
-      "transaction_status": "Success",
-      "id": 23
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 24
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 25
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 26
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 27
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 28
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 29
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 30
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 31
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 32
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 33
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 34
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 35
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 36
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 37
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 38
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-06-30",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 39
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 6,
-      "transaction_date": "2026-06-30",
-      "amount": 28000,
-      "transaction_status": "Success",
-      "id": 40
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 1,
-      "transaction_date": "2026-06-30",
-      "amount": 45000,
-      "transaction_status": "Success",
-      "id": 41
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 1,
-      "transaction_date": "2026-07-01",
-      "amount": 45000,
-      "transaction_status": "Success",
-      "id": 42
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 1,
-      "transaction_date": "2026-07-01",
-      "amount": 45000,
-      "transaction_status": "Success",
-      "id": 43
-    },
-    {
-      "customer_id": 3,
-      "pet_id": 2,
-      "transaction_date": "2026-07-01",
-      "amount": 32000,
-      "transaction_status": "Success",
-      "id": 44
-    },
-    {
-      "customer_id": 1,
-      "pet_id": 7,
-      "transaction_date": "2026-07-01",
-      "amount": 35000,
-      "transaction_status": "Success",
-      "id": 45
-    },
-    {
-      "customer_id": 1,
-      "pet_id": 10,
-      "transaction_date": "2026-07-01",
-      "amount": 40000,
-      "transaction_status": "Success",
-      "id": 46
-    }
-  ],
-  "petGroomingRelationship": [
-    {
-      "id": 1,
-      "pet_id": 1,
-      "service_id": 2
-    },
-    {
-      "id": 2,
-      "pet_id": 2,
-      "service_id": 1
-    },
-    {
-      "id": 3,
-      "pet_id": 3,
-      "service_id": 22
-    },
-    {
-      "id": 4,
-      "pet_id": 4,
-      "service_id": 21
-    },
-    {
-      "id": 5,
-      "pet_id": 5,
-      "service_id": 2
-    },
-    {
-      "id": 6,
-      "pet_id": 6,
-      "service_id": 1
-    },
-    {
-      "id": 7,
-      "pet_id": 7,
-      "service_id": 2
-    },
-    {
-      "id": 8,
-      "pet_id": 8,
-      "service_id": 2
-    },
-    {
-      "id": 9,
-      "pet_id": 9,
-      "service_id": 2
-    },
-    {
-      "id": 10,
-      "pet_id": 10,
-      "service_id": 2
-    },
-    {
-      "id": 11,
-      "pet_id": 11,
-      "service_id": 2
-    },
-    {
-      "id": 12,
-      "pet_id": 12,
-      "service_id": 2
-    },
-    {
-      "id": 13,
-      "pet_id": 13,
-      "service_id": 2
-    },
-    {
-      "id": 14,
-      "pet_id": 14,
-      "service_id": 2
-    },
-    {
-      "id": 15,
-      "pet_id": 15,
-      "service_id": 2
-    },
-    {
-      "id": 16,
-      "pet_id": 17,
-      "service_id": 1
-    },
-    {
-      "id": 17,
-      "pet_id": 19,
-      "service_id": 2
-    },
-    {
-      "id": 18,
-      "pet_id": 20,
-      "service_id": 1
-    },
-    {
-      "id": 19,
-      "pet_id": 22,
-      "service_id": 3
-    },
-    {
-      "id": 20,
-      "pet_id": 23,
-      "service_id": 4
-    },
-    {
-      "id": 21,
-      "pet_id": 24,
-      "service_id": 13
-    },
-    {
-      "id": 22,
-      "pet_id": 25,
-      "service_id": 6
-    },
-    {
-      "id": 23,
-      "pet_id": 26,
-      "service_id": 24
-    },
-    {
-      "id": 24,
-      "pet_id": 27,
-      "service_id": 10
-    },
-    {
-      "id": 25,
-      "pet_id": 28,
-      "service_id": 11
-    }
-  ],
-  "petVaccinationRelationship": [
-    {
-      "id": 1,
-      "pet_id": 1,
-      "vaccination_id": 2
-    },
-    {
-      "id": 2,
-      "pet_id": 2,
-      "vaccination_id": 1
-    },
-    {
-      "id": 3,
-      "pet_id": 3,
-      "vaccination_id": 2
-    },
-    {
-      "id": 4,
-      "pet_id": 4,
-      "vaccination_id": 1
-    },
-    {
-      "id": 5,
-      "pet_id": 5,
-      "vaccination_id": 2
-    },
-    {
-      "id": 6,
-      "pet_id": 6,
-      "vaccination_id": 20
-    },
-    {
-      "id": 7,
-      "pet_id": 7,
-      "vaccination_id": 21
-    },
-    {
-      "id": 8,
-      "pet_id": 8,
-      "vaccination_id": 2
-    },
-    {
-      "id": 9,
-      "pet_id": 9,
-      "vaccination_id": 2
-    },
-    {
-      "id": 10,
-      "pet_id": 10,
-      "vaccination_id": 2
-    },
-    {
-      "id": 11,
-      "pet_id": 11,
-      "vaccination_id": 2
-    },
-    {
-      "id": 12,
-      "pet_id": 12,
-      "vaccination_id": 2
-    },
-    {
-      "id": 13,
-      "pet_id": 13,
-      "vaccination_id": 2
-    },
-    {
-      "id": 14,
-      "pet_id": 14,
-      "vaccination_id": 2
-    },
-    {
-      "id": 15,
-      "pet_id": 15,
-      "vaccination_id": 2
-    },
-    {
-      "id": 16,
-      "pet_id": 17,
-      "vaccination_id": 1
-    },
-    {
-      "id": 17,
-      "pet_id": 19,
-      "vaccination_id": 2
-    },
-    {
-      "id": 18,
-      "pet_id": 20,
-      "vaccination_id": 1
-    },
-    {
-      "id": 19,
-      "pet_id": 22,
-      "vaccination_id": 3
-    },
-    {
-      "id": 20,
-      "pet_id": 23,
-      "vaccination_id": 4
-    },
-    {
-      "id": 21,
-      "pet_id": 24,
-      "vaccination_id": 13
-    },
-    {
-      "id": 22,
-      "pet_id": 25,
-      "vaccination_id": 6
-    },
-    {
-      "id": 23,
-      "pet_id": 26,
-      "vaccination_id": 7
-    },
-    {
-      "id": 24,
-      "pet_id": 27,
-      "vaccination_id": 10
-    },
-    {
-      "id": 25,
-      "pet_id": 28,
-      "vaccination_id": 11
-    }
-  ],
-  "petFoodRelationship": [
-    {
-      "id": 1,
-      "pet_id": 1,
-      "food_id": 2
-    },
-    {
-      "id": 2,
-      "pet_id": 2,
-      "food_id": 3
-    },
-    {
-      "id": 3,
-      "pet_id": 3,
-      "food_id": 2
-    },
-    {
-      "id": 4,
-      "pet_id": 4,
-      "food_id": 3
-    },
-    {
-      "id": 5,
-      "pet_id": 5,
-      "food_id": 5
-    },
-    {
-      "id": 6,
-      "pet_id": 6,
-      "food_id": 6
-    },
-    {
-      "id": 7,
-      "pet_id": 7,
-      "food_id": 2
-    },
-    {
-      "id": 8,
-      "pet_id": 8,
-      "food_id": 4
-    },
-    {
-      "id": 9,
-      "pet_id": 9,
-      "food_id": 9
-    },
-    {
-      "id": 10,
-      "pet_id": 10,
-      "food_id": 7
-    },
-    {
-      "id": 11,
-      "pet_id": 11,
-      "food_id": 2
-    },
-    {
-      "id": 12,
-      "pet_id": 12,
-      "food_id": 2
-    },
-    {
-      "id": 13,
-      "pet_id": 24,
-      "food_id": 12
-    },
-    {
-      "id": 14,
-      "pet_id": 25,
-      "food_id": 13
-    },
-    {
-      "id": 15,
-      "pet_id": 26,
-      "food_id": 14
-    },
-    {
-      "id": 16,
-      "pet_id": 27,
-      "food_id": 17
-    },
-    {
-      "id": 17,
-      "pet_id": 28,
-      "food_id": 16
-    },
-    {
-      "id": 18,
-      "pet_id": 30,
-      "food_id": 12
-    }
-  ],
-  "petSupplierRelationship": [
-    {
-      "id": 1,
-      "pet_id": 1,
-      "supplier_id": 1
-    },
-    {
-      "id": 2,
-      "pet_id": 2,
-      "supplier_id": 2
-    },
-    {
-      "id": 3,
-      "pet_id": 3,
-      "supplier_id": 1
-    },
-    {
-      "id": 4,
-      "pet_id": 4,
-      "supplier_id": 3
-    },
-    {
-      "id": 5,
-      "pet_id": 5,
-      "supplier_id": 1
-    },
-    {
-      "id": 6,
-      "pet_id": 6,
-      "supplier_id": 2
-    },
-    {
-      "id": 7,
-      "pet_id": 7,
-      "supplier_id": 4
-    },
-    {
-      "id": 8,
-      "pet_id": 8,
-      "supplier_id": 1
-    },
-    {
-      "id": 9,
-      "pet_id": 9,
-      "supplier_id": 5
-    },
-    {
-      "id": 10,
-      "pet_id": 10,
-      "supplier_id": 2
-    },
-    {
-      "id": 11,
-      "pet_id": 22,
-      "supplier_id": 5
-    },
-    {
-      "id": 12,
-      "pet_id": 23,
-      "supplier_id": 5
-    },
-    {
-      "id": 13,
-      "pet_id": 24,
-      "supplier_id": 7
-    },
-    {
-      "id": 14,
-      "pet_id": 25,
-      "supplier_id": 3
-    },
-    {
-      "id": 15,
-      "pet_id": 26,
-      "supplier_id": 8
-    },
-    {
-      "id": 16,
-      "pet_id": 27,
-      "supplier_id": 9
-    },
-    {
-      "id": 17,
-      "pet_id": 28,
-      "supplier_id": 5
-    },
-    {
-      "id": 18,
-      "pet_id": 30,
-      "supplier_id": 7
-    }
-  ],
-  "employeePetRelationship": [
-    {
-      "id": 1,
-      "employee_id": 3,
-      "pet_id": 1
-    },
-    {
-      "id": 2,
-      "employee_id": 3,
-      "pet_id": 2
-    },
-    {
-      "id": 3,
-      "employee_id": 3,
-      "pet_id": 3
-    },
-    {
-      "id": 4,
-      "employee_id": 5,
-      "pet_id": 4
-    },
-    {
-      "id": 5,
-      "employee_id": 5,
-      "pet_id": 5
-    },
-    {
-      "id": 6,
-      "employee_id": 9,
-      "pet_id": 6
-    },
-    {
-      "id": 7,
-      "employee_id": 9,
-      "pet_id": 7
-    },
-    {
-      "id": 8,
-      "employee_id": 2,
-      "pet_id": 8
-    },
-    {
-      "id": 9,
-      "employee_id": 2,
-      "pet_id": 9
-    },
-    {
-      "id": 10,
-      "employee_id": 4,
-      "pet_id": 10
-    }
-  ]
+	"users": [
+		{
+			"id": 1,
+			"username": "admin",
+			"email": "admin@petshop.com",
+			"password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
+			"role": "Admin"
+		},
+		{
+			"id": 2,
+			"username": "supplier1",
+			"email": "supplier1@petshop.com",
+			"password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
+			"role": "Supplier"
+		},
+		{
+			"id": 3,
+			"username": "customer1",
+			"email": "alice.johnson@example.com",
+			"password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
+			"role": "Customer"
+		},
+		{
+			"id": 4,
+			"username": "customer2",
+			"email": "bob.smith@example.com",
+			"password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
+			"role": "Customer"
+		},
+		{
+			"id": 5,
+			"username": "supplier2",
+			"email": "supplier2@petshop.com",
+			"password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
+			"role": "Supplier"
+		},
+		{
+			"email": "test@petshop.com",
+			"password": "$2a$10$HVlFhPgMe48yIsuDH4KvtO5DimW9bjFHH0dQSzIZk8oaTG/mSRxfe",
+			"id": 6
+		},
+		{
+			"email": "employee1@petshop.com",
+			"password": "$2a$10$hWfcTJHjFNYVCIB3JS75ZOwSsGrNjzdVVHWDtvs/bilgyV2ZcgBDu",
+			"role": "Employee",
+			"name": "John Employee",
+			"id": 7
+		}
+	],
+	"addresses": [
+		{
+			"id": 1,
+			"street": "123 Oak Street",
+			"city": "Springfield",
+			"state": "Illinois",
+			"zip_code": "62701"
+		},
+		{
+			"id": 2,
+			"street": "456 Pine Avenue",
+			"city": "Maplewood",
+			"state": "New Jersey",
+			"zip_code": "07040"
+		},
+		{
+			"id": 3,
+			"street": "789 Elm Lane",
+			"city": "Lexington",
+			"state": "Kentucky",
+			"zip_code": "40502"
+		},
+		{
+			"id": 4,
+			"street": "321 Maple Street",
+			"city": "Boulder",
+			"state": "Colorado",
+			"zip_code": "80302"
+		},
+		{
+			"id": 5,
+			"street": "654 Cedar Avenue",
+			"city": "Portland",
+			"state": "Oregon",
+			"zip_code": "97201"
+		},
+		{
+			"id": 6,
+			"street": "987 Birch Lane",
+			"city": "Austin",
+			"state": "Texas",
+			"zip_code": "78701"
+		},
+		{
+			"id": 7,
+			"street": "147 Redwood Street",
+			"city": "Raleigh",
+			"state": "North Carolina",
+			"zip_code": "27601"
+		},
+		{
+			"id": 8,
+			"street": "258 Walnut Avenue",
+			"city": "Madison",
+			"state": "Wisconsin",
+			"zip_code": "53703"
+		},
+		{
+			"id": 9,
+			"street": "369 Oak Lane",
+			"city": "Bozeman",
+			"state": "Montana",
+			"zip_code": "59715"
+		},
+		{
+			"id": 10,
+			"street": "951 Pine Street",
+			"city": "Santa Fe",
+			"state": "New Mexico",
+			"zip_code": "87501"
+		},
+		{
+			"id": 11,
+			"street": "753 Elm Avenue",
+			"city": "Asheville",
+			"state": "North Carolina",
+			"zip_code": "28801"
+		},
+		{
+			"id": 12,
+			"street": "864 Birch Lane",
+			"city": "Burlington",
+			"state": "Vermont",
+			"zip_code": "05401"
+		},
+		{
+			"id": 13,
+			"street": "246 Cedar Street",
+			"city": "Savannah",
+			"state": "Georgia",
+			"zip_code": "31401"
+		},
+		{
+			"id": 14,
+			"street": "135 Oak Avenue",
+			"city": "Ann Arbor",
+			"state": "Michigan",
+			"zip_code": "48104"
+		},
+		{
+			"id": 15,
+			"street": "579 Pine Lane",
+			"city": "Bellingham",
+			"state": "Washington",
+			"zip_code": "98225"
+		},
+		{
+			"id": 16,
+			"street": "802 Maple Street",
+			"city": "Ithaca",
+			"state": "New York",
+			"zip_code": "14850"
+		},
+		{
+			"id": 17,
+			"street": "714 Cedar Avenue",
+			"city": "San Luis Obispo",
+			"state": "California",
+			"zip_code": "93401"
+		},
+		{
+			"id": 18,
+			"street": "625 Oak Lane",
+			"city": "Providence",
+			"state": "Rhode Island",
+			"zip_code": "02903"
+		},
+		{
+			"id": 19,
+			"street": "937 Birch Street",
+			"city": "Charleston",
+			"state": "South Carolina",
+			"zip_code": "29401"
+		},
+		{
+			"id": 20,
+			"street": "648 Maple Avenue",
+			"city": "Athens",
+			"state": "Georgia",
+			"zip_code": "30601"
+		},
+		{
+			"id": 21,
+			"street": "360 Elm Lane",
+			"city": "Eugene",
+			"state": "Oregon",
+			"zip_code": "97401"
+		},
+		{
+			"id": 22,
+			"street": "720 Pine Street",
+			"city": "Knoxville",
+			"state": "Tennessee",
+			"zip_code": "37902"
+		},
+		{
+			"id": 23,
+			"street": "489 Cedar Avenue",
+			"city": "Fayetteville",
+			"state": "Arkansas",
+			"zip_code": "72701"
+		},
+		{
+			"id": 24,
+			"street": "271 Oak Lane",
+			"city": "Flagstaff",
+			"state": "Arizona",
+			"zip_code": "86001"
+		},
+		{
+			"id": 25,
+			"street": "146 Maple Street",
+			"city": "Missoula",
+			"state": "Montana",
+			"zip_code": "59801"
+		},
+		{
+			"id": 26,
+			"street": "582 Birch Avenue",
+			"city": "Lawrence",
+			"state": "Kansas",
+			"zip_code": "66044"
+		},
+		{
+			"id": 27,
+			"street": "793 Pine Lane",
+			"city": "Sarasota",
+			"state": "Florida",
+			"zip_code": "34236"
+		},
+		{
+			"id": 28,
+			"street": "902 Oak Street",
+			"city": "Birmingham",
+			"state": "Alabama",
+			"zip_code": "35203"
+		},
+		{
+			"id": 29,
+			"street": "115 Elm Avenue",
+			"city": "Spokane",
+			"state": "Washington",
+			"zip_code": "99201"
+		},
+		{
+			"id": 30,
+			"street": "223 Pine Lane",
+			"city": "Tallahassee",
+			"state": "Florida",
+			"zip_code": "32301"
+		}
+	],
+	"petCategories": [
+		{
+			"id": 1,
+			"name": "Cats"
+		},
+		{
+			"id": 2,
+			"name": "Dogs"
+		},
+		{
+			"id": 3,
+			"name": "Cows"
+		},
+		{
+			"id": 4,
+			"name": "Buffaloes"
+		},
+		{
+			"id": 5,
+			"name": "Horses"
+		},
+		{
+			"id": 6,
+			"name": "Donkeys"
+		},
+		{
+			"id": 7,
+			"name": "Ducks"
+		},
+		{
+			"id": 8,
+			"name": "Hens"
+		},
+		{
+			"id": 9,
+			"name": "Goats"
+		},
+		{
+			"id": 10,
+			"name": "Sheep"
+		},
+		{
+			"id": 11,
+			"name": "Fishes"
+		},
+		{
+			"id": 12,
+			"name": "Parrots"
+		},
+		{
+			"id": 13,
+			"name": "Turtles"
+		},
+		{
+			"id": 14,
+			"name": "Guinea Pigs"
+		},
+		{
+			"id": 15,
+			"name": "Hamsters"
+		},
+		{
+			"id": 16,
+			"name": "Chickens"
+		},
+		{
+			"id": 17,
+			"name": "Geckos"
+		},
+		{
+			"id": 18,
+			"name": "Rats"
+		},
+		{
+			"id": 19,
+			"name": "Snakes"
+		},
+		{
+			"id": 20,
+			"name": "Rabbits"
+		}
+	],
+	"pets": [
+		{
+			"id": 1,
+			"name": "Bella",
+			"breed": "Labrador Retriever",
+			"age": 2,
+			"price": 45000,
+			"category_id": 2,
+			"description": "Friendly and energetic Labrador Retriever",
+			"image_url": "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=400"
+		},
+		{
+			"id": 2,
+			"name": "Whiskers",
+			"breed": "Persian Cat",
+			"age": 3,
+			"price": 32000,
+			"category_id": 1,
+			"description": "Fluffy and calm Persian Cat",
+			"image_url": "https://images.unsplash.com/photo-1548247416-ec66f4900b2e?w=400"
+		},
+		{
+			"id": 3,
+			"name": "Max",
+			"breed": "German Shepherd",
+			"age": 3,
+			"price": 55000,
+			"category_id": 2,
+			"description": "Intelligent and loyal German Shepherd",
+			"image_url": "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=400"
+		},
+		{
+			"id": 4,
+			"name": "Simba",
+			"breed": "Sphynx Cat",
+			"age": 2,
+			"price": 38000,
+			"category_id": 1,
+			"description": "Hairless and affectionate Sphynx Cat",
+			"image_url": "https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?w=400"
+		},
+		{
+			"id": 5,
+			"name": "Luna",
+			"breed": "Golden Retriever",
+			"age": 1,
+			"price": 42000,
+			"category_id": 2,
+			"description": "Playful and affectionate Golden Retriever",
+			"image_url": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=400"
+		},
+		{
+			"id": 6,
+			"name": "Mochi",
+			"breed": "Siamese Cat",
+			"age": 1,
+			"price": 28000,
+			"category_id": 1,
+			"description": "Elegant and vocal Siamese Cat",
+			"image_url": "https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?w=400"
+		},
+		{
+			"id": 7,
+			"name": "Charlie",
+			"breed": "Beagle",
+			"age": 2,
+			"price": 35000,
+			"category_id": 2,
+			"description": "Curious and friendly Beagle",
+			"image_url": "https://images.unsplash.com/photo-1505628346881-b72b27e84530?w=400"
+		},
+		{
+			"id": 8,
+			"name": "Rocky",
+			"breed": "Doberman Pinscher",
+			"age": 2,
+			"price": 60000,
+			"category_id": 2,
+			"description": "Alert and loyal Doberman Pinscher",
+			"image_url": "https://images.unsplash.com/photo-1601979031925-424e53b6caaa?w=400"
+		},
+		{
+			"id": 9,
+			"name": "Lucy",
+			"breed": "French Bulldog",
+			"age": 1,
+			"price": 75000,
+			"category_id": 2,
+			"description": "Adorable and easygoing French Bulldog",
+			"image_url": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400"
+		},
+		{
+			"id": 10,
+			"name": "Zoe",
+			"breed": "Shetland Sheepdog",
+			"age": 2,
+			"price": 40000,
+			"category_id": 2,
+			"description": "Smart and energetic Shetland Sheepdog",
+			"image_url": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400"
+		},
+		{
+			"id": 11,
+			"name": "Cooper",
+			"breed": "Bulldog",
+			"age": 3,
+			"price": 50000,
+			"category_id": 2,
+			"description": "Determined and gentle Bulldog",
+			"image_url": "https://images.unsplash.com/photo-1529511582893-2d7e684dd128?w=400"
+		},
+		{
+			"id": 12,
+			"name": "Lola",
+			"breed": "Pomeranian",
+			"age": 1,
+			"price": 30000,
+			"category_id": 2,
+			"description": "Fluffy and lively Pomeranian",
+			"image_url": "https://images.unsplash.com/photo-1593134257782-e89567b7718a?w=400"
+		},
+		{
+			"id": 13,
+			"name": "Duke",
+			"breed": "Poodle",
+			"age": 2,
+			"price": 45000,
+			"category_id": 2,
+			"description": "Intelligent and hypoallergenic Poodle",
+			"image_url": "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400"
+		},
+		{
+			"id": 14,
+			"name": "Mia",
+			"breed": "Bernese Mountain Dog",
+			"age": 1,
+			"price": 65000,
+			"category_id": 2,
+			"description": "Gentle and strong Bernese Mountain Dog",
+			"image_url": "https://images.unsplash.com/photo-1568572933382-74d440642117?w=400"
+		},
+		{
+			"id": 15,
+			"name": "Oscar",
+			"breed": "Corgi",
+			"age": 3,
+			"price": 48000,
+			"category_id": 2,
+			"description": "Adorable and outgoing Corgi",
+			"image_url": "https://images.unsplash.com/photo-1596671736898-5a5c6c0cdf24?w=400"
+		},
+		{
+			"id": 16,
+			"name": "Lily",
+			"breed": "Pug",
+			"age": 1,
+			"price": 33000,
+			"category_id": 2,
+			"description": "Charming and mischievous Pug",
+			"image_url": "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400"
+		},
+		{
+			"id": 17,
+			"name": "Rocky Jr",
+			"breed": "Ragdoll Cat",
+			"age": 2,
+			"price": 36000,
+			"category_id": 1,
+			"description": "Gentle and laid-back Ragdoll Cat",
+			"image_url": "https://images.unsplash.com/photo-1561948955-570b270e7c36?w=400"
+		},
+		{
+			"id": 18,
+			"name": "Sophie",
+			"breed": "Chihuahua",
+			"age": 1,
+			"price": 22000,
+			"category_id": 2,
+			"description": "Tiny and spirited Chihuahua",
+			"image_url": "https://images.unsplash.com/photo-1583512603806-077998240c7a?w=400"
+		},
+		{
+			"id": 19,
+			"name": "Milo",
+			"breed": "Australian Shepherd",
+			"age": 2,
+			"price": 52000,
+			"category_id": 2,
+			"description": "Intelligent and energetic Australian Shepherd",
+			"image_url": "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400"
+		},
+		{
+			"id": 20,
+			"name": "Ziggy",
+			"breed": "Maine Coon Cat",
+			"age": 3,
+			"price": 40000,
+			"category_id": 1,
+			"description": "Fluffy and friendly Maine Coon Cat",
+			"image_url": "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=400"
+		},
+		{
+			"id": 21,
+			"name": "Penny",
+			"breed": "Cocker Spaniel",
+			"age": 2,
+			"price": 38000,
+			"category_id": 2,
+			"description": "Gentle and affectionate Cocker Spaniel",
+			"image_url": "https://images.unsplash.com/photo-1581888227599-779811939961?w=400"
+		},
+		{
+			"id": 22,
+			"name": "Daisy",
+			"breed": "Holstein",
+			"age": 3,
+			"price": 85000,
+			"category_id": 3,
+			"description": "Gentle and productive Holstein cow",
+			"image_url": "https://images.unsplash.com/photo-1545468900-8c26b9ec1de8?w=400"
+		},
+		{
+			"id": 23,
+			"name": "Thunder",
+			"breed": "Thoroughbred",
+			"age": 4,
+			"price": 95000,
+			"category_id": 5,
+			"description": "Elegant and fast Thoroughbred horse",
+			"image_url": "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=400"
+		},
+		{
+			"id": 24,
+			"name": "Nemo",
+			"breed": "Clownfish",
+			"age": 1,
+			"price": 1500,
+			"category_id": 11,
+			"description": "Colorful and playful Clownfish",
+			"image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400"
+		},
+		{
+			"id": 25,
+			"name": "Thumper",
+			"breed": "Holland Lop",
+			"age": 1,
+			"price": 8000,
+			"category_id": 20,
+			"description": "Adorable and gentle Holland Lop rabbit",
+			"image_url": "https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=400"
+		},
+		{
+			"id": 26,
+			"name": "Rio",
+			"breed": "African Grey Parrot",
+			"age": 2,
+			"price": 45000,
+			"category_id": 12,
+			"description": "Intelligent and talkative African Grey Parrot",
+			"image_url": "https://images.unsplash.com/photo-1612024782955-49fae79e42bb?w=400"
+		},
+		{
+			"id": 27,
+			"name": "Shelly",
+			"breed": "Red-Eared Slider Turtle",
+			"age": 3,
+			"price": 3500,
+			"category_id": 13,
+			"description": "Colorful and aquatic Red-Eared Slider Turtle",
+			"image_url": "https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400"
+		},
+		{
+			"id": 28,
+			"name": "Billy",
+			"breed": "Boer Goat",
+			"age": 2,
+			"price": 12000,
+			"category_id": 9,
+			"description": "Hardy and productive Boer Goat",
+			"image_url": "https://images.unsplash.com/photo-1533318087102-944a8515a7e7?w=400"
+		},
+		{
+			"id": 29,
+			"name": "Snowflake",
+			"breed": "Dorset Sheep",
+			"age": 1,
+			"price": 9500,
+			"category_id": 10,
+			"description": "White and woolly Dorset Sheep",
+			"image_url": "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?w=400"
+		},
+		{
+			"id": 30,
+			"name": "Aqua",
+			"breed": "Goldfish",
+			"age": 1,
+			"price": 800,
+			"category_id": 11,
+			"description": "Classic and graceful Goldfish",
+			"image_url": "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=400"
+		}
+	],
+	"groomingServices": [
+		{
+			"id": 1,
+			"name": "Cat Brushing",
+			"description": "Gentle brushing for your furry feline friend",
+			"price": 1200,
+			"available": true
+		},
+		{
+			"id": 2,
+			"name": "Dog Bathing",
+			"description": "Refreshing bath for your loyal canine companion",
+			"price": 1800,
+			"available": true
+		},
+		{
+			"id": 3,
+			"name": "Cow Grooming",
+			"description": "Professional grooming for your friendly cow",
+			"price": 4500,
+			"available": true
+		},
+		{
+			"id": 4,
+			"name": "Horse Mane Styling",
+			"description": "Stylish mane grooming for your majestic horse",
+			"price": 5500,
+			"available": true
+		},
+		{
+			"id": 5,
+			"name": "Donkey Hoof Trimming",
+			"description": "Expert trimming for your dependable donkey",
+			"price": 3200,
+			"available": true
+		},
+		{
+			"id": 6,
+			"name": "Rabbit Fur Trim",
+			"description": "Delicate fur trimming for your adorable rabbit",
+			"price": 900,
+			"available": true
+		},
+		{
+			"id": 7,
+			"name": "Parrot Feather Styling",
+			"description": "Colorful feather styling for your talkative parrot",
+			"price": 1500,
+			"available": true
+		},
+		{
+			"id": 8,
+			"name": "Rat Spa Day",
+			"description": "Relaxing spa day for your sociable rat",
+			"price": 700,
+			"available": true
+		},
+		{
+			"id": 9,
+			"name": "Pig Mud Bath",
+			"description": "Enjoyable mud bath for your playful pig",
+			"price": 2000,
+			"available": true
+		},
+		{
+			"id": 10,
+			"name": "Turtle Shell Polishing",
+			"description": "Polishing service for your patient turtle",
+			"price": 800,
+			"available": true
+		},
+		{
+			"id": 11,
+			"name": "Goat Horn Grooming",
+			"description": "Gentle grooming for your horned goat",
+			"price": 1100,
+			"available": true
+		},
+		{
+			"id": 12,
+			"name": "Sheep Wool Shearing",
+			"description": "Skillful wool shearing for your fluffy sheep",
+			"price": 2500,
+			"available": true
+		},
+		{
+			"id": 13,
+			"name": "Fish Fin Trim",
+			"description": "Precise fin trimming for your aquatic fish",
+			"price": 600,
+			"available": false
+		},
+		{
+			"id": 14,
+			"name": "Hen Feather Fluffing",
+			"description": "Fluffing service for your busy hen",
+			"price": 750,
+			"available": true
+		},
+		{
+			"id": 15,
+			"name": "Duck Bill Cleaning",
+			"description": "Cleaning service for your quacking duck",
+			"price": 850,
+			"available": true
+		},
+		{
+			"id": 16,
+			"name": "Gecko Scale Polishing",
+			"description": "Gentle scale polishing for your small gecko",
+			"price": 950,
+			"available": false
+		},
+		{
+			"id": 17,
+			"name": "Snake Shedding Assistance",
+			"description": "Assistance for your snake during shedding",
+			"price": 1300,
+			"available": true
+		},
+		{
+			"id": 18,
+			"name": "Guinea Pig Grooming",
+			"description": "Personalized grooming for your guinea pig",
+			"price": 850,
+			"available": true
+		},
+		{
+			"id": 19,
+			"name": "Hamster Fur Fluffing",
+			"description": "Fluffing service for your tiny hamster",
+			"price": 650,
+			"available": true
+		},
+		{
+			"id": 20,
+			"name": "Chicken Beak Trimming",
+			"description": "Careful beak trimming for your clucking chicken",
+			"price": 700,
+			"available": true
+		},
+		{
+			"id": 21,
+			"name": "Siamese Cat Haircut",
+			"description": "Specialized haircut for your elegant Siamese cat",
+			"price": 1400,
+			"available": true
+		},
+		{
+			"id": 22,
+			"name": "German Shepherd Bath",
+			"description": "Refreshing bath for your loyal German Shepherd",
+			"price": 2200,
+			"available": true
+		},
+		{
+			"id": 23,
+			"name": "Arabian Horse Mane Braiding",
+			"description": "Intricate mane braiding for your Arabian horse",
+			"price": 6500,
+			"available": true
+		},
+		{
+			"id": 24,
+			"name": "African Grey Parrot Feather Styling",
+			"description": "Feather styling for your intelligent African Grey parrot",
+			"price": 1800,
+			"available": true
+		},
+		{
+			"id": 25,
+			"name": "Potbelly Pig Spa Day",
+			"description": "Relaxing spa day for your potbelly pig",
+			"price": 2800,
+			"available": false
+		},
+		{
+			"name": "German Bath",
+			"description": "Refreshing bath for your loyal German Shepherd",
+			"price": 22222,
+			"available": false,
+			"id": 26
+		}
+	],
+	"vaccinations": [
+		{
+			"id": 1,
+			"name": "Feline Distemper Vaccine",
+			"description": "Protects against feline distemper",
+			"price": 1500,
+			"available": true
+		},
+		{
+			"id": 2,
+			"name": "Canine Parvovirus Vaccine",
+			"description": "Prevents canine parvovirus infection",
+			"price": 1800,
+			"available": true
+		},
+		{
+			"id": 3,
+			"name": "Bovine Respiratory Syncytial Virus Vaccine",
+			"description": "Vaccination for bovine respiratory syncytial virus",
+			"price": 3500,
+			"available": true
+		},
+		{
+			"id": 4,
+			"name": "Equine Influenza Vaccine",
+			"description": "Protects horses from equine influenza",
+			"price": 4200,
+			"available": true
+		},
+		{
+			"id": 5,
+			"name": "Donkey Tetanus Shot",
+			"description": "Tetanus protection for donkeys",
+			"price": 2200,
+			"available": true
+		},
+		{
+			"id": 6,
+			"name": "Rabbit Calicivirus Vaccination",
+			"description": "Vaccination against rabbit calicivirus",
+			"price": 1200,
+			"available": true
+		},
+		{
+			"id": 7,
+			"name": "Parrot Polyomavirus Vaccine",
+			"description": "Protects parrots from polyomavirus",
+			"price": 2500,
+			"available": true
+		},
+		{
+			"id": 8,
+			"name": "Rat Infectious Disease Vaccine",
+			"description": "Vaccine for common infectious diseases in rats",
+			"price": 800,
+			"available": true
+		},
+		{
+			"id": 9,
+			"name": "Swine Flu Vaccine for Pigs",
+			"description": "Vaccination against swine flu in pigs",
+			"price": 1800,
+			"available": false
+		},
+		{
+			"id": 10,
+			"name": "Turtle Shell Rot Vaccine",
+			"description": "Protects turtles from shell rot disease",
+			"price": 900,
+			"available": true
+		},
+		{
+			"id": 11,
+			"name": "Goat Clostridium Perfringens Vaccine",
+			"description": "Vaccination for Clostridium perfringens in goats",
+			"price": 1100,
+			"available": true
+		},
+		{
+			"id": 12,
+			"name": "Sheep Foot Rot Vaccine",
+			"description": "Vaccine to prevent foot rot in sheep",
+			"price": 1300,
+			"available": true
+		},
+		{
+			"id": 13,
+			"name": "Beta Fish Fin Rot Vaccine",
+			"description": "Protects Betta fish from fin rot disease",
+			"price": 500,
+			"available": false
+		},
+		{
+			"id": 14,
+			"name": "Chicken Newcastle Disease Vaccine",
+			"description": "Prevents Newcastle disease in chickens",
+			"price": 750,
+			"available": true
+		},
+		{
+			"id": 15,
+			"name": "Duck Avian Influenza Vaccination",
+			"description": "Vaccination for avian influenza in ducks",
+			"price": 1600,
+			"available": true
+		},
+		{
+			"id": 16,
+			"name": "Gecko Metabolic Bone Disease Vaccine",
+			"description": "Vaccine to prevent metabolic bone disease in geckos",
+			"price": 950,
+			"available": true
+		},
+		{
+			"id": 17,
+			"name": "Snake Respiratory Infection Vaccine",
+			"description": "Vaccination against respiratory infections in snakes",
+			"price": 1400,
+			"available": true
+		},
+		{
+			"id": 18,
+			"name": "Guinea Pig Bordetella Vaccine",
+			"description": "Vaccine for Bordetella in guinea pigs",
+			"price": 850,
+			"available": true
+		},
+		{
+			"id": 19,
+			"name": "Hamster Tyzzer Disease Vaccine",
+			"description": "Vaccination for Tyzzer's disease in hamsters",
+			"price": 700,
+			"available": true
+		},
+		{
+			"id": 20,
+			"name": "Feline Leukemia Vaccine",
+			"description": "Protects against feline leukemia",
+			"price": 2000,
+			"available": true
+		},
+		{
+			"id": 21,
+			"name": "Canine Coronavirus Vaccine",
+			"description": "Prevents canine coronavirus infection",
+			"price": 1700,
+			"available": true
+		},
+		{
+			"id": 22,
+			"name": "Bovine Brucellosis Vaccine",
+			"description": "Vaccine for bovine brucellosis",
+			"price": 4000,
+			"available": true
+		},
+		{
+			"id": 23,
+			"name": "Equine West Nile Virus Vaccine",
+			"description": "Protects horses from West Nile virus",
+			"price": 5000,
+			"available": false
+		},
+		{
+			"id": 24,
+			"name": "Rabbit Myxomatosis Shot",
+			"description": "Vaccination for rabbit myxomatosis",
+			"price": 1100,
+			"available": true
+		},
+		{
+			"id": 25,
+			"name": "Parrot Psittacosis Vaccine",
+			"description": "Protects parrots from psittacosis",
+			"price": 2800,
+			"available": true
+		}
+	],
+	"petFoods": [
+		{
+			"id": 1,
+			"name": "Royal Canin Adult",
+			"brand": "Royal Canin",
+			"type": "Dry",
+			"quantity": 150,
+			"price": 2500
+		},
+		{
+			"id": 2,
+			"name": "Pedigree Puppy",
+			"brand": "Pedigree",
+			"type": "Dry",
+			"quantity": 200,
+			"price": 1200
+		},
+		{
+			"id": 3,
+			"name": "Whiskas Ocean Fish",
+			"brand": "Whiskas",
+			"type": "Wet",
+			"quantity": 300,
+			"price": 450
+		},
+		{
+			"id": 4,
+			"name": "Hill's Science Diet",
+			"brand": "Hill's",
+			"type": "Dry",
+			"quantity": 80,
+			"price": 3200
+		},
+		{
+			"id": 5,
+			"name": "Purina Pro Plan",
+			"brand": "Purina",
+			"type": "Dry",
+			"quantity": 120,
+			"price": 2800
+		},
+		{
+			"id": 6,
+			"name": "Friskies Mixed Grill",
+			"brand": "Friskies",
+			"type": "Wet",
+			"quantity": 250,
+			"price": 380
+		},
+		{
+			"id": 7,
+			"name": "Iams ProActive Health",
+			"brand": "Iams",
+			"type": "Dry",
+			"quantity": 90,
+			"price": 1800
+		},
+		{
+			"id": 8,
+			"name": "Blue Buffalo Life Protection",
+			"brand": "Blue Buffalo",
+			"type": "Dry",
+			"quantity": 65,
+			"price": 3500
+		},
+		{
+			"id": 9,
+			"name": "Cesar Gourmet Filets",
+			"brand": "Cesar",
+			"type": "Wet",
+			"quantity": 180,
+			"price": 520
+		},
+		{
+			"id": 10,
+			"name": "Orijen Original",
+			"brand": "Orijen",
+			"type": "Dry",
+			"quantity": 40,
+			"price": 5500
+		},
+		{
+			"id": 11,
+			"name": "Acana Heritage Grains",
+			"brand": "Acana",
+			"type": "Dry",
+			"quantity": 55,
+			"price": 4800
+		},
+		{
+			"id": 12,
+			"name": "Tetra TetraFin Flakes",
+			"brand": "Tetra",
+			"type": "Flakes",
+			"quantity": 500,
+			"price": 350
+		},
+		{
+			"id": 13,
+			"name": "Kaytee Fiesta Rabbit Food",
+			"brand": "Kaytee",
+			"type": "Pellets",
+			"quantity": 200,
+			"price": 680
+		},
+		{
+			"id": 14,
+			"name": "Zupreem Bird Food",
+			"brand": "Zupreem",
+			"type": "Pellets",
+			"quantity": 150,
+			"price": 1200
+		},
+		{
+			"id": 15,
+			"name": "Vitakraft Guinea Pig Food",
+			"brand": "Vitakraft",
+			"type": "Pellets",
+			"quantity": 180,
+			"price": 550
+		},
+		{
+			"id": 16,
+			"name": "Oxbow Timothy Hay",
+			"brand": "Oxbow",
+			"type": "Hay",
+			"quantity": 300,
+			"price": 750
+		},
+		{
+			"id": 17,
+			"name": "Mazuri Tortoise Diet",
+			"brand": "Mazuri",
+			"type": "Pellets",
+			"quantity": 80,
+			"price": 1800
+		},
+		{
+			"id": 18,
+			"name": "ZuPreem Natural Large Bird",
+			"brand": "ZuPreem",
+			"type": "Pellets",
+			"quantity": 100,
+			"price": 2200
+		},
+		{
+			"id": 19,
+			"name": "Wellness CORE Dog Food",
+			"brand": "Wellness",
+			"type": "Dry",
+			"quantity": 75,
+			"price": 3800
+		},
+		{
+			"id": 20,
+			"name": "Taste of the Wild Pacific Stream",
+			"brand": "Taste of the Wild",
+			"type": "Dry",
+			"quantity": 60,
+			"price": 3200
+		}
+	],
+	"suppliers": [
+		{
+			"id": 1,
+			"name": "PetWorld Suppliers Co.",
+			"contact_person": "John Martinez",
+			"phone_number": "5551234567",
+			"email": "john@petworld.com",
+			"address_id": 1
+		},
+		{
+			"id": 2,
+			"name": "Happy Paws Wholesale",
+			"contact_person": "Sarah Lee",
+			"phone_number": "5559876543",
+			"email": "sarah@happypaws.com",
+			"address_id": 2
+		},
+		{
+			"id": 3,
+			"name": "Animal Kingdom Dist.",
+			"contact_person": "Michael Brown",
+			"phone_number": "5554567890",
+			"email": "michael@animalkingdom.com",
+			"address_id": 3
+		},
+		{
+			"id": 4,
+			"name": "Premium Pet Imports",
+			"contact_person": "Emily Davis",
+			"phone_number": "5552345678",
+			"email": "emily@premiumpet.com",
+			"address_id": 4
+		},
+		{
+			"id": 5,
+			"name": "FarmFresh Animals LLC",
+			"contact_person": "Robert Wilson",
+			"phone_number": "5556789012",
+			"email": "robert@farmfresh.com",
+			"address_id": 5
+		},
+		{
+			"id": 6,
+			"name": "Exotic Creatures Supply",
+			"contact_person": "Jennifer Garcia",
+			"phone_number": "5553456789",
+			"email": "jennifer@exoticcreatures.com",
+			"address_id": 6
+		},
+		{
+			"id": 7,
+			"name": "AquaLife Breeders",
+			"contact_person": "David Thompson",
+			"phone_number": "5557890123",
+			"email": "david@aqualife.com",
+			"address_id": 7
+		},
+		{
+			"id": 8,
+			"name": "Feathered Friends Supply",
+			"contact_person": "Lisa Anderson",
+			"phone_number": "5550123456",
+			"email": "lisa@featheredfriends.com",
+			"address_id": 8
+		},
+		{
+			"id": 9,
+			"name": "Fur & Scales Breeders",
+			"contact_person": "James Taylor",
+			"phone_number": "5554321098",
+			"email": "james@furscales.com",
+			"address_id": 9
+		},
+		{
+			"id": 10,
+			"name": "Nature's Companions Inc.",
+			"contact_person": "Amanda White",
+			"phone_number": "5558765432",
+			"email": "amanda@naturescompanions.com",
+			"address_id": 10
+		}
+	],
+	"employees": [
+		{
+			"id": 1,
+			"first_name": "Thomas",
+			"last_name": "Anderson",
+			"position": "Store Manager",
+			"hire_date": "2020-01-15",
+			"phone_number": "5551110001",
+			"email": "thomas.anderson@petshop.com",
+			"address_id": 1,
+			"role": "Admin"
+		},
+		{
+			"id": 2,
+			"first_name": "Jessica",
+			"last_name": "Martinez",
+			"position": "Veterinarian",
+			"hire_date": "2020-03-22",
+			"phone_number": "5552220002",
+			"email": "jessica.martinez@petshop.com",
+			"address_id": 2,
+			"role": "Admin"
+		},
+		{
+			"id": 3,
+			"first_name": "Kevin",
+			"last_name": "Johnson",
+			"position": "Groomer",
+			"hire_date": "2021-05-10",
+			"phone_number": "5553330003",
+			"email": "kevin.johnson@petshop.com",
+			"address_id": 3,
+			"role": "Admin"
+		},
+		{
+			"id": 4,
+			"first_name": "Michelle",
+			"last_name": "Lee",
+			"position": "Sales Associate",
+			"hire_date": "2021-07-18",
+			"phone_number": "5554440004",
+			"email": "michelle.lee@petshop.com",
+			"address_id": 4,
+			"role": "Admin"
+		},
+		{
+			"id": 5,
+			"first_name": "Daniel",
+			"last_name": "Williams",
+			"position": "Pet Care Specialist",
+			"hire_date": "2022-01-05",
+			"phone_number": "5555550005",
+			"email": "daniel.williams@petshop.com",
+			"address_id": 5,
+			"role": "Admin"
+		},
+		{
+			"id": 6,
+			"first_name": "Rachel",
+			"last_name": "Brown",
+			"position": "Cashier",
+			"hire_date": "2022-03-14",
+			"phone_number": "5556660006",
+			"email": "rachel.brown@petshop.com",
+			"address_id": 6,
+			"role": "Supplier"
+		},
+		{
+			"id": 7,
+			"first_name": "Christopher",
+			"last_name": "Davis",
+			"position": "Inventory Manager",
+			"hire_date": "2019-11-20",
+			"phone_number": "5557770007",
+			"email": "christopher.davis@petshop.com",
+			"address_id": 7,
+			"role": "Supplier"
+		},
+		{
+			"id": 8,
+			"first_name": "Amanda",
+			"last_name": "Wilson",
+			"position": "Marketing Coordinator",
+			"hire_date": "2023-02-08",
+			"phone_number": "5558880008",
+			"email": "amanda.wilson@petshop.com",
+			"address_id": 8,
+			"role": "Admin"
+		},
+		{
+			"id": 9,
+			"first_name": "Brian",
+			"last_name": "Thompson",
+			"position": "Nutritionist",
+			"hire_date": "2021-09-30",
+			"phone_number": "5559990009",
+			"email": "brian.thompson@petshop.com",
+			"address_id": 9,
+			"role": "Admin"
+		},
+		{
+			"id": 10,
+			"first_name": "Stephanie",
+			"last_name": "Garcia",
+			"position": "Customer Relations",
+			"hire_date": "2022-06-15",
+			"phone_number": "5550000010",
+			"email": "stephanie.garcia@petshop.com",
+			"address_id": 10,
+			"role": "Admin"
+		}
+	],
+	"customers": [
+		{
+			"id": 1,
+			"first_name": "Alice",
+			"last_name": "Johnson",
+			"email": "alice.johnson@example.com",
+			"phone_number": "5551234000",
+			"address_id": 5
+		},
+		{
+			"id": 2,
+			"first_name": "Bob",
+			"last_name": "Smith",
+			"email": "bob.smith@example.com",
+			"phone_number": "5555678001",
+			"address_id": 12
+		},
+		{
+			"id": 3,
+			"first_name": "Charlie",
+			"last_name": "Williams",
+			"email": "charlie.williams@example.com",
+			"phone_number": "5559012002",
+			"address_id": 8
+		},
+		{
+			"id": 4,
+			"first_name": "David",
+			"last_name": "Davis",
+			"email": "david.davis@example.com",
+			"phone_number": "5553456003",
+			"address_id": 3
+		},
+		{
+			"id": 5,
+			"first_name": "Emma",
+			"last_name": "Brown",
+			"email": "emma.brown@example.com",
+			"phone_number": "5557890004",
+			"address_id": 17
+		},
+		{
+			"id": 6,
+			"first_name": "Frank",
+			"last_name": "Taylor",
+			"email": "frank.taylor@example.com",
+			"phone_number": "5552345005",
+			"address_id": 22
+		},
+		{
+			"id": 7,
+			"first_name": "Grace",
+			"last_name": "Miller",
+			"email": "grace.miller@example.com",
+			"phone_number": "5556789006",
+			"address_id": 9
+		},
+		{
+			"id": 8,
+			"first_name": "Henry",
+			"last_name": "Wilson",
+			"email": "henry.wilson@example.com",
+			"phone_number": "5550123007",
+			"address_id": 14
+		},
+		{
+			"id": 9,
+			"first_name": "Ivy",
+			"last_name": "Moore",
+			"email": "ivy.moore@example.com",
+			"phone_number": "5554567008",
+			"address_id": 6
+		},
+		{
+			"id": 10,
+			"first_name": "Jack",
+			"last_name": "Anderson",
+			"email": "jack.anderson@example.com",
+			"phone_number": "5558901009",
+			"address_id": 19
+		},
+		{
+			"id": 11,
+			"first_name": "Katie",
+			"last_name": "Thomas",
+			"email": "katie.thomas@example.com",
+			"phone_number": "5551234010",
+			"address_id": 25
+		},
+		{
+			"id": 12,
+			"first_name": "Leo",
+			"last_name": "Martinez",
+			"email": "leo.martinez@example.com",
+			"phone_number": "5555678011",
+			"address_id": 2
+		},
+		{
+			"id": 13,
+			"first_name": "Mia",
+			"last_name": "Jones",
+			"email": "mia.jones@example.com",
+			"phone_number": "5559012012",
+			"address_id": 11
+		},
+		{
+			"id": 14,
+			"first_name": "Noah",
+			"last_name": "Hernandez",
+			"email": "noah.hernandez@example.com",
+			"phone_number": "5553456013",
+			"address_id": 7
+		},
+		{
+			"id": 15,
+			"first_name": "Olivia",
+			"last_name": "Young",
+			"email": "olivia.young@example.com",
+			"phone_number": "5557890014",
+			"address_id": 20
+		}
+	],
+	"transactions": [
+		{
+			"id": 1,
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2024-01-15",
+			"amount": 45000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 2,
+			"customer_id": 2,
+			"pet_id": 2,
+			"transaction_date": "2024-01-22",
+			"amount": 32000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 3,
+			"customer_id": 3,
+			"pet_id": 5,
+			"transaction_date": "2024-02-05",
+			"amount": 42000,
+			"transaction_status": "Failed"
+		},
+		{
+			"id": 4,
+			"customer_id": 4,
+			"pet_id": 9,
+			"transaction_date": "2024-02-14",
+			"amount": 75000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 5,
+			"customer_id": 5,
+			"pet_id": 3,
+			"transaction_date": "2024-02-28",
+			"amount": 55000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 6,
+			"customer_id": 6,
+			"pet_id": 15,
+			"transaction_date": "2024-03-10",
+			"amount": 48000,
+			"transaction_status": "Failed"
+		},
+		{
+			"id": 7,
+			"customer_id": 7,
+			"pet_id": 24,
+			"transaction_date": "2024-03-18",
+			"amount": 1500,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 8,
+			"customer_id": 8,
+			"pet_id": 26,
+			"transaction_date": "2024-04-02",
+			"amount": 45000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 9,
+			"customer_id": 9,
+			"pet_id": 11,
+			"transaction_date": "2024-04-20",
+			"amount": 50000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 10,
+			"customer_id": 10,
+			"pet_id": 7,
+			"transaction_date": "2024-05-05",
+			"amount": 35000,
+			"transaction_status": "Failed"
+		},
+		{
+			"id": 11,
+			"customer_id": 11,
+			"pet_id": 25,
+			"transaction_date": "2024-05-15",
+			"amount": 8000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 12,
+			"customer_id": 12,
+			"pet_id": 17,
+			"transaction_date": "2024-05-22",
+			"amount": 36000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 13,
+			"customer_id": 13,
+			"pet_id": 30,
+			"transaction_date": "2024-06-01",
+			"amount": 800,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 14,
+			"customer_id": 14,
+			"pet_id": 23,
+			"transaction_date": "2024-06-12",
+			"amount": 95000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 15,
+			"customer_id": 15,
+			"pet_id": 19,
+			"transaction_date": "2024-06-25",
+			"amount": 52000,
+			"transaction_status": "Failed"
+		},
+		{
+			"id": 16,
+			"customer_id": 1,
+			"pet_id": 6,
+			"transaction_date": "2024-07-08",
+			"amount": 28000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 17,
+			"customer_id": 2,
+			"pet_id": 16,
+			"transaction_date": "2024-07-19",
+			"amount": 33000,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 18,
+			"customer_id": 3,
+			"pet_id": 27,
+			"transaction_date": "2024-08-03",
+			"amount": 3500,
+			"transaction_status": "Success"
+		},
+		{
+			"id": 19,
+			"customer_id": 4,
+			"pet_id": 28,
+			"transaction_date": "2024-08-14",
+			"amount": 12000,
+			"transaction_status": "Failed"
+		},
+		{
+			"id": 20,
+			"customer_id": 5,
+			"pet_id": 14,
+			"transaction_date": "2024-08-28",
+			"amount": 65000,
+			"transaction_status": "Success"
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 6,
+			"transaction_date": "2026-06-30",
+			"amount": 28000,
+			"transaction_status": "Success",
+			"id": 21
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 3,
+			"transaction_date": "2026-06-30",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 22
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 3,
+			"transaction_date": "2026-06-30",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 23
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 24
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 25
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 26
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 27
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 28
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 29
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 30
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 31
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 32
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 33
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 34
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 35
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 36
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 37
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 38
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-06-30",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 39
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 6,
+			"transaction_date": "2026-06-30",
+			"amount": 28000,
+			"transaction_status": "Success",
+			"id": 40
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 1,
+			"transaction_date": "2026-06-30",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 41
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 42
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 43
+		},
+		{
+			"customer_id": 3,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 44
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 7,
+			"transaction_date": "2026-07-01",
+			"amount": 35000,
+			"transaction_status": "Success",
+			"id": 45
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 10,
+			"transaction_date": "2026-07-01",
+			"amount": 40000,
+			"transaction_status": "Success",
+			"id": 46
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 47
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 48
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 49
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 50
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 51
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 52
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 53
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 54
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 55
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 56
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 57
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 58
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 59
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 60
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 61
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 62
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 63
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 64
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 65
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 66
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 67
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 10,
+			"transaction_date": "2026-07-01",
+			"amount": 40000,
+			"transaction_status": "Success",
+			"id": 68
+		},
+		{
+			"transaction_date": "2026-07-02",
+			"transaction_status": "Success",
+			"customer_id": "4",
+			"pet_id": "2",
+			"amount": 25000,
+			"id": 69
+		},
+		{
+			"transaction_date": "2026-07-02",
+			"transaction_status": "Success",
+			"customer_id": "2",
+			"pet_id": "1",
+			"amount": 25252,
+			"id": 70
+		}
+	],
+	"petGroomingRelationship": [
+		{
+			"id": 1,
+			"pet_id": 1,
+			"service_id": 2
+		},
+		{
+			"id": 2,
+			"pet_id": 2,
+			"service_id": 1
+		},
+		{
+			"id": 3,
+			"pet_id": 3,
+			"service_id": 22
+		},
+		{
+			"id": 4,
+			"pet_id": 4,
+			"service_id": 21
+		},
+		{
+			"id": 5,
+			"pet_id": 5,
+			"service_id": 2
+		},
+		{
+			"id": 6,
+			"pet_id": 6,
+			"service_id": 1
+		},
+		{
+			"id": 7,
+			"pet_id": 7,
+			"service_id": 2
+		},
+		{
+			"id": 8,
+			"pet_id": 8,
+			"service_id": 2
+		},
+		{
+			"id": 9,
+			"pet_id": 9,
+			"service_id": 2
+		},
+		{
+			"id": 10,
+			"pet_id": 10,
+			"service_id": 2
+		},
+		{
+			"id": 11,
+			"pet_id": 11,
+			"service_id": 2
+		},
+		{
+			"id": 12,
+			"pet_id": 12,
+			"service_id": 2
+		},
+		{
+			"id": 13,
+			"pet_id": 13,
+			"service_id": 2
+		},
+		{
+			"id": 14,
+			"pet_id": 14,
+			"service_id": 2
+		},
+		{
+			"id": 15,
+			"pet_id": 15,
+			"service_id": 2
+		},
+		{
+			"id": 16,
+			"pet_id": 17,
+			"service_id": 1
+		},
+		{
+			"id": 17,
+			"pet_id": 19,
+			"service_id": 2
+		},
+		{
+			"id": 18,
+			"pet_id": 20,
+			"service_id": 1
+		},
+		{
+			"id": 19,
+			"pet_id": 22,
+			"service_id": 3
+		},
+		{
+			"id": 20,
+			"pet_id": 23,
+			"service_id": 4
+		},
+		{
+			"id": 21,
+			"pet_id": 24,
+			"service_id": 13
+		},
+		{
+			"id": 22,
+			"pet_id": 25,
+			"service_id": 6
+		},
+		{
+			"id": 23,
+			"pet_id": 26,
+			"service_id": 24
+		},
+		{
+			"id": 24,
+			"pet_id": 27,
+			"service_id": 10
+		},
+		{
+			"id": 25,
+			"pet_id": 28,
+			"service_id": 11
+		}
+	],
+	"petVaccinationRelationship": [
+		{
+			"id": 1,
+			"pet_id": 1,
+			"vaccination_id": 2
+		},
+		{
+			"id": 2,
+			"pet_id": 2,
+			"vaccination_id": 1
+		},
+		{
+			"id": 3,
+			"pet_id": 3,
+			"vaccination_id": 2
+		},
+		{
+			"id": 4,
+			"pet_id": 4,
+			"vaccination_id": 1
+		},
+		{
+			"id": 5,
+			"pet_id": 5,
+			"vaccination_id": 2
+		},
+		{
+			"id": 6,
+			"pet_id": 6,
+			"vaccination_id": 20
+		},
+		{
+			"id": 7,
+			"pet_id": 7,
+			"vaccination_id": 21
+		},
+		{
+			"id": 8,
+			"pet_id": 8,
+			"vaccination_id": 2
+		},
+		{
+			"id": 9,
+			"pet_id": 9,
+			"vaccination_id": 2
+		},
+		{
+			"id": 10,
+			"pet_id": 10,
+			"vaccination_id": 2
+		},
+		{
+			"id": 11,
+			"pet_id": 11,
+			"vaccination_id": 2
+		},
+		{
+			"id": 12,
+			"pet_id": 12,
+			"vaccination_id": 2
+		},
+		{
+			"id": 13,
+			"pet_id": 13,
+			"vaccination_id": 2
+		},
+		{
+			"id": 14,
+			"pet_id": 14,
+			"vaccination_id": 2
+		},
+		{
+			"id": 15,
+			"pet_id": 15,
+			"vaccination_id": 2
+		},
+		{
+			"id": 16,
+			"pet_id": 17,
+			"vaccination_id": 1
+		},
+		{
+			"id": 17,
+			"pet_id": 19,
+			"vaccination_id": 2
+		},
+		{
+			"id": 18,
+			"pet_id": 20,
+			"vaccination_id": 1
+		},
+		{
+			"id": 19,
+			"pet_id": 22,
+			"vaccination_id": 3
+		},
+		{
+			"id": 20,
+			"pet_id": 23,
+			"vaccination_id": 4
+		},
+		{
+			"id": 21,
+			"pet_id": 24,
+			"vaccination_id": 13
+		},
+		{
+			"id": 22,
+			"pet_id": 25,
+			"vaccination_id": 6
+		},
+		{
+			"id": 23,
+			"pet_id": 26,
+			"vaccination_id": 7
+		},
+		{
+			"id": 24,
+			"pet_id": 27,
+			"vaccination_id": 10
+		},
+		{
+			"id": 25,
+			"pet_id": 28,
+			"vaccination_id": 11
+		}
+	],
+	"petFoodRelationship": [
+		{
+			"id": 1,
+			"pet_id": 1,
+			"food_id": 2
+		},
+		{
+			"id": 2,
+			"pet_id": 2,
+			"food_id": 3
+		},
+		{
+			"id": 3,
+			"pet_id": 3,
+			"food_id": 2
+		},
+		{
+			"id": 4,
+			"pet_id": 4,
+			"food_id": 3
+		},
+		{
+			"id": 5,
+			"pet_id": 5,
+			"food_id": 5
+		},
+		{
+			"id": 6,
+			"pet_id": 6,
+			"food_id": 6
+		},
+		{
+			"id": 7,
+			"pet_id": 7,
+			"food_id": 2
+		},
+		{
+			"id": 8,
+			"pet_id": 8,
+			"food_id": 4
+		},
+		{
+			"id": 9,
+			"pet_id": 9,
+			"food_id": 9
+		},
+		{
+			"id": 10,
+			"pet_id": 10,
+			"food_id": 7
+		},
+		{
+			"id": 11,
+			"pet_id": 11,
+			"food_id": 2
+		},
+		{
+			"id": 12,
+			"pet_id": 12,
+			"food_id": 2
+		},
+		{
+			"id": 13,
+			"pet_id": 24,
+			"food_id": 12
+		},
+		{
+			"id": 14,
+			"pet_id": 25,
+			"food_id": 13
+		},
+		{
+			"id": 15,
+			"pet_id": 26,
+			"food_id": 14
+		},
+		{
+			"id": 16,
+			"pet_id": 27,
+			"food_id": 17
+		},
+		{
+			"id": 17,
+			"pet_id": 28,
+			"food_id": 16
+		},
+		{
+			"id": 18,
+			"pet_id": 30,
+			"food_id": 12
+		}
+	],
+	"petSupplierRelationship": [
+		{
+			"id": 1,
+			"pet_id": 1,
+			"supplier_id": 1
+		},
+		{
+			"id": 2,
+			"pet_id": 2,
+			"supplier_id": 2
+		},
+		{
+			"id": 3,
+			"pet_id": 3,
+			"supplier_id": 1
+		},
+		{
+			"id": 4,
+			"pet_id": 4,
+			"supplier_id": 3
+		},
+		{
+			"id": 5,
+			"pet_id": 5,
+			"supplier_id": 1
+		},
+		{
+			"id": 6,
+			"pet_id": 6,
+			"supplier_id": 2
+		},
+		{
+			"id": 7,
+			"pet_id": 7,
+			"supplier_id": 4
+		},
+		{
+			"id": 8,
+			"pet_id": 8,
+			"supplier_id": 1
+		},
+		{
+			"id": 9,
+			"pet_id": 9,
+			"supplier_id": 5
+		},
+		{
+			"id": 10,
+			"pet_id": 10,
+			"supplier_id": 2
+		},
+		{
+			"id": 11,
+			"pet_id": 22,
+			"supplier_id": 5
+		},
+		{
+			"id": 12,
+			"pet_id": 23,
+			"supplier_id": 5
+		},
+		{
+			"id": 13,
+			"pet_id": 24,
+			"supplier_id": 7
+		},
+		{
+			"id": 14,
+			"pet_id": 25,
+			"supplier_id": 3
+		},
+		{
+			"id": 15,
+			"pet_id": 26,
+			"supplier_id": 8
+		},
+		{
+			"id": 16,
+			"pet_id": 27,
+			"supplier_id": 9
+		},
+		{
+			"id": 17,
+			"pet_id": 28,
+			"supplier_id": 5
+		},
+		{
+			"id": 18,
+			"pet_id": 30,
+			"supplier_id": 7
+		}
+	],
+	"employeePetRelationship": [
+		{
+			"id": 1,
+			"employee_id": 3,
+			"pet_id": 1
+		},
+		{
+			"id": 2,
+			"employee_id": 3,
+			"pet_id": 2
+		},
+		{
+			"id": 3,
+			"employee_id": 3,
+			"pet_id": 3
+		},
+		{
+			"id": 4,
+			"employee_id": 5,
+			"pet_id": 4
+		},
+		{
+			"id": 5,
+			"employee_id": 5,
+			"pet_id": 5
+		},
+		{
+			"id": 6,
+			"employee_id": 9,
+			"pet_id": 6
+		},
+		{
+			"id": 7,
+			"employee_id": 9,
+			"pet_id": 7
+		},
+		{
+			"id": 8,
+			"employee_id": 2,
+			"pet_id": 8
+		},
+		{
+			"id": 9,
+			"employee_id": 2,
+			"pet_id": 9
+		},
+		{
+			"id": 10,
+			"employee_id": 4,
+			"pet_id": 10
+		}
+	]
 }
