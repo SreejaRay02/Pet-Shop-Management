@@ -14,8 +14,9 @@ function App() {
 	return (
 		<BrowserRouter>
 			<ManageGrooming />
+			<LoginPage />
 		</BrowserRouter>
-	);
+	);	
 }
 
 export default App;
