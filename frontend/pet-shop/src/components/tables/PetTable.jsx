@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button, OverlayTrigger, Tooltip as BSTooltip, Badge } from 'react-bootstrap';
 import { formatCurrency } from '../../utils/helpers';
 import DataTable from './DataTable';
 
@@ -9,10 +8,10 @@ export default function PetTable({ data, isLoading, refetch, categories, openEdi
     {
       field: 'image_url', headerName: 'Image', sortable: false,
       renderCell: (row) => (
-        <img
+        <img className="rounded object-fit-cover"
           src={row.image_url || `https://picsum.photos/seed/${row.id}/60/40`}
           alt="Pet"
-          className="rounded object-fit-cover"
+          
           style={{ width: '60px', height: '40px' }}
           onError={(e) => { e.target.src = `https://picsum.photos/seed/${row.id}/60/40`; }}
         />
@@ -34,23 +33,23 @@ export default function PetTable({ data, isLoading, refetch, categories, openEdi
       renderCell: (row) => {
         // Look up the category name using the category_id
         const cat = categories.find((c) => c.id === row.category_id);
-        return <Badge bg="secondary" className="fw-normal">{cat?.name || '-'}</Badge>;
+        return <span className="badge bg-secondary fw-normal"  >{cat?.name || '-'}</span>;
       },
     },
     {
       field: 'actions', headerName: 'Actions', sortable: false,
       renderCell: (row) => (
-        <div className="d-flex gap-2">
-          <OverlayTrigger placement="top" overlay={<BSTooltip>Edit</BSTooltip>}>
-            <Button variant="outline-primary" size="sm" onClick={() => openEdit(row)}>
-              <i className="bi bi-pencil"></i>
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger placement="top" overlay={<BSTooltip>Delete</BSTooltip>}>
-            <Button variant="outline-danger" size="sm" onClick={() => setDeleteId(row.id)}>
-              <i className="bi bi-trash"></i>
-            </Button>
-          </OverlayTrigger>
+        <div className="d-flex gap-2" >
+          
+            <button className="btn btn-outline-primary btn-sm"  onClick={() => openEdit(row)}>
+              <i className="bi bi-pencil" ></i>
+            </button>
+          
+          
+            <button className="btn btn-outline-danger btn-sm"  onClick={() => setDeleteId(row.id)}>
+              <i className="bi bi-trash" ></i>
+            </button>
+          
         </div>
       ),
     },
