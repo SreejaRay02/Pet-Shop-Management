@@ -11,7 +11,7 @@ import RegisterPage from "./pages/auth/Register";
 function App() {
 	return (
 		<BrowserRouter>
-			<RegisterPage />
+			<LoginPage />
 		</BrowserRouter>
 	);
 }
