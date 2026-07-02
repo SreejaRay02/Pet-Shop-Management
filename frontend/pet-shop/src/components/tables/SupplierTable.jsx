@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button, OverlayTrigger, Tooltip as BSTooltip } from 'react-bootstrap';
 import DataTable from './DataTable';
 
 export default function SupplierTable({ data, isLoading, refetch, openEdit, setDeleteId }) {
@@ -13,17 +12,17 @@ export default function SupplierTable({ data, isLoading, refetch, openEdit, setD
     {
       field: 'actions', headerName: 'Actions', sortable: false,
       renderCell: (row) => (
-        <div className="d-flex gap-2">
-          <OverlayTrigger placement="top" overlay={<BSTooltip>Edit</BSTooltip>}>
-            <Button variant="outline-primary" size="sm" onClick={() => openEdit(row)}>
-              <i className="bi bi-pencil"></i>
-            </Button>
-          </OverlayTrigger>
-          <OverlayTrigger placement="top" overlay={<BSTooltip>Delete</BSTooltip>}>
-            <Button variant="outline-danger" size="sm" onClick={() => setDeleteId(row.id)}>
-              <i className="bi bi-trash"></i>
-            </Button>
-          </OverlayTrigger>
+        <div className="d-flex gap-2" >
+          
+            <button className="btn btn-outline-primary btn-sm"  onClick={() => openEdit(row)}>
+              <i className="bi bi-pencil" ></i>
+            </button>
+          
+          
+            <button className="btn btn-outline-danger btn-sm"  onClick={() => setDeleteId(row.id)}>
+              <i className="bi bi-trash" ></i>
+            </button>
+          
         </div>
       ),
     },
