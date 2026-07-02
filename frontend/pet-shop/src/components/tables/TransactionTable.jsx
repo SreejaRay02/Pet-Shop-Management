@@ -18,7 +18,7 @@ export default function TransactionTable({ data, isLoading, refetch, customers, 
       headerName: 'Customer', 
       renderCell: (row) => {
         // Find the customer's real name instead of just showing their ID
-        const c = customers.find((x) => x.id === row.customer_id);
+        const c = customers.find((x) => String(x.id) === String(row.customer_id));
         return c ? `${c.first_name} ${c.last_name}` : `#${row.customer_id}`;
       }
     },
@@ -27,7 +27,7 @@ export default function TransactionTable({ data, isLoading, refetch, customers, 
       headerName: 'Pet', 
       renderCell: (row) => {
         // Find the pet's real name
-        const p = pets.find((x) => x.id === row.pet_id);
+        const p = pets.find((x) => String(x.id) === String(row.pet_id));
         return p ? p.name : `#${row.pet_id}`;
       }
     },
@@ -44,7 +44,7 @@ export default function TransactionTable({ data, isLoading, refetch, customers, 
     },
     {
       field: 'actions', headerName: 'Actions', sortable: false,
-
+      // Note: No delete button here! Financial records should be immutable.
       renderCell: (row) => (
         
           <button className="btn btn-outline-primary btn-sm"  onClick={() => openEdit(row)}>

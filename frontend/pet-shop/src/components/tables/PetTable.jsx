@@ -32,7 +32,7 @@ export default function PetTable({ data, isLoading, refetch, categories, openEdi
       sortable: false,
       renderCell: (row) => {
         // Look up the category name using the category_id
-        const cat = categories.find((c) => c.id === row.category_id);
+        const cat = categories.find((c) => String(c.id) === String(row.category_id));
         return <span className="badge bg-secondary fw-normal"  >{cat?.name || '-'}</span>;
       },
     },

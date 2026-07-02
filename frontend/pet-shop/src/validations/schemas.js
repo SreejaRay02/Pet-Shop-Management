@@ -11,3 +11,10 @@ export const registerSchema = yup.object({
   password: yup.string().min(6, 'Minimum 6 characters').required('Password is required'),
   role: yup.string().oneOf(['Admin', 'Supplier', 'Customer']).default('Customer'),
 });
+
+export const groomingSchema = yup.object({
+  name: yup.string().required('Service name is required'),
+  description: yup.string(),
+  price: yup.number().min(0).required('Price is required'),
+  available: yup.boolean().default(true),
+});
