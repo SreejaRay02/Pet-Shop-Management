@@ -1363,12 +1363,12 @@
   ],
   "customers": [
     {
+      "id": 1,
       "first_name": "Alice",
       "last_name": "Johnson",
       "email": "alice.johnson@example.com",
       "phone_number": "5551234000",
-      "address_id": 5,
-      "id": 1
+      "address_id": 5
     },
     {
       "id": 2,
@@ -2046,6 +2046,9 @@
     },
     {
       "customer_id": 1,
+      "pet_id": 4,
+      "transaction_date": "2026-07-03",
+      "amount": 38000,
       "pet_id": 17,
       "transaction_date": "2026-07-03",
       "amount": 36000,
