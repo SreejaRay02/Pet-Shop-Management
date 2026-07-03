@@ -1,16 +1,17 @@
 import "./App.css";
-import { useFormik } from "formik";
-import GroomingForm from "./components/forms/GroomingForm";
-import VaccinationForm from "./components/forms/VaccinationForm";
-import TransactionForm from "./components/forms/TransactionForm";
-import FoodForm from "./components/forms/FoodForm";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+
 import LoginPage from "./pages/auth/login";
 import RegisterPage from "./pages/auth/Register";
+
 import ManageGrooming from "./pages/admin/ManageGrooming";
-import CustomerProfile from "./pages/customer/Profile";
 import ManageAddresses from "./pages/admin/ManageAddresses";
 import ManageCustomers from "./pages/admin/ManageCustomers";
+import ManageFoods from "./pages/admin/ManageFoods";
+import ManageCategories from "./pages/admin/ManageCategories";
+import ManagePets from "./pages/admin/ManagePets";
+
+import CustomerProfile from "./pages/customer/Profile";
 
 function App() {
 	return (
@@ -21,6 +22,9 @@ function App() {
 				<Link to="/grooming">Manage Grooming</Link>
 				<Link to="/addresses">Manage Addresses</Link>
 				<Link to="/customers">Manage Customers</Link>
+				<Link to="/foods">Manage Foods</Link>
+				<Link to="/categories">Manage Categories</Link>
+				<Link to="/pets">Manage Pets</Link>
 			</nav>
 
 			<Routes>
@@ -29,7 +33,10 @@ function App() {
 				<Route path="/grooming" element={<ManageGrooming />} />
 				<Route path="/customer/profile" element={<CustomerProfile />} />
 				<Route path="/addresses" element={<ManageAddresses />} />
-				<Route path="customers" element={<ManageCustomers />} />
+				<Route path="/customers" element={<ManageCustomers />} />
+				<Route path="/foods" element={<ManageFoods />} />
+				<Route path="/categories" element={<ManageCategories />} />
+				<Route path="/pets" element={<ManagePets />} />
 
 				<Route path="*" element={<LoginPage />} />
 			</Routes>
