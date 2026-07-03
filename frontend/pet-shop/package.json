@@ -10,6 +10,10 @@
 		"preview": "vite preview",
 		"test": "vitest",
 		"test:run": "vitest run",
+<<<<<<< HEAD
+		"test:coverage": "vitest run --coverage",
+=======
+>>>>>>> b616a0504d1ae214d87395d239c8793ea4c3d0dd
 		"test:ui": "vitest --ui"
 	},
 	"dependencies": {
