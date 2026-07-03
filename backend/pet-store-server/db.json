@@ -819,6 +819,13 @@
 			"description": "Relaxing spa day for your potbelly pig",
 			"price": 2800,
 			"available": false
+		},
+		{
+			"name": "German Bath",
+			"description": "Refreshing bath for your loyal German Shepherd",
+			"price": 22222,
+			"available": false,
+			"id": 26
 		}
 	],
 	"vaccinations": [
@@ -1844,6 +1851,198 @@
 			"amount": 40000,
 			"transaction_status": "Success",
 			"id": 46
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 47
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 48
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 49
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 50
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 51
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 52
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 53
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 54
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 55
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 56
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 57
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 58
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 59
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 60
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 61
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 62
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 2,
+			"transaction_date": "2026-07-01",
+			"amount": 32000,
+			"transaction_status": "Success",
+			"id": 63
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 3,
+			"transaction_date": "2026-07-01",
+			"amount": 55000,
+			"transaction_status": "Success",
+			"id": 64
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 65
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 66
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 1,
+			"transaction_date": "2026-07-01",
+			"amount": 45000,
+			"transaction_status": "Success",
+			"id": 67
+		},
+		{
+			"customer_id": 1,
+			"pet_id": 10,
+			"transaction_date": "2026-07-01",
+			"amount": 40000,
+			"transaction_status": "Success",
+			"id": 68
+		},
+		{
+			"transaction_date": "2026-07-02",
+			"transaction_status": "Success",
+			"customer_id": "4",
+			"pet_id": "2",
+			"amount": 25000,
+			"id": 69
+		},
+		{
+			"transaction_date": "2026-07-02",
+			"transaction_status": "Success",
+			"customer_id": "2",
+			"pet_id": "1",
+			"amount": 25252,
+			"id": 70
 		}
 	],
 	"petGroomingRelationship": [

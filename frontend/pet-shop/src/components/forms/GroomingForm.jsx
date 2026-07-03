@@ -5,25 +5,25 @@ import React from 'react';
 
 export default function GroomingForm({ formik }) {
   return (
-    <div className="row g-3">
-          <div className="col-xs-12" >
-            <div className="mb-3">
-              <label className="form-label">Service Name</label>
-              <input 
+    <div className="row g-3" >
+          <div className="col-12"  >
+            <div className="mb-3" >
+              <label className="form-label" >Service Name</label>
+              <input className={` ${`form-control ${formik.touched.name && !!formik.errors.name ? 'is-invalid' : ''}`}`.trim()} 
                 type="text" 
                 name="name"
                 value={formik.values.name || ''}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                  
-                size="sm" className={`form-control ${formik.touched.name && !!formik.errors.name ? 'is-invalid' : ''}`} />
-              <div className="invalid-feedback">{formik.touched.name && formik.errors.name}</div>
+                size="sm"  />
+              <div className="invalid-feedback" >{formik.touched.name && formik.errors.name}</div>
             </div>
           </div>
-          <div className="col-xs-12" >
-            <div className="mb-3">
-              <label className="form-label">Description</label>
-              <textarea 
+          <div className="col-12"  >
+            <div className="mb-3" >
+              <label className="form-label" >Description</label>
+              <textarea className="form-control" 
                  
                 rows={2} 
                 name="description"
@@ -31,33 +31,38 @@ export default function GroomingForm({ formik }) {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 size="sm" 
-               className="form-control"></textarea>
+               ></textarea>
             </div>
           </div>
-          <div className="col-xs-12" >
-            <div className="mb-3">
-              <label className="form-label">Price (₹)</label>
-              <input 
+          <div className="col-12"  >
+            <div className="mb-3" >
+              <label className="form-label" >Price (₹)</label>
+              <input className={` ${`form-control ${formik.touched.price && !!formik.errors.price ? 'is-invalid' : ''}`}`.trim()} 
                 type="number" 
                 name="price"
                 value={formik.values.price || ''}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                  
-                size="sm" className={`form-control ${formik.touched.price && !!formik.errors.price ? 'is-invalid' : ''}`} />
-              <div className="invalid-feedback">{formik.touched.price && formik.errors.price}</div>
+                size="sm"  />
+              <div className="invalid-feedback" >{formik.touched.price && formik.errors.price}</div>
             </div>
           </div>
-          <div className="col-xs-12" >
-            <input 
-              type="switch" 
+          <div className="col-12"  >
+            
+<div className="form-check form-switch" >
+  <input className="form-check-input" 
+              type="checkbox" role="switch" 
               id="custom-switch" 
-              label="Available" 
+               
               name="available"
               checked={!!formik.values.available} 
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-             className="form-check-input" />
+              />
+  <label className="form-check-label"  htmlFor="custom-switch">Available</label>
+</div>
+
           </div>
         </div>
   );

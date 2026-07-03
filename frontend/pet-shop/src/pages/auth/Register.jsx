@@ -9,6 +9,7 @@ export default function RegisterPage() {
 	const [successMessage, setSuccessMessage] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
+	const [showPw, setShowPw] = useState(false);
 	const [error, setError] = useState("");
 
 	const navigate = useNavigate(); // Navigate to URL
@@ -133,18 +134,45 @@ export default function RegisterPage() {
 								<label className="form-label fw-semibold">
 									Password
 								</label>
-								<input
-									className={` ${`form-control ${formik.touched.password && !!formik.errors.password ? "is-invalid" : ""}`}`.trim()}
-									type="password"
-									name="password"
-									value={formik.values.password}
-									onChange={formik.handleChange}
-									onBlur={formik.handleBlur}
-									placeholder="Create a password"
-								/>
-								<div className="invalid-feedback">
-									{formik.touched.password &&
-										formik.errors.password}
+
+								<div className="input-group">
+									<input
+										className={`form-control ${
+											formik.touched.password &&
+											!!formik.errors.password
+												? "is-invalid"
+												: ""
+										}`}
+										type={showPw ? "text" : "password"}
+										name="password"
+										value={formik.values.password}
+										onChange={formik.handleChange}
+										onBlur={formik.handleBlur}
+										placeholder="Create a password"
+									/>
+
+									<button
+										type="button"
+										className="btn btn-outline-secondary border-start-0"
+										onClick={() => setShowPw(!showPw)}
+										style={{
+											borderColor:
+												"var(--bs-border-color)",
+										}}
+									>
+										<i
+											className={
+												showPw
+													? "bi bi-eye-slash"
+													: "bi bi-eye"
+											}
+										></i>
+									</button>
+
+									<div className="invalid-feedback">
+										{formik.touched.password &&
+											formik.errors.password}
+									</div>
 								</div>
 							</div>
 

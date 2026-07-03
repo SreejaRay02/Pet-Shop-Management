@@ -122,6 +122,7 @@ export default function LoginPage() {
 										placeholder="Enter your password"
 									/>
 									<button
+										type="button"
 										className="btn btn-outline-secondary border-start-0"
 										onClick={() => setShowPw(!showPw)}
 										style={{
