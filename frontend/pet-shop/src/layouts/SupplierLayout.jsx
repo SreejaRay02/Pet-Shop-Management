@@ -7,7 +7,7 @@ import { useUIStore } from '../stores/uiStore';
 const navItems = [
   { label: 'Dashboard', to: '/supplier/dashboard', icon: 'bi-speedometer2' },
   { label: 'Inventory', to: '/supplier/inventory', icon: 'bi-box-seam' },
-  { label: 'Browse Pets', to: '/catalog', icon: 'bi-search-heart' },
+  { label: 'Browse Pets', to: '/supplier/catalog', icon: 'bi-search-heart' },
 ];
 
 export default function SupplierLayout() {
@@ -30,7 +30,7 @@ export default function SupplierLayout() {
       
       <div className="p-3 border-bottom d-flex align-items-center gap-3" >
         <div className="bg-warning text-dark fw-bold rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"  style={{ width: '40px', height: '40px' }}>
-          {user?.username?.[0]?.toUpperCase()}
+          {user?.email?.[0]?.toUpperCase()}
         </div>
         <div className="flex-grow-1 overflow-hidden" >
           <div className="fw-bold text-truncate" >{user?.username}</div>

@@ -1,3 +1,8 @@
+import React, { useState } from 'react';
+import { Outlet, useNavigate, useLocation, Link } from 'react-router-dom';
+import { useAuthStore } from '../stores/authStore';
+import { useUIStore } from '../stores/uiStore';
+
 const navItems = [
     { label: 'Dashboard', to: '/employee/dashboard', icon: 'bi-speedometer2' },
 ];
@@ -43,10 +48,12 @@ export default function EmployeeLayout() {
                     className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
                     style={{ width: '36px', height: '36px' }}
                 >
-                    {user?.username?.[0]?.toUpperCase()}
+                    {user?.email?.[0]?.toUpperCase()}
+                    
+                    
                 </div>
                 <div className="flex-grow-1 overflow-hidden">
-                    <div className="fw-bold text-truncate" style={{ fontSize: '14px' }}>{user?.username}</div>
+                    <div className="fw-bold text-truncate" style={{ fontSize: '14px' }}>{user?.name}</div>
                     <div className="text-muted text-truncate" style={{ fontSize: '12px' }}>{user?.role}</div>
                 </div>
             </div>

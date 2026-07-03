@@ -60,7 +60,7 @@ export default function PublicLayout() {
               {isAuthenticated ? (
                 <div className="dropdown"  >
                   <button className="rounded-circle d-flex align-items-center justify-content-center p-0" type="button"  id="dropdown-user"  style={{ width: '36px', height: '36px' }} data-bs-toggle="dropdown" aria-expanded="false">
-                    {user?.username?.[0]?.toUpperCase()}
+                    {user?.email?.[0]?.toUpperCase()}
                   </button>
                   <ul className="dropdown-menu dropdown-menu-end shadow-sm border-0" >
                     <li><button className="dropdown-item" type="button"  onClick={() => { navigate(getDashboardPath()); setExpanded(false); }}>
