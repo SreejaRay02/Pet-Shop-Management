@@ -2043,6 +2043,14 @@
       "pet_id": "1",
       "amount": 25252,
       "id": 70
+    },
+    {
+      "customer_id": 1,
+      "pet_id": 17,
+      "transaction_date": "2026-07-03",
+      "amount": 36000,
+      "transaction_status": "Success",
+      "id": 71
     }
   ],
   "petGroomingRelationship": [
