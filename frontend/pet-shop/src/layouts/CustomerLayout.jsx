@@ -7,7 +7,7 @@ const navItems = [
   { label: 'My Profile', to: '/customer/profile', icon: 'bi-person' },
   { label: 'My Pets', to: '/customer/my-pets', icon: 'bi-suit-heart' },
   { label: 'My Transactions', to: '/customer/transactions', icon: 'bi-receipt' },
-  { label: 'Browse Pets', to: '/catalog', icon: 'bi-search-heart' },
+  { label: 'Browse Pets', to: '/customer/catalog', icon: 'bi-search-heart' },
 ];
 
 export default function CustomerLayout() {
@@ -29,10 +29,10 @@ export default function CustomerLayout() {
       
       <div className="p-3 border-bottom d-flex align-items-center gap-3" >
         <div className="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"  style={{ width: '40px', height: '40px' }}>
-          {user?.username?.[0]?.toUpperCase()}
+          {user?.email?.[0]?.toUpperCase()}
         </div>
         <div className="flex-grow-1 overflow-hidden" >
-          <div className="fw-bold text-truncate" >{user?.username}</div>
+          <div className="fw-bold text-truncate" >{user?.email}</div>
           <div className="text-muted text-truncate"  style={{ fontSize: '13px' }}>Customer</div>
         </div>
       </div>

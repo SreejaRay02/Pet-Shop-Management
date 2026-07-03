@@ -56,7 +56,7 @@ export default function AdminLayout() {
 
       <div className="p-3 border-top mt-auto bg-body d-flex align-items-center gap-2" >
         <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"  style={{ width: '36px', height: '36px' }}>
-          {user?.username?.[0]?.toUpperCase()}
+          {user?.email?.[0]?.toUpperCase()}
         </div>
         <div className="flex-grow-1 overflow-hidden" >
           <div className="fw-bold text-truncate"  style={{ fontSize: '14px' }}>{user?.username}</div>
