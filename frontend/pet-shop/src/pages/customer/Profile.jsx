@@ -10,10 +10,9 @@ import {
 } from "../../hooks/mutations/useCustomerMutations";
 import { useCustomerTransactions } from "../../hooks/queries/useTransactions";
 import { PageHeader } from "../../components/layout/PageHeader";
+import CustomerForm from "../../components/forms/CustomerForm";
 import { formatCurrency, getInitials } from "../../utils/helpers";
 import { customerSchema } from "../../validations/schemas";
-
-import CustomerForm from "../../components/forms/CustomerForm";
 
 export default function CustomerProfile() {
 	const { user } = useAuthStore(); // Get current logged in user's data
@@ -29,7 +28,6 @@ export default function CustomerProfile() {
 
 	const formik = useFormik({
 		enableReinitialize: true,
-
 		initialValues: {
 			first_name: customer?.first_name || "",
 			last_name: customer?.last_name || "",
@@ -37,9 +35,7 @@ export default function CustomerProfile() {
 			phone_number: customer?.phone_number || "",
 			address_id: customer?.address_id || "",
 		},
-
 		validationSchema: customerSchema,
-
 		onSubmit: async (values) => {
 			const payload = {
 				...values,
@@ -47,7 +43,6 @@ export default function CustomerProfile() {
 					? Number(values.address_id)
 					: null,
 			};
-
 			if (customer) {
 				await updateCustomer.mutateAsync({
 					id: customer.id,
