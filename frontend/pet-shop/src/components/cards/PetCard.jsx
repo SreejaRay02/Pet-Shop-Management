@@ -58,9 +58,9 @@ const PetCard = (props) => {
           <h5 className="card-title fw-bold mb-0 text-truncate"  style={{ maxWidth: '70%' }}>
             {pet.name}
           </h5>
-          <span className="badge bg-primary fs-6 px-2 py-1"  >
+          {showBuyButton && <span className="badge bg-primary fs-6 px-2 py-1"  >
             {formatCurrency(pet.price)}
-          </span>
+          </span>}
         </div>
         <p className="card-text text-muted small mb-2" >
           🐾 {pet.breed} • {pet.age} yr{pet.age !== 1 ? 's' : ''}
