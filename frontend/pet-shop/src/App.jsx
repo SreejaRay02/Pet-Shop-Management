@@ -3,15 +3,17 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import LoginPage from "./pages/auth/login";
 import RegisterPage from "./pages/auth/Register";
-
 import ManageGrooming from "./pages/admin/ManageGrooming";
 import ManageAddresses from "./pages/admin/ManageAddresses";
 import ManageCustomers from "./pages/admin/ManageCustomers";
 import ManageFoods from "./pages/admin/ManageFoods";
 import ManageCategories from "./pages/admin/ManageCategories";
 import ManagePets from "./pages/admin/ManagePets";
-
+import ManageVaccinations from "./pages/admin/ManageVaccinations";
+import ManageTransactions from "./pages/admin/ManageTransactions";
 import CustomerProfile from "./pages/customer/Profile";
+import HomePage from "./pages/public/Home";
+
 
 function App() {
 	return (
@@ -25,6 +27,8 @@ function App() {
 				<Link to="/foods">Manage Foods</Link>
 				<Link to="/categories">Manage Categories</Link>
 				<Link to="/pets">Manage Pets</Link>
+				<Link to="/vaccinations">Manage Vaccinations</Link>
+				<Link to="/transactions">Manage Transactions</Link>
 			</nav>
 
 			<Routes>
@@ -37,8 +41,10 @@ function App() {
 				<Route path="/foods" element={<ManageFoods />} />
 				<Route path="/categories" element={<ManageCategories />} />
 				<Route path="/pets" element={<ManagePets />} />
-
-				<Route path="*" element={<LoginPage />} />
+				<Route path="/vaccinations" element={<ManageVaccinations />} />
+				<Route path="/transactions" element={<ManageTransactions />} />
+				
+				<Route path="*" element={<HomePage />} />
 			</Routes>
 		</BrowserRouter>
 	);
