@@ -42,4 +42,4 @@ const ConfirmDialog = (props) => {
   );
 };
 
-export default ConfirmDialog;
+export default React.memo(ConfirmDialog);
