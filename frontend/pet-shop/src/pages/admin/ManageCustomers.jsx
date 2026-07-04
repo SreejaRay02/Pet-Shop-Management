@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useFormik } from "formik";
 
 import FormModal from "../../components/dialogs/FormModal";
@@ -75,20 +75,25 @@ export default function ManageCustomers() {
 		},
 	});
 
-	const openCreate = () => {
-		setEditItem(null);
-		formik.resetForm();
-		formik.setTouched({});
-		formik.setErrors({});
-		setModalOpen(true);
-	};
+	const { resetForm, setTouched, setErrors, handleSubmit } = formik;
 
-	const openEdit = (item) => {
-		setEditItem(item);
-		formik.setTouched({});
-		formik.setErrors({});
+	const openCreate = useCallback(() => {
+		setEditItem(null);
+		resetForm();
+		setTouched({});
+		setErrors({});
 		setModalOpen(true);
-	};
+	}, [resetForm, setTouched, setErrors]);
+
+	const openEdit = useCallback(
+		(item) => {
+			setEditItem(item);
+			setTouched({});
+			setErrors({});
+			setModalOpen(true);
+		},
+		[setTouched, setErrors],
+	);
 
 	return (
 		<div className="container p-0">
@@ -127,7 +132,7 @@ export default function ManageCustomers() {
 					formik.setErrors({});
 				}}
 				title={editItem ? "Edit Customer" : "Add Customer"}
-				onSubmit={formik.handleSubmit}
+				onSubmit={handleSubmit}
 				loading={create.isPending || update.isPending}
 			>
 				<CustomerForm

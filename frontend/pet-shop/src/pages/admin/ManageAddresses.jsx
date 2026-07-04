@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useFormik } from "formik";
 
 import AddressTable from "../../components/tables/AddressTable";
@@ -75,66 +75,25 @@ export default function ManageAddresses() {
 		},
 	});
 
-	const openCreate = () => {
+	const { resetForm, setTouched, setErrors, handleSubmit } = formik;
+
+	const openCreate = useCallback(() => {
 		setEditItem(null);
-		formik.resetForm();
+		resetForm();
+		setTouched({});
+		setErrors({});
 		setModalOpen(true);
-	};
+	}, [resetForm, setTouched, setErrors]);
 
-	const openEdit = (item) => {
-		setEditItem(item);
-		formik.setTouched({});
-		formik.setErrors({});
-		setModalOpen(true);
-	};
-
-	const columns = [
-		{
-			field: "id",
-			headerName: "ID",
+	const openEdit = useCallback(
+		(item) => {
+			setEditItem(item);
+			setTouched({});
+			setErrors({});
+			setModalOpen(true);
 		},
-		{
-			field: "street",
-			headerName: "Street",
-			sortable: true,
-		},
-		{
-			field: "city",
-			headerName: "City",
-			sortable: true,
-		},
-		{
-			field: "state",
-			headerName: "State",
-			sortable: true,
-		},
-		{
-			field: "zip_code",
-			headerName: "Zip Code",
-		},
-		{
-			field: "actions",
-			headerName: "Actions",
-			sortable: false,
-			renderCell: (row) => (
-				<div className="d-flex gap-2">
-					<button
-						className="btn btn-outline-primary btn-sm"
-						onClick={() => openEdit(row)}
-					>
-						<i className="bi bi-pencil"></i>
-					</button>
-
-					<button
-						className="btn btn-outline-danger btn-sm"
-						onClick={() => setDeleteId(row.id)}
-					>
-						<i className="bi bi-trash"></i>
-					</button>
-				</div>
-			),
-		},
-	];
+		[setTouched, setErrors],
+	);
 
 	return (
 		<div className="container p-0">
@@ -172,7 +131,7 @@ export default function ManageAddresses() {
 					formik.setErrors({});
 				}}
 				title={editItem ? "Edit Address" : "Add Address"}
-				onSubmit={formik.handleSubmit}
+				onSubmit={handleSubmit}
 				loading={create.isPending || update.isPending}
 			>
 				<AddressForm formik={formik} />
