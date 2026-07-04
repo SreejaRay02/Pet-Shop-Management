@@ -14,13 +14,20 @@ set "Warning=%Y%[Warning]%W%"   &:: [Warning] in Yellow
 set "System=%G%[System]%W%"     &:: [System] in Green
 
 :: Find and kill whatever program is running on port 3001 && 5173
-for /f "tokens=5" %%a in ('netstat -aon ^| findstr :3001') do @(
-    taskkill /F /PID %%a >nul 2>nul
-	echo  %Clear% Closed old Backend server on port 3001.
+for /f "tokens=5" %%a in ('
+	netstat -ano ^| findstr /R /C:":3001 .*LISTENING"
+') do (
+	taskkill /F /PID %%a >nul 2>nul && (
+		echo %Clear% Closed old Backend server on port 3001.
+	)
 )
-for /f "tokens=5" %%a in ('netstat -aon ^| findstr :5173') do @(
-    taskkill /F /PID %%a >nul 2>nul
-	echo  %Clear% Closed old Frontend server on port 5173.
+
+for /f "tokens=5" %%a in ('
+	netstat -ano ^| findstr /R /C:":5173 .*LISTENING"
+') do (
+	taskkill /F /PID %%a >nul 2>nul && (
+		echo %Clear% Closed old Frontend server on port 5173.
+	)
 )
 
 :: Close any previously opened terminal windows by matching their title names
@@ -32,11 +39,14 @@ set "arg=%~1"
 set "npmi="
 
 if /i "%arg%"=="i" (
-    echo  %System% Starting Pet Shop servers with installation...
-    set "npmi=npm i &&"
+	echo %System% Starting Pet Shop servers with installation...
+	set "npmi=npm i &&"
 ) else (
-    if not "%arg%"=="" echo  %Warning% Unknown argument '%arg%'. Defaulting to run without install.
-    echo  %System% Starting Pet Shop servers without installation...
+	if not "%arg%"=="" (
+		echo %Warning% Unknown argument '%arg%'. Defaulting to run without install.
+	)
+
+	echo %System% Starting Pet Shop servers without installation...
 )
 
 :: Run the commands dynamically using the variable
@@ -46,9 +56,9 @@ start "Pet Shop Frontend" cmd /k "cd frontend/pet-shop && !npmi! npm run dev"
 :: Open the terminal in the project root and run:
 ::
 :: PowerShell or cmd
-:: .\run.bat (Without installation)
+:: .\run.bat   (Without installation)
 :: .\run.bat i (With installation)
 ::
 :: Git Bash
-:: ./run.bat (Without installation)
+:: ./run.bat   (Without installation)
 :: ./run.bat i (With installation)
