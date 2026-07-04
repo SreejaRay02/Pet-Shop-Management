@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // The main header for pages (e.g. "Pets" title and "Add Pet" button)
-export const PageHeader = (props) => {
+export const PageHeader = React.memo((props) => {
   const { title, subtitle, action, actionLabel, actionIcon } = props;
   
   return (
@@ -23,10 +23,10 @@ export const PageHeader = (props) => {
       )}
     </div>
   );
-};
+});
 
 // A reusable loading spinner
-export const LoadingSpinner = (props) => {
+export const LoadingSpinner = React.memo((props) => {
   const { message = 'Loading...' } = props;
   return (
     <div className="d-flex flex-column align-items-center justify-content-center min-vh-50 gap-3 py-5" >
@@ -34,4 +34,4 @@ export const LoadingSpinner = (props) => {
       <span className="text-muted" >{message}</span>
     </div>
   );
-};
+});

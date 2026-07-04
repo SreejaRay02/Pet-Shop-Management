@@ -49,4 +49,4 @@ const FormModal = (props) => {
   );
 };
 
-export default FormModal;
+export default React.memo(FormModal);
