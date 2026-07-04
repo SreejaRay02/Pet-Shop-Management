@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { formatCurrency } from '../../utils/helpers';
 import DataTable from './DataTable';
 
-export default function PetTable({ data, isLoading, refetch, categories, openEdit, setDeleteId }) {
-  const columns = [
+const PetTable = ({ data, isLoading, refetch, categories, openEdit, setDeleteId }) => {
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID', sortable: true },
     {
       field: 'image_url', headerName: 'Image', sortable: false,
@@ -53,7 +53,7 @@ export default function PetTable({ data, isLoading, refetch, categories, openEdi
         </div>
       ),
     },
-  ];
+  ], [categories, openEdit, setDeleteId]);
 
   return (
     <DataTable 
@@ -64,4 +64,6 @@ export default function PetTable({ data, isLoading, refetch, categories, openEdi
         searchPlaceholder="Search by name or breed..." 
       />
   );
-}
+};
+
+export default React.memo(PetTable);
