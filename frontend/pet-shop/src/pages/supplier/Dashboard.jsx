@@ -1,4 +1,4 @@
-import 'react';
+import React, { useMemo } from 'react';
 import { useAuthStore } from '../../stores/authStore';
 import { useSuppliers } from '../../hooks/queries/useSuppliers';
 import { usePets } from '../../hooks/queries/usePets';
@@ -9,7 +9,18 @@ export default function SupplierDashboard() {
   const { user } = useAuthStore();
   const { data: suppliers = [] } = useSuppliers();
   const { data: pets = [] } = usePets();
-  const mySupplier = suppliers.find((s) => s.email === user?.email);
+  
+  const mySupplier = useMemo(() => suppliers.find((s) => s.email === user?.email), [suppliers, user?.email]);
+
+  const supplierInfo = useMemo(() => {
+    if (!mySupplier) return [];
+    return [
+      ['Company Name', mySupplier.name],
+      ['Contact Person', mySupplier.contact_person],
+      ['Phone', mySupplier.phone_number],
+      ['Email', mySupplier.email],
+    ];
+  }, [mySupplier]);
 
   return (
     <div className="container p-0" fluid >
@@ -27,12 +38,7 @@ export default function SupplierDashboard() {
         
         {mySupplier ? (
           <div className="row g-3" >
-            {[
-              ['Company Name', mySupplier.name],
-              ['Contact Person', mySupplier.contact_person],
-              ['Phone', mySupplier.phone_number],
-              ['Email', mySupplier.email],
-            ].map(([label, value]) => (
+            {supplierInfo.map(([label, value]) => (
               <div className="col-12 col-sm-6"  key={label}>
                 <span className="text-secondary small d-block mb-1" >{label}</span>
                 <span className="fw-semibold" >{value}</span>

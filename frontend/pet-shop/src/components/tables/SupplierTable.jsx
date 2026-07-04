@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import DataTable from './DataTable';
 
-export default function SupplierTable({ data, isLoading, refetch, openEdit, setDeleteId }) {
+const SupplierTable = ({ data, isLoading, refetch, openEdit, setDeleteId }) => {
 
-  const columns = [
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID' },
     { field: 'name', headerName: 'Supplier Name', sortable: true },
     { field: 'contact_person', headerName: 'Contact Person', sortable: true },
@@ -26,7 +26,7 @@ export default function SupplierTable({ data, isLoading, refetch, openEdit, setD
         </div>
       ),
     },
-  ];
+  ], [openEdit, setDeleteId]);
 
   return (
     <DataTable 
@@ -37,4 +37,6 @@ export default function SupplierTable({ data, isLoading, refetch, openEdit, setD
         searchPlaceholder="Search suppliers..." 
       />
   );
-}
+};
+
+export default React.memo(SupplierTable);

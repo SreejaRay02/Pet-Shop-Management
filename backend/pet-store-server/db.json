@@ -46,6 +46,13 @@
       "role": "Employee",
       "name": "John Employee",
       "id": 7
+    },
+    {
+      "email": "sonalkumari270@gmail.com",
+      "password": "$2a$10$usIS.vvhMV7Q4hkXRH73je7OnEeaaIcEJGdF3Xdzv7oNgXMbkPIdu",
+      "username": "sonal",
+      "role": "Customer",
+      "id": 8
     }
   ],
   "addresses": [
@@ -1481,6 +1488,14 @@
       "email": "olivia.young@example.com",
       "phone_number": "5557890014",
       "address_id": 20
+    },
+    {
+      "first_name": "Alice",
+      "last_name": "Sonal",
+      "email": "sonalkumari270@gmail.com",
+      "phone_number": "5551110001",
+      "address_id": 17,
+      "id": 16
     }
   ],
   "transactions": [
@@ -2045,21 +2060,12 @@
       "id": 70
     },
     {
-      "customer_id": 1,
-      "pet_id": 17,
-      "transaction_date": "2026-07-03",
-      "amount": 36000,
+      "customer_id": 16,
+      "pet_id": 1,
+      "transaction_date": "2026-07-04",
+      "amount": 45000,
       "transaction_status": "Success",
       "id": 71
-    },
-    {
-      "customer_id": 1,
-      "pet_id": 17,
-      "transaction_date": "2026-07-03",
-      "amount": 1500,
-      "transaction_status": "Success",
-      "vaccination_id": 1,
-      "id": 72
     }
   ],
   "petGroomingRelationship": [

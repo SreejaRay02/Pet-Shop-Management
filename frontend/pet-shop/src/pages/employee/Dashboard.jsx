@@ -1,4 +1,4 @@
-import 'react';
+import React, { useMemo } from 'react';
 import { PageHeader } from '../../components/layout/PageHeader';
 import StatCard from '../../components/cards/StatCard';
 import { useAuthStore } from '../../stores/authStore';
@@ -12,11 +12,11 @@ export default function EmployeeDashboard() {
   const { data: grooming } = useGroomingServices();
   const { data: vaccinations } = useVaccinations();
 
-  const stats = [
+  const stats = useMemo(() => [
     { title: 'Total Pets', value: pets?.length || 0, icon: 'bi-suit-heart-fill', color: 'primary' },
     { title: 'Grooming Services', value: grooming?.length || 0, icon: 'bi-scissors', color: 'info' },
     { title: 'Vaccinations', value: vaccinations?.length || 0, icon: 'bi-shield-fill-plus', color: 'success' },
-  ];
+  ], [pets?.length, grooming?.length, vaccinations?.length]);
 
   return (
     <div className="container-fluid p-0">

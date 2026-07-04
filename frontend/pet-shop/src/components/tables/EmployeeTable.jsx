@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { formatDate } from '../../utils/helpers';
 import DataTable from './DataTable';
 
-export default function EmployeeTable({ data, isLoading, refetch, openEdit, setDeleteId }) {
-  const columns = [
+const EmployeeTable = ({ data, isLoading, refetch, openEdit, setDeleteId }) => {
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID' },
     { field: 'first_name', headerName: 'First Name', sortable: true },
     { field: 'last_name', headerName: 'Last Name', sortable: true },
@@ -33,7 +33,7 @@ export default function EmployeeTable({ data, isLoading, refetch, openEdit, setD
         </div>
       ),
     },
-  ];
+  ], [openEdit, setDeleteId]);
 
   return (
     <DataTable 
@@ -44,4 +44,6 @@ export default function EmployeeTable({ data, isLoading, refetch, openEdit, setD
         searchPlaceholder="Search employees..." 
       />
   );
-}
+};
+
+export default React.memo(EmployeeTable);

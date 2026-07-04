@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import  { useState, useEffect, useCallback } from 'react';
 import { useFormik } from 'formik';
 import FormModal from '../../components/dialogs/FormModal';
 import ConfirmDialog from '../../components/dialogs/ConfirmDialog';
@@ -59,18 +59,20 @@ export default function ManageEmployees() {
     }
   });
 
-  const openCreate = () => { 
-    formik.resetForm();
+  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
+    resetForm();
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [resetForm]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
 
   return (
     <div className="container p-0" fluid >
@@ -91,7 +93,7 @@ export default function ManageEmployees() {
         open={modalOpen} 
         onClose={() => setModalOpen(false)} 
         title={editItem ? 'Edit Employee' : 'Add Employee'} 
-        onSubmit={formik.handleSubmit} 
+        onSubmit={handleSubmit} 
         loading={create.isPending || update.isPending}
       >
         <EmployeeForm formik={formik} editItem={editItem} addresses={addresses} />
