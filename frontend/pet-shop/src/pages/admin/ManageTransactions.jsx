@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import { useFormik } from 'formik';
 
@@ -53,23 +53,25 @@ export default function ManageTransactions() {
     }
   });
 
-  const openCreate = () => { 
+  const { setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
     // Set today's date as the default
-    formik.setValues({ 
+    setValues({ 
       transaction_date: new Date().toISOString().slice(0, 10), 
       transaction_status: 'Success' 
     });
-    formik.setTouched({});
+    setTouched({});
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
 
   
   return (
@@ -91,7 +93,7 @@ export default function ManageTransactions() {
         open={modalOpen} 
         onClose={() => setModalOpen(false)} 
         title={editItem ? 'Edit Transaction' : 'New Transaction'} 
-        onSubmit={formik.handleSubmit} 
+        onSubmit={handleSubmit} 
         loading={create.isPending || update.isPending}
       >
         <TransactionForm formik={formik} editItem={editItem} customers={customers} pets={pets} />

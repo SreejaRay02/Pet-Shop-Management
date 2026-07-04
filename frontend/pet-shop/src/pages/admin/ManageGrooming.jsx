@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useFormik } from 'formik';
 
 // Components
@@ -61,18 +61,20 @@ export default function ManageGrooming() {
     }
   });
 
-  const openCreate = () => { 
-    formik.resetForm();
+  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
+    resetForm();
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [resetForm]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
 
   return (
     <div className="container p-0" fluid >
@@ -93,7 +95,7 @@ export default function ManageGrooming() {
         open={modalOpen}
         onClose={() => setModalOpen(false)}
         title={editItem ? 'Edit Service' : 'Add Grooming Service'}
-        onSubmit={formik.handleSubmit}
+        onSubmit={handleSubmit}
         loading={create.isPending || update.isPending}
       >
         <GroomingForm formik={formik} />

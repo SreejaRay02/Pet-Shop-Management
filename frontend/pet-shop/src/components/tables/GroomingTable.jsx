@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { formatCurrency } from '../../utils/helpers';
 import DataTable from './DataTable';
 
-export default function GroomingTable({ data, isLoading, refetch, openEdit, setDeleteId }) {
+const GroomingTable = ({ data, isLoading, refetch, openEdit, setDeleteId }) => {
 
-  const columns = [
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID' },
     { field: 'name', headerName: 'Service Name', sortable: true },
     { field: 'price', headerName: 'Price', sortable: true, renderCell: (r) => formatCurrency(r.price) },
@@ -34,7 +34,7 @@ export default function GroomingTable({ data, isLoading, refetch, openEdit, setD
         </div>
       ),
     },
-  ];
+  ], [openEdit, setDeleteId]);
 
   return (
     <DataTable 
@@ -45,4 +45,6 @@ export default function GroomingTable({ data, isLoading, refetch, openEdit, setD
         searchPlaceholder="Search services..." 
       />
   );
-}
+};
+
+export default React.memo(GroomingTable);

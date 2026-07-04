@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { formatCurrency, formatDate, statusColor } from "../../utils/helpers";
 import DataTable from "./DataTable";
 
-export default function TransactionTable({
+const TransactionTable = ({
   data,
   isLoading,
   refetch,
@@ -10,7 +10,7 @@ export default function TransactionTable({
   pets = [],
   openEdit,
   adminView = true,
-}) {
+}) => {
   const getBadgeBg = (status) => {
     const color = statusColor(status);
     if (color === "error") return "danger";
@@ -18,7 +18,7 @@ export default function TransactionTable({
     return color;
   };
 
-  const columns = [
+  const columns = useMemo(() => [
     { field: "id", headerName: "ID" },
 
     ...(adminView
@@ -94,7 +94,7 @@ export default function TransactionTable({
           },
         ]
       : []),
-  ];
+  ], [adminView, customers, pets, openEdit]);
 
   return (
     <DataTable
@@ -105,4 +105,6 @@ export default function TransactionTable({
       searchPlaceholder="Search transactions..."
     />
   );
-}
+};
+
+export default React.memo(TransactionTable);
