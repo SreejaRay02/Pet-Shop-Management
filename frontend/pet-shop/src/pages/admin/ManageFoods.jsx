@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useFormik } from 'formik';
 
 // Components
@@ -77,18 +77,20 @@ export default function ManageFoods() {
     }
   });
 
-  const openCreate = () => { 
-    formik.resetForm();
+  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
+    resetForm();
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [resetForm]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
 
   return (
     <div className="container p-0" fluid >
@@ -109,7 +111,7 @@ export default function ManageFoods() {
         open={modalOpen} 
         onClose={() => setModalOpen(false)} 
         title={editItem ? 'Edit Pet Food' : 'Add Pet Food'} 
-        onSubmit={formik.handleSubmit} 
+        onSubmit={handleSubmit} 
         loading={create.isPending || update.isPending}
       >
         <FoodForm formik={formik} editItem={editItem} />

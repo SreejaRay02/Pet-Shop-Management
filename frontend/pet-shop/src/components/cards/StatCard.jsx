@@ -57,4 +57,4 @@ const StatCard = (props) => {
   );
 };
 
-export default StatCard;
+export default React.memo(StatCard);

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { formatCurrency } from '../../utils/helpers';
 import DataTable from './DataTable';
 
-export default function FoodTable({ data, isLoading, refetch, setQtyItem, setNewQty, openEdit, setDeleteId }) {
+const FoodTable = ({ data, isLoading, refetch, setQtyItem, setNewQty, openEdit, setDeleteId }) => {
 
-  const columns = [
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID' },
     { field: 'name', headerName: 'Name', sortable: true },
     { field: 'brand', headerName: 'Brand', sortable: true },
@@ -40,7 +40,7 @@ export default function FoodTable({ data, isLoading, refetch, setQtyItem, setNew
         </div>
       ),
     },
-  ];
+  ], [setQtyItem, setNewQty, openEdit, setDeleteId]);
 
   return (
     <DataTable 
@@ -51,4 +51,6 @@ export default function FoodTable({ data, isLoading, refetch, setQtyItem, setNew
         searchPlaceholder="Search by name or brand..." 
       />
   );
-}
+};
+
+export default React.memo(FoodTable);

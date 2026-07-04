@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { formatCurrency } from '../../utils/helpers';
 import DataTable from './DataTable';
 
-export default function VaccinationTable({ data, isLoading, refetch, openEdit, setDeleteId }) {
+const VaccinationTable = ({ data, isLoading, refetch, openEdit, setDeleteId }) => {
 
-  const columns = [
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID' },
     { field: 'name', headerName: 'Vaccination Name', sortable: true },
     { field: 'price', headerName: 'Price', sortable: true, renderCell: (r) => formatCurrency(r.price) },
@@ -34,7 +34,7 @@ export default function VaccinationTable({ data, isLoading, refetch, openEdit, s
         </div>
       ),
     },
-  ];
+  ], [openEdit, setDeleteId]);
  
   return (
     <DataTable 
@@ -45,4 +45,6 @@ export default function VaccinationTable({ data, isLoading, refetch, openEdit, s
         searchPlaceholder="Search vaccinations..." 
       />
   );
-}
+};
+
+export default React.memo(VaccinationTable);
