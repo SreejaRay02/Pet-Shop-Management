@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 // Validation
 import { useFormik } from 'formik';
@@ -65,18 +65,20 @@ export default function ManagePets() {
     }
   });
 
-  const openCreate = () => { 
-    formik.resetForm();
+  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
+    resetForm();
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [resetForm]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
 
   return (
     <div className="container p-0" fluid >
@@ -98,7 +100,7 @@ export default function ManagePets() {
         open={modalOpen} 
         onClose={() => setModalOpen(false)} 
         title={editPet ? 'Edit Pet' : 'Add New Pet'} 
-        onSubmit={formik.handleSubmit} 
+        onSubmit={handleSubmit} 
         loading={createPet.isPending || updatePet.isPending}
       >
         <PetForm formik={formik} editPet={editPet} categories={categories} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
 // Form validation
 import { useFormik } from 'formik';
@@ -55,19 +55,21 @@ export default function ManageCategories() {
     }
   });
 
-  const openCreate = () => { 
-    formik.resetForm();
+  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
+    resetForm();
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [resetForm]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
-  const columns = [
+  }, [setValues, setTouched]);
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID', sortable: true },
     { field: 'name', headerName: 'Category Name', sortable: true },
     {
@@ -87,7 +89,7 @@ export default function ManageCategories() {
         </div>
       ),
     },
-  ];
+  ], [openEdit]);
 
   return (
     <div className="container p-0" fluid >
@@ -114,7 +116,7 @@ export default function ManageCategories() {
         open={modalOpen} 
         onClose={() => setModalOpen(false)} 
         title={editItem ? 'Edit Category' : 'Add Category'} 
-        onSubmit={formik.handleSubmit} 
+        onSubmit={handleSubmit} 
         loading={create.isPending || update.isPending}
       >
         <div className="mb-3" >
