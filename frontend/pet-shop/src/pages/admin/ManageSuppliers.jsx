@@ -1,4 +1,4 @@
-import  { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useFormik } from 'formik';
 import DataTable from '../../components/tables/DataTable';
 import FormModal from '../../components/dialogs/FormModal';
@@ -57,18 +57,20 @@ export default function ManageSuppliers() {
     }
   });
 
-  const openCreate = () => { 
-    formik.resetForm();
+  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+
+  const openCreate = useCallback(() => { 
+    resetForm();
     setEditItem(null); 
     setModalOpen(true); 
-  };
+  }, [resetForm]);
   
-  const openEdit = (item) => { 
-    formik.setValues(item); 
-    formik.setTouched({}); 
+  const openEdit = useCallback((item) => { 
+    setValues(item); 
+    setTouched({}); 
     setEditItem(item); 
     setModalOpen(true); 
-  };
+  }, [setValues, setTouched]);
 
   return (
     <div className="container p-0" fluid >
@@ -89,7 +91,7 @@ export default function ManageSuppliers() {
         open={modalOpen} 
         onClose={() => setModalOpen(false)} 
         title={editItem ? 'Edit Supplier' : 'Add Supplier'} 
-        onSubmit={formik.handleSubmit} 
+        onSubmit={handleSubmit} 
         loading={create.isPending || update.isPending}
       >
         <SupplierForm formik={formik} editItem={editItem} addresses={addresses} />

@@ -1,4 +1,4 @@
-import  'react';
+import React, { useMemo } from 'react';
 import DataTable from '../../components/tables/DataTable';
 import { PageHeader } from '../../components/layout/PageHeader';
 import { usePetFoods } from '../../hooks/queries/usePetFoods';
@@ -6,7 +6,7 @@ import { formatCurrency } from '../../utils/helpers';
 
 export default function Inventory() {
   const { data = [], isLoading, refetch } = usePetFoods();
-  const columns = [
+  const columns = useMemo(() => [
     { field: 'id', headerName: 'ID' },
     { field: 'name', headerName: 'Food Name', sortable: true },
     { field: 'brand', headerName: 'Brand', sortable: true },
@@ -46,7 +46,7 @@ export default function Inventory() {
       sortable: true, 
       renderCell: (row) => formatCurrency(row.price) 
     },
-  ];
+  ], []);
 
   return (
     <div className="container p-0" fluid >
