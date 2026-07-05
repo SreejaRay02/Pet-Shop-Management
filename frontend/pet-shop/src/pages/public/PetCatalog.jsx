@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // Hooks for fetching data
 import { usePets } from "../../hooks/queries/usePets";
 import { useCategories } from "../../hooks/queries/useCategories";
-import { useCustomers } from "../../hooks/queries/useCustomers";
+import { useCustomerByEmail } from "../../hooks/queries/useCustomers";
 
 // UI Component
 import PetCard from "../../components/cards/PetCard";
@@ -28,8 +28,8 @@ export default function CatalogPage() {
   const { isAuthenticated, user, role } = useAuthStore();
   const createTransaction = useCreateTransaction();
 
-  // Also fetch customers so we can map the auth user to a customer record
-  const { data: customers = [] } = useCustomers();
+  // Get current customer object by email
+  const { data: customer } = useCustomerByEmail(user?.email);
 
   // MAGIC PART: Filtering the pets array!
   const filtered = pets.filter((pet) => {
@@ -44,7 +44,7 @@ export default function CatalogPage() {
     return matchSearch && matchCat;
   });
 
-  const customer = customers.find((c) => c.email === user?.email);
+
   const { data: customerTransactions = [] } = useCustomerTransactions(
     customer?.id,
   );

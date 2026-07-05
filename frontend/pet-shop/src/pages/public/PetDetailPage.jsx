@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { useAuthStore } from "../../stores/authStore";
-import { useCustomers } from "../../hooks/queries/useCustomers";
+import { useCustomerByEmail } from "../../hooks/queries/useCustomers";
 import { useCreateTransaction } from "../../hooks/mutations/useTransactionMutations";
 
 // Our custom data-fetching hooks
@@ -12,10 +12,7 @@ import {
   usePetVaccinations,
   usePetFoodInfo,
 } from "../../hooks/queries/usePets";
-import { useCategories } from "../../hooks/queries/useCategories";
-import { useGroomingServices } from "../../hooks/queries/useGroomingServices";
-import { useVaccinations } from "../../hooks/queries/useVaccinations";
-import { usePetFoods } from "../../hooks/queries/usePetFoods";
+import { useCategoryById } from "../../hooks/queries/useCategories";
 
 import { formatCurrency } from "../../utils/helpers";
 
@@ -25,23 +22,18 @@ export default function PetDetailPage() {
 
   // Fetch all the data we need for this page
   const { data: pet, isLoading } = usePet(id);
-  const { data: categories = [] } = useCategories();
+  const { data: category } = useCategoryById(pet?.category_id);
 
-  // Fetch junction table data
-  const { data: groomingRel = [] } = usePetGroomingServices(id);
-  const { data: vaccinationRel = [] } = usePetVaccinations(id);
-  const { data: foodRel = [] } = usePetFoodInfo(id);
-
-  // Fetch master tables data
-  const { data: allGrooming = [] } = useGroomingServices();
-  const { data: allVaccinations = [] } = useVaccinations();
-  const { data: allFoods = [] } = usePetFoods();
+  // Fetch resolved relation data (thanks to our complex hooks)
+  const { data: groomingServices = [] } = usePetGroomingServices(id);
+  const { data: vaccinations = [] } = usePetVaccinations(id);
+  const { data: foods = [] } = usePetFoodInfo(id);
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const { isAuthenticated, user, role } = useAuthStore();
-  const { data: customers = [] } = useCustomers();
+  const { data: customer } = useCustomerByEmail(user?.email);
   const createTransaction = useCreateTransaction();
 
   const handleBuyItem = async (item, type) => {
@@ -54,7 +46,6 @@ export default function PetDetailPage() {
       return;
     }
 
-    const customer = customers.find((c) => c.email === user?.email);
     if (!customer) {
       setErrorMessage("Customer profile not found!");
       return;
@@ -104,19 +95,7 @@ export default function PetDetailPage() {
   }
 
   // --- Data Processing ---
-  const category = categories.find((c) => c.id === pet.category_id);
-
-  const groomingServices = groomingRel
-    .map((r) => allGrooming.find((g) => g.id === r.service_id))
-    .filter(Boolean);
-
-  const vaccinations = vaccinationRel
-    .map((r) => allVaccinations.find((v) => v.id === r.vaccination_id))
-    .filter(Boolean);
-
-  const foods = foodRel
-    .map((r) => allFoods.find((f) => f.id === r.food_id))
-    .filter(Boolean);
+  // No longer needed! Complex hooks return fully resolved arrays.
 
   return (
     <div className="container py-5">
