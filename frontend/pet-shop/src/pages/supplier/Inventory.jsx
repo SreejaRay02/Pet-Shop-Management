@@ -13,7 +13,7 @@ export default function Inventory() {
     { 
       field: 'type', 
       headerName: 'Type', 
-      renderCell: (row) => <span className="badge bg-light border fw-normal"  text="dark" >{row.type}</span> 
+      renderCell: (row) => <span className="badge bg-light text-dark border fw-normal">{row.type}</span> 
     },
     {
       field: 'quantity', 
