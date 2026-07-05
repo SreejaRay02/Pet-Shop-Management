@@ -10,3 +10,10 @@ export const useVaccinations = (params) => {
   });
 };
 
+export const useVaccinationById = (id) => {
+  return useQuery({
+    queryKey: [...VACCINATIONS_KEY, id],
+    queryFn: () => vaccinationService.getById(id).then((r) => r.data),
+    enabled: !!id,
+  });
+};

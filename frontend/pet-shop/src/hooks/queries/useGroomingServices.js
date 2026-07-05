@@ -1,4 +1,3 @@
-
 import { useQuery } from '@tanstack/react-query';
 import { groomingService } from '../../services/groomingService';
 
@@ -8,9 +7,16 @@ export const useGroomingServices = (params) => {
   return useQuery({
     /* queryKey is like a unique ID  */
     queryKey: [...GROOMING_KEY, params],
-    
+
     /* queryFn is the actual function that fetches the data.  */
     queryFn: () => groomingService.getAll(params).then((r) => r.data),
   });
 };
 
+export const useGroomingServiceById = (id) => {
+  return useQuery({
+    queryKey: [...GROOMING_KEY, id],
+    queryFn: () => groomingService.getById(id).then((r) => r.data),
+    enabled: !!id,
+  });
+};

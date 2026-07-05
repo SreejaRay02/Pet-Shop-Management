@@ -1,42 +1,34 @@
 import axiosInstance from '../api/axiosInstance';
 import { ENDPOINTS } from '../api/endpoints';
 
-// Fetch all grooming services from the API
 const getGroomingServices = async (params) => {
-  return await axiosInstance.get(ENDPOINTS.GROOMING, { params });
+  return await axiosInstance.get(ENDPOINTS.SERVICES, { params });
 };
 
-// Fetch a single grooming service by its ID
 const getGroomingServiceById = async (id) => {
-  return await axiosInstance.get(ENDPOINTS.GROOMING_SERVICE(id));
+  return await axiosInstance.get(ENDPOINTS.SERVICE(id));
 };
 
-// Fetch only the grooming services that are currently available
 const getAvailableGroomingServices = async () => {
-  return await axiosInstance.get(ENDPOINTS.GROOMING, { params: { available: true } });
+  return await axiosInstance.get(ENDPOINTS.SERVICES_AVAILABLE);
 };
 
-// Fetch only the grooming services that are currently unavailable
 const getUnavailableGroomingServices = async () => {
-  return await axiosInstance.get(ENDPOINTS.GROOMING, { params: { available: false } });
+  return await axiosInstance.get(ENDPOINTS.SERVICES_UNAVAILABLE);
 };
 
-// Save a new grooming service to the database
 export const createGroomingService = async (data) => {
-  return await axiosInstance.post(ENDPOINTS.GROOMING, data);
+  return await axiosInstance.post(ENDPOINTS.SERVICES, data);
 };
 
-// Update an existing grooming service
 export const updateGroomingService = async (id, data) => {
-  return await axiosInstance.put(ENDPOINTS.GROOMING_SERVICE(id), data);
+  return await axiosInstance.put(ENDPOINTS.SERVICE(id), data);
 };
 
-// Delete a grooming service from the database
 export const deleteGroomingService = async (id) => {
-  return await axiosInstance.delete(ENDPOINTS.GROOMING_SERVICE(id));
+  return await axiosInstance.delete(ENDPOINTS.SERVICE(id));
 };
 
-// We export this object to keep the old code working while we refactor.
 export const groomingService = {
   getAll: getGroomingServices,
   getById: getGroomingServiceById,
@@ -46,4 +38,3 @@ export const groomingService = {
   update: updateGroomingService,
   remove: deleteGroomingService,
 };
-
