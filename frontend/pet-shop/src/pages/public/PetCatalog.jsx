@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 // Hooks for fetching data
 import { usePets } from "../../hooks/queries/usePets";
 import { useCategories } from "../../hooks/queries/useCategories";
-import { useCustomerByEmail } from "../../hooks/queries/useCustomers";
+import { useCustomerByEmail, useCustomerPurchasedPets } from "../../hooks/queries/useCustomers";
 
 // UI Component
 import PetCard from "../../components/cards/PetCard";
@@ -30,9 +30,16 @@ export default function CatalogPage() {
 
   // Get current customer object by email
   const { data: customer } = useCustomerByEmail(user?.email);
+  
+  // Get pets the customer has already adopted
+  const { data: purchasedPets = [] } = useCustomerPurchasedPets(customer?.id);
+  const purchasedPetIds = new Set(purchasedPets.map(p => p.id));
 
   // MAGIC PART: Filtering the pets array!
   const filtered = pets.filter((pet) => {
+    // Hide pets the current user has already adopted
+    if (purchasedPetIds.has(pet.id)) return false;
+
     const matchSearch =
       !search ||
       pet.name.toLowerCase().includes(search.toLowerCase()) ||

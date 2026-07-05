@@ -37,7 +37,10 @@ export const useCustomerPurchasedPets = (customerId) => {
 			const res = await axiosInstance.get(ENDPOINTS.CUSTOMER_PETS(customerId));
 			const transactions = res.data;
 
-			const petPromises = transactions.map(t => petService.getById(t.pet_id).then(r => r.data));
+			// Extract unique pet IDs
+			const uniquePetIds = [...new Set(transactions.map(t => t.pet_id).filter(Boolean))];
+
+			const petPromises = uniquePetIds.map(petId => petService.getById(petId).then(r => r.data));
 			return await Promise.all(petPromises);
 		},
 		enabled: !!customerId,

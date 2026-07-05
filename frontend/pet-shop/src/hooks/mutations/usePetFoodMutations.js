@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { petFoodService } from '../../services/petFoodService';
 import { PET_FOODS_KEY } from '../queries/usePetFoods';
+import { PETS_KEY } from '../queries/usePets';
 
 // Hook to create a new pet food product
 export const useCreatePetFood = () => {
@@ -38,6 +39,7 @@ export const useUpdateFoodQuantity = () => {
     mutationFn: ({ id, quantity }) => petFoodService.updateQuantity(id, quantity).then((r) => r.data),
     onSuccess: () => { 
       qc.invalidateQueries({ queryKey: PET_FOODS_KEY }); 
+      qc.invalidateQueries({ queryKey: PETS_KEY }); 
       console.log('Quantity updated!'); 
     },
   });

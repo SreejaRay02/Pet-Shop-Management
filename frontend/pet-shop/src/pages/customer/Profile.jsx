@@ -74,6 +74,13 @@ export default function CustomerProfile() {
 		0,
 	);
 
+	const displayName = customer
+		? `${customer.first_name} ${customer.last_name}`
+		: user?.username;
+	const avatarInitials = customer
+		? getInitials(customer.first_name, customer.last_name)
+		: user?.username?.[0]?.toUpperCase();
+
 	return (
 		<div className="container p-0">
 			<PageHeader
@@ -92,19 +99,10 @@ export default function CustomerProfile() {
 								fontSize: "32px",
 							}}
 						>
-							{customer
-								? getInitials(
-										customer.first_name,
-										customer.last_name,
-									)
-								: user?.username?.[0]?.toUpperCase()}
+							{avatarInitials}
 						</div>
 
-						<h6 className="fw-bold mb-1">
-							{customer
-								? `${customer.first_name} ${customer.last_name}`
-								: user?.username}
-						</h6>
+						<h6 className="fw-bold mb-1">{displayName}</h6>
 
 						<p className="text-secondary small mb-2">
 							{user?.email}
@@ -149,18 +147,18 @@ export default function CustomerProfile() {
 								</h5>
 
 								{!editing ? (
-									<button
-										type="button"
-										className="btn btn-outline-primary btn-sm"
-										onClick={() => {
-											formik.resetForm();
-											setEditing(true);
-										}}
-									>
-										{customer
-											? "Edit Profile"
-											: "Complete Profile"}
-									</button>
+									customer && (
+										<button
+											type="button"
+											className="btn btn-outline-primary btn-sm"
+											onClick={() => {
+												formik.resetForm();
+												setEditing(true);
+											}}
+										>
+											Edit Profile
+										</button>
+									)
 								) : (
 									<div className="d-flex gap-2">
 										<button
@@ -192,11 +190,31 @@ export default function CustomerProfile() {
 
 							{!customer && !editing && (
 								<div
-									className="alert alert-info mb-4"
-									role="alert"
+									className="alert alert-success d-flex flex-column align-items-center text-center p-4 mb-4 rounded-4 shadow-sm border-0"
+									style={{ backgroundColor: "#d1e7dd" }}
 								>
-									Complete your profile to get personalized
-									recommendations.
+									<h1 className="display-3 mb-2">🎉 🐾</h1>
+									<h3 className="fw-bold text-success mb-2">
+										Welcome to the PetShop Family!
+									</h3>
+									<p className="fs-6 text-dark mb-4 px-1">
+										We are absolutely thrilled to have you
+										here! You are just one small step away
+										from finding your new best friend.
+										Complete your profile below to unlock
+										adoptions, grooming services, and a
+										whole lot of tail-wagging joy!
+									</p>
+									<button
+										type="button"
+										className="btn btn-success px-3 rounded-pill fw-bold shadow-sm"
+										onClick={() => {
+											formik.resetForm();
+											setEditing(true);
+										}}
+									>
+										Let's Get Started! 🐶
+									</button>
 								</div>
 							)}
 
@@ -207,55 +225,57 @@ export default function CustomerProfile() {
 									emailEditable={false}
 								/>
 							) : (
-								<div className="row g-3">
-									<div className="col-12 col-sm-6">
-										<span className="text-secondary small d-block mb-1">
-											First Name
-										</span>
-										<span className="fw-semibold">
-											{customer?.first_name || "-"}
-										</span>
-									</div>
+								customer && (
+									<div className="row g-3">
+										<div className="col-12 col-sm-6">
+											<span className="text-secondary small d-block mb-1">
+												First Name
+											</span>
+											<span className="fw-semibold">
+												{customer?.first_name || "-"}
+											</span>
+										</div>
 
-									<div className="col-12 col-sm-6">
-										<span className="text-secondary small d-block mb-1">
-											Last Name
-										</span>
-										<span className="fw-semibold">
-											{customer?.last_name || "-"}
-										</span>
-									</div>
+										<div className="col-12 col-sm-6">
+											<span className="text-secondary small d-block mb-1">
+												Last Name
+											</span>
+											<span className="fw-semibold">
+												{customer?.last_name || "-"}
+											</span>
+										</div>
 
-									<div className="col-12 col-sm-6">
-										<span className="text-secondary small d-block mb-1">
-											Phone Number
-										</span>
-										<span className="fw-semibold">
-											{customer?.phone_number || "-"}
-										</span>
-									</div>
+										<div className="col-12 col-sm-6">
+											<span className="text-secondary small d-block mb-1">
+												Phone Number
+											</span>
+											<span className="fw-semibold">
+												{customer?.phone_number || "-"}
+											</span>
+										</div>
 
-									<div className="col-12 col-sm-6">
-										<span className="text-secondary small d-block mb-1">
-											Email
-										</span>
-										<span className="fw-semibold">
-											{user?.email}
-										</span>
-									</div>
+										<div className="col-12 col-sm-6">
+											<span className="text-secondary small d-block mb-1">
+												Email
+											</span>
+											<span className="fw-semibold">
+												{user?.email}
+											</span>
+										</div>
 
-									<div className="col-12">
-										<span className="text-secondary small d-block mb-1">
-											Address
-										</span>
+										<div className="col-12">
+											<span className="text-secondary small d-block mb-1">
+												Address
+											</span>
 
-										<span className="fw-semibold">
-											{customerAddress
-												? `${customerAddress.street}, ${customerAddress.city}`
-												: "-"}
-										</span>
+											<span className="fw-semibold">
+												{customerAddress
+													? `${customerAddress.street}, ${customerAddress.city}`
+													: "-"}
+											</span>
+										</div>
 									</div>
-								</div>
+								)
 							)}
 						</form>
 					</div>

@@ -103,6 +103,8 @@ const TransactionTable = ({
       loading={isLoading}
       onRefresh={refetch}
       searchPlaceholder="Search transactions..."
+      defaultOrderBy="id"
+      defaultOrder="desc"
     />
   );
 };
