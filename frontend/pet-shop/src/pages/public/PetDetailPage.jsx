@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../../stores/authStore";
 import { useCustomerByEmail } from "../../hooks/queries/useCustomers";
 import { useCreateTransaction } from "../../hooks/mutations/useTransactionMutations";
+import { useUpdateFoodQuantity } from "../../hooks/mutations/usePetFoodMutations";
 
 // Our custom data-fetching hooks
 import {
@@ -35,6 +36,7 @@ export default function PetDetailPage() {
   const { isAuthenticated, user, role } = useAuthStore();
   const { data: customer } = useCustomerByEmail(user?.email);
   const createTransaction = useCreateTransaction();
+  const updateFoodQuantity = useUpdateFoodQuantity();
 
   const handleBuyItem = async (item, type) => {
     if (!isAuthenticated) {
@@ -62,7 +64,14 @@ export default function PetDetailPage() {
 
       if (type === "vaccination") transactionData.vaccination_id = item.id;
       if (type === "grooming") transactionData.grooming_service_id = item.id;
-      if (type === "food") transactionData.pet_food_id = item.id;
+      if (type === "food") {
+        if (item.quantity <= 0) {
+          setErrorMessage("This food is out of stock!");
+          return;
+        }
+        transactionData.pet_food_id = item.id;
+        await updateFoodQuantity.mutateAsync({ id: item.id, quantity: item.quantity - 1 });
+      }
 
       await createTransaction.mutateAsync(transactionData);
       setSuccessMessage(`${item.name} purchased successfully!`);

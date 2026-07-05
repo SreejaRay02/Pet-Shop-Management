@@ -2,6 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { transactionService } from '../../services/transactionService';
 import { TRANSACTIONS_KEY } from '../queries/useTransactions';
+import { CUSTOMERS_KEY } from '../queries/useCustomers';
 
 export const useCreateTransaction = () => {
   const qc = useQueryClient();
@@ -11,6 +12,7 @@ export const useCreateTransaction = () => {
         onSuccess: () => {
       // invalidateQueries deletes the old cached data.
       qc.invalidateQueries({ queryKey: TRANSACTIONS_KEY });
+      qc.invalidateQueries({ queryKey: CUSTOMERS_KEY });
       console.log('Transaction created!');
     },
   });

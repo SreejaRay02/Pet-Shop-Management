@@ -11,6 +11,8 @@ const DataTable = ({
   rowsPerPageOptions = [10, 25, 50],
   searchable = true,
   searchPlaceholder = 'Search...',
+  defaultOrderBy = '',
+  defaultOrder = 'asc'
 }) => {
   // Store the current page number (starts at 0)
   const [page, setPage] = useState(0);
@@ -22,10 +24,10 @@ const DataTable = ({
   const [search, setSearch] = useState('');
 
   // Store which column we are currently sorting by
-  const [orderBy, setOrderBy] = useState('');
+  const [orderBy, setOrderBy] = useState(defaultOrderBy);
 
   // Store the sort direction ('asc' for ascending, 'desc' for descending)
-  const [order, setOrder] = useState('asc');
+  const [order, setOrder] = useState(defaultOrder);
 
   // Function to handle when a user clicks a column header to sort
   const handleSort = (col) => {
@@ -126,11 +128,11 @@ const DataTable = ({
                 >
                   {col.headerName}
                   {col.sortable !== false && (
-                    <span className="ms-1 text-muted small" >
+                    <span className="ms-1 text-dark small" >
                       {orderBy === col.field ? (
                         order === 'asc' ? <i className="bi bi-arrow-up" ></i> : <i className="bi bi-arrow-down" ></i>
                       ) : (
-                        <i className="bi bi-arrow-down-up opacity-25" ></i>
+                        <i className="bi bi-arrow-down-up opacity-50" ></i>
                       )}
                     </span>
                   )}
