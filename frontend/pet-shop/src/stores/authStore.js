@@ -15,13 +15,13 @@ export const useAuthStore = create(
     persist(
       // The 'set' function updates the state, 'get' reads the current state
       (set, get) => ({
-        
+
         // --- STATE ---
         user: null,             // Stores the logged-in user's details
         token: null,            // Stores the JWT string
         role: null,             // Stores the user's role (e.g., 'Admin', 'Customer')
         isAuthenticated: false, // True if the user is logged in
-        
+
         // --- ACTIONS ---
 
         // Login Action
@@ -29,17 +29,17 @@ export const useAuthStore = create(
           // Send login request to JSON Server Auth
           const response = await axiosInstance.post('/login', { email, password });
           const { accessToken, user } = response.data;
-          
+
           let role = user?.role || 'Customer'; // Default to Customer if role is missing
-          
+
           // Decode the token to see if it contains the role
           try {
             const decoded = jwtDecode(accessToken);
             role = decoded.role || role;
-          } catch (_error) {
+          } catch (error) {
             console.error("Token decoding failed", error);
           }
-          
+
           // Update the global state
           set({ token: accessToken, user, role, isAuthenticated: true });
           return { user, role };
@@ -50,7 +50,7 @@ export const useAuthStore = create(
           // Send registration request
           const response = await axiosInstance.post('/register', userData);
           const { accessToken, user } = response.data;
-          
+
           // Update state and log the user in immediately
           set({ token: accessToken, user, role: user.role || 'Customer', isAuthenticated: true });
           return { user };
@@ -72,7 +72,7 @@ export const useAuthStore = create(
         // Runs when the app starts to check if the saved token is still valid
         restoreSession: () => {
           const { token, user } = get();
-          
+
           if (token && user) {
             try {
               const decoded = jwtDecode(token);
@@ -81,7 +81,7 @@ export const useAuthStore = create(
                 get().logout(); // Token expired, log them out
                 return false;
               }
-              
+
               // Token is valid, ensure they are marked as authenticated
               set({ isAuthenticated: true });
               return true;
@@ -96,7 +96,7 @@ export const useAuthStore = create(
       {
         // name: The key used to save the data in the browser's localStorage
         name: 'petshop-auth',
-        
+
         // partialize: Choose exactly which pieces of state to save to localStorage
         partialize: (state) => ({
           user: state.user,
