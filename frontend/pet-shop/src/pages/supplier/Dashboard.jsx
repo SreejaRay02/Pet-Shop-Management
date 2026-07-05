@@ -1,16 +1,15 @@
 import React, { useMemo } from 'react';
 import { useAuthStore } from '../../stores/authStore';
-import { useSuppliers } from '../../hooks/queries/useSuppliers';
+import { useSupplierByEmail } from '../../hooks/queries/useSuppliers';
 import { usePets } from '../../hooks/queries/usePets';
 import StatCard from '../../components/cards/StatCard';
 import { PageHeader } from '../../components/layout/PageHeader';
 
 export default function SupplierDashboard() {
   const { user } = useAuthStore();
-  const { data: suppliers = [] } = useSuppliers();
   const { data: pets = [] } = usePets();
   
-  const mySupplier = useMemo(() => suppliers.find((s) => s.email === user?.email), [suppliers, user?.email]);
+  const { data: mySupplier } = useSupplierByEmail(user?.email);
 
   const supplierInfo = useMemo(() => {
     if (!mySupplier) return [];
