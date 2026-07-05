@@ -10,3 +10,11 @@ export const useAddresses = () => {
 		queryFn: () => addressService.getAll().then((r) => r.data),
 	});
 };
+
+export const useAddressById = (id) => {
+	return useQuery({
+		queryKey: [...ADDRESSES_KEY, id],
+		queryFn: () => addressService.getById(id).then((r) => r.data),
+		enabled: !!id,
+	});
+};

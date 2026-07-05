@@ -9,16 +9,20 @@ const getCustomerById = async (id) => {
 	return await axiosInstance.get(ENDPOINTS.CUSTOMER(id));
 };
 
+const getCustomerByEmail = async (email) => {
+	return await axiosInstance.get(ENDPOINTS.CUSTOMER_BY_EMAIL(email));
+};
+
 const searchCustomers = async (query) => {
-	return await axiosInstance.get(ENDPOINTS.CUSTOMERS, { params: { first_name_like: query } });
+	return await axiosInstance.get(ENDPOINTS.CUSTOMER_BY_NAME(query, ''));
 };
 
 const getCustomersByCity = async (city) => {
-	return await axiosInstance.get(ENDPOINTS.CUSTOMERS, { params: { city } });
+	return await axiosInstance.get(ENDPOINTS.CUSTOMER_BY_CITY(city));
 };
 
 const getCustomersByState = async (state) => {
-	return await axiosInstance.get(ENDPOINTS.CUSTOMERS, { params: { state } });
+	return await axiosInstance.get(ENDPOINTS.CUSTOMER_BY_STATE(state));
 };
 
 const createCustomer = async (data) => {
@@ -36,6 +40,7 @@ const deleteCustomer = async (id) => {
 export const customerService = {
 	getAll: getCustomers,
 	getById: getCustomerById,
+	getByEmail: getCustomerByEmail,
 	search: searchCustomers,
 	getByCity: getCustomersByCity,
 	getByState: getCustomersByState,

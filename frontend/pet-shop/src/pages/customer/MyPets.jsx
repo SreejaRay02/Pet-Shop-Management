@@ -1,30 +1,19 @@
 import React from "react";
 
 import { useAuthStore } from "../../stores/authStore";
-import { useCustomers } from "../../hooks/queries/useCustomers";
-import { useCustomerTransactions } from "../../hooks/queries/useTransactions";
-import { usePets } from "../../hooks/queries/usePets";
+import {
+	useCustomerByEmail,
+	useCustomerPurchasedPets,
+} from "../../hooks/queries/useCustomers";
 import PetCard from "../../components/cards/PetCard";
 import { PageHeader, LoadingSpinner } from "../../components/layout/PageHeader";
 
 export default function MyPets() {
-	const { user } = useAuthStore(); // Get current logged in user's data
-	const { data: customers = [] } = useCustomers(); // Get list of all customers
-	const customer = customers.find((c) => c.email === user?.email); // Find the customer
-
-	// Get their transactions and the pets list
-	const { data: transactions = [], isLoading } = useCustomerTransactions(
+	const { user } = useAuthStore();
+	const { data: customer } = useCustomerByEmail(user?.email);
+	const { data: myPets = [], isLoading } = useCustomerPurchasedPets(
 		customer?.id,
 	);
-	const { data: pets = [] } = usePets();
-
-	// Find all successful transactions and get just the pet_id from them
-	const purchasedPetIds = transactions
-		.filter((t) => t.transaction_status === "Success")
-		.map((t) => t.pet_id);
-
-	// Get all pets belonging to customer
-	const myPets = pets.filter((p) => purchasedPetIds.includes(p.id));
 
 	return (
 		<div className="container p-0" fluid>
