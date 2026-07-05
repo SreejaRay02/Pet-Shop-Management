@@ -1,9 +1,9 @@
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-
 import { groomingService } from '../../services/groomingService';
 import { GROOMING_KEY } from '../queries/useGroomingServices';
 
+// Hook to create a new grooming service (Post request)
 export const useCreateGroomingService = () => {
   const qc = useQueryClient();
   return useMutation({
@@ -17,6 +17,8 @@ export const useCreateGroomingService = () => {
   });
 };
 
+
+// Hook to update an existing grooming service (Put request)
 export const useUpdateGroomingService = () => {
   const qc = useQueryClient();
   return useMutation({
@@ -28,6 +30,7 @@ export const useUpdateGroomingService = () => {
   });
 };
 
+// Hook to delete a grooming service (Delete request)
 export const useDeleteGroomingService = () => {
   const qc = useQueryClient();
   return useMutation({

@@ -1,10 +1,9 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-
 import { petFoodService } from '../../services/petFoodService';
 import { PET_FOODS_KEY } from '../queries/usePetFoods';
 import { PETS_KEY } from '../queries/usePets';
 
-// Hook to create a new pet food product
+// Hook to create a new pet food product (Post request)
 export const useCreatePetFood = () => {
   const qc = useQueryClient();
   return useMutation({
@@ -19,7 +18,7 @@ export const useCreatePetFood = () => {
 };
 
 
-// Hook to update an existing pet food product
+// Hook to update an existing pet food product (Put request)
 export const useUpdatePetFood = () => {
   const qc = useQueryClient();
   return useMutation({
