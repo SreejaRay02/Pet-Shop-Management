@@ -1,6 +1,5 @@
 {
 	"/api/v1/customers": "/customers",
-	"/api/v1/customers/:id": "/customers/:id",
 	"/api/v1/customers/email/:email": "/customers?email=:email",
 	"/api/v1/customers/name/:firstName/:lastName": "/customers?first_name=:firstName&last_name=:lastName",
 	"/api/v1/customers/by_city/:city": "/customers?city=:city",
@@ -9,55 +8,56 @@
 	"/api/v1/customers/transactions_status/:status": "/transactions?transaction_status=:status",
 	"/api/v1/customers/no-transactions": "/customers",
 	"/api/v1/customers/pets/:id": "/transactions?customer_id=:id&transaction_status=Success",
+	"/api/v1/customers/:id": "/customers/:id",
 
 	"/api/v1/address": "/addresses",
 	"/api/v1/address/:id": "/addresses/:id",
 
 	"/api/v1/categories": "/petCategories",
-	"/api/v1/categories/:id": "/petCategories/:id",
 	"/api/v1/categories/name/:name": "/petCategories?name=:name",
+	"/api/v1/categories/:id": "/petCategories/:id",
 
 	"/api/v1/pets": "/pets",
-	"/api/v1/pets/:id": "/pets/:id",
 	"/api/v1/pets/category/:category": "/pets?category_id=:category",
 	"/api/v1/pets/grooming_services/:id": "/petGroomingRelationship?pet_id=:id",
 	"/api/v1/pets/vaccinations/:id": "/petVaccinationRelationship?pet_id=:id",
 	"/api/v1/pets/food_info/:id": "/petFoodRelationship?pet_id=:id",
 	"/api/v1/pets/suppliers/:id": "/petSupplierRelationship?pet_id=:id",
 	"/api/v1/pets/transaction_history/:id": "/transactions?pet_id=:id",
+	"/api/v1/pets/:id": "/pets/:id",
 
 	"/api/v1/services": "/groomingServices",
-	"/api/v1/services/:id": "/groomingServices/:id",
 	"/api/v1/services/available": "/groomingServices?available=true",
 	"/api/v1/services/unavailable": "/groomingServices?available=false",
+	"/api/v1/services/:id": "/groomingServices/:id",
 
 	"/api/v1/vaccinations": "/vaccinations",
-	"/api/v1/vaccinations/:id": "/vaccinations/:id",
 	"/api/v1/vaccinations/available": "/vaccinations?available=true",
 	"/api/v1/vaccinations/unavailable": "/vaccinations?available=false",
+	"/api/v1/vaccinations/:id": "/vaccinations/:id",
 
 	"/api/v1/pet_foods": "/petFoods",
-	"/api/v1/pet_foods/:id": "/petFoods/:id",
 	"/api/v1/pet_foods/search/:name": "/petFoods?name_like=:name",
 	"/api/v1/pet_foods/food_type/:type": "/petFoods?type=:type",
 	"/api/v1/pet_foods/brand/:brand": "/petFoods?brand=:brand",
+	"/api/v1/pet_foods/:id": "/petFoods/:id",
 
 	"/api/v1/transaction_history": "/transactions",
-	"/api/v1/transaction_history/:id": "/transactions/:id",
 	"/api/v1/transaction_history/by_customer/:id": "/transactions?customer_id=:id",
 	"/api/v1/transaction_history/successful": "/transactions?transaction_status=Success",
 	"/api/v1/transaction_history/failed": "/transactions?transaction_status=Failed",
+	"/api/v1/transaction_history/:id": "/transactions/:id",
 
 	"/api/v1/suppliers": "/suppliers",
-	"/api/v1/suppliers/:id": "/suppliers/:id",
 	"/api/v1/suppliers/email/:email": "/suppliers?email=:email",
 	"/api/v1/suppliers/name/:name": "/suppliers?name_like=:name",
 	"/api/v1/suppliers/city/:city": "/suppliers?city=:city",
 	"/api/v1/suppliers/state/:state": "/suppliers?state=:state",
+	"/api/v1/suppliers/:id": "/suppliers/:id",
 
 	"/api/v1/employees": "/employees",
-	"/api/v1/employees/:id": "/employees/:id",
 	"/api/v1/employees/email/:email": "/employees?email=:email",
 	"/api/v1/employees/name/:name": "/employees?name_like=:name",
-	"/api/v1/employees/position/:position": "/employees?role=:position"
+	"/api/v1/employees/position/:position": "/employees?role=:position",
+	"/api/v1/employees/:id": "/employees/:id"
 }
