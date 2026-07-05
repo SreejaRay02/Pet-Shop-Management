@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { useAuthStore } from "../../stores/authStore";
-import { useCustomerByEmail } from "../../hooks/queries/useCustomers";
+import { useCustomerByEmail, useCustomerPurchasedPets } from "../../hooks/queries/useCustomers";
 import { useCreateTransaction } from "../../hooks/mutations/useTransactionMutations";
 import { useUpdateFoodQuantity } from "../../hooks/mutations/usePetFoodMutations";
 
@@ -37,6 +37,9 @@ export default function PetDetailPage() {
   const { data: customer } = useCustomerByEmail(user?.email);
   const createTransaction = useCreateTransaction();
   const updateFoodQuantity = useUpdateFoodQuantity();
+
+  const { data: myPets = [] } = useCustomerPurchasedPets(customer?.id);
+  const isPetPurchasedByMe = myPets.some((p) => String(p.id) === String(pet?.id));
 
   const handleBuyItem = async (item, type) => {
     if (!isAuthenticated) {
@@ -245,7 +248,7 @@ export default function PetDetailPage() {
                             <span className="badge bg-primary">
                               {formatCurrency(v.price)}
                             </span>
-                            {isAuthenticated && role === "Customer" && (
+                            {isAuthenticated && role === "Customer" && isPetPurchasedByMe && (
                               <button
                                 className="btn btn-sm btn-outline-primary"
                                 onClick={() => handleBuyItem(v, "vaccination")}
@@ -281,7 +284,7 @@ export default function PetDetailPage() {
                             <span className="badge bg-primary">
                               {formatCurrency(g.price)}
                             </span>
-                            {isAuthenticated && role === "Customer" && (
+                            {isAuthenticated && role === "Customer" && isPetPurchasedByMe && (
                               <button
                                 className="btn btn-sm btn-outline-primary"
                                 onClick={() => handleBuyItem(g, "grooming")}
@@ -320,7 +323,7 @@ export default function PetDetailPage() {
                             <span className="badge bg-primary">
                               {formatCurrency(f.price)}
                             </span>
-                            {isAuthenticated && role === "Customer" && (
+                            {isAuthenticated && role === "Customer" && isPetPurchasedByMe && (
                               <button
                                 className="btn btn-sm btn-outline-primary"
                                 onClick={() => handleBuyItem(f, "food")}

@@ -114,6 +114,7 @@ export default function AppRouter() {
             <Route path="my-pets" element={<MyPets />} />
             <Route path="transactions" element={<MyTransactions />} />
             <Route path="catalog" element={<CatalogPage />} />
+            <Route path="pets/:id" element={<PetDetailPage />} />
           </Route>
 
           {/* SUPPLIER ROUTES (Protected) */}
@@ -130,6 +131,7 @@ export default function AppRouter() {
             <Route path="dashboard" element={<SupplierDashboard />} />
             <Route path="inventory" element={<Inventory />} />
             <Route path="catalog" element={<CatalogPage />} />
+            <Route path="pets/:id" element={<PetDetailPage />} />
           </Route>
           
           {/* EMPLOYEE ROUTES (Protected) */}
