@@ -2,24 +2,31 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 
 import { useAuthStore } from "../../stores/authStore";
-import { useCustomers } from "../../hooks/queries/useCustomers";
-import { useAddresses } from "../../hooks/queries/useAddresses";
+import { useCustomerByEmail } from "../../hooks/queries/useCustomers";
+import { useAddresses, useAddressById } from "../../hooks/queries/useAddresses";
 import {
 	useCreateCustomer,
 	useUpdateCustomer,
 } from "../../hooks/mutations/useCustomerMutations";
-import { useCustomerTransactions } from "../../hooks/queries/useTransactions";
+import {
+	useCustomerTransactions,
+	useSuccessfulTransactions,
+} from "../../hooks/queries/useTransactions";
 import { PageHeader } from "../../components/layout/PageHeader";
 import CustomerForm from "../../components/forms/CustomerForm";
 import { formatCurrency, getInitials } from "../../utils/helpers";
 import { customerSchema } from "../../validations/schemas";
 
 export default function CustomerProfile() {
-	const { user } = useAuthStore(); // Get current logged in user's data
-	const { data: customers = [] } = useCustomers(); // Get list of all customers
-	const customer = customers.find((c) => c.email === user?.email); // Find the customer
-	const { data: addresses = [] } = useAddresses(); // Needed for the address dropdown
+	const { user } = useAuthStore();
+	const { data: customer } = useCustomerByEmail(user?.email);
+	const { data: addresses = [] } = useAddresses(); // Needed for the edit form dropdown
+	const { data: customerAddress } = useAddressById(customer?.address_id);
+
 	const { data: transactions = [] } = useCustomerTransactions(customer?.id);
+	const { data: successfulTransactions = [] } = useSuccessfulTransactions(
+		customer?.id,
+	);
 
 	const createCustomer = useCreateCustomer();
 	const updateCustomer = useUpdateCustomer();
@@ -62,12 +69,9 @@ export default function CustomerProfile() {
 	});
 
 	// Total amount of money customer has spent on successful purchases
-	const totalSpent = transactions
-		.filter((t) => t.transaction_status === "Success")
-		.reduce((sum, t) => sum + Number(t.amount), 0);
-
-	const customerAddress = addresses.find(
-		(a) => a.id === customer?.address_id,
+	const totalSpent = successfulTransactions.reduce(
+		(sum, t) => sum + Number(t.amount),
+		0,
 	);
 
 	return (
