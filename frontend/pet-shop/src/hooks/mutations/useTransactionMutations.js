@@ -4,6 +4,7 @@ import { transactionService } from '../../services/transactionService';
 import { TRANSACTIONS_KEY } from '../queries/useTransactions';
 import { CUSTOMERS_KEY } from '../queries/useCustomers';
 
+// Hook to create a new transaction (Post request)
 export const useCreateTransaction = () => {
   const qc = useQueryClient();
   return useMutation({
@@ -18,6 +19,8 @@ export const useCreateTransaction = () => {
   });
 };
 
+
+// Hook to update an existing transaction (Put request)
 export const useUpdateTransaction = () => {
   const qc = useQueryClient();
   return useMutation({

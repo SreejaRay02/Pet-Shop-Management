@@ -1,11 +1,11 @@
-import { useQuery } from '@tanstack/react-query';
-import { groomingService } from '../../services/groomingService';
+import { useQuery } from "@tanstack/react-query";
+import { groomingService } from "../../services/groomingService";
 
-export const GROOMING_KEY = ['grooming'];
+export const GROOMING_KEY = ["grooming"];
 
 export const useGroomingServices = (params) => {
   return useQuery({
-    /* queryKey is like a unique ID  */
+    /* queryKey gives a unique identity to a query  */
     queryKey: [...GROOMING_KEY, params],
 
     /* queryFn is the actual function that fetches the data.  */
@@ -17,6 +17,8 @@ export const useGroomingServiceById = (id) => {
   return useQuery({
     queryKey: [...GROOMING_KEY, id],
     queryFn: () => groomingService.getById(id).then((r) => r.data),
+
+    // Run the query only when a valid ID is available
     enabled: !!id,
   });
 };

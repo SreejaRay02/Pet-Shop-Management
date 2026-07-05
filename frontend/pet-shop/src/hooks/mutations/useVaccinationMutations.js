@@ -3,6 +3,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { vaccinationService } from '../../services/vaccinationService';
 import { VACCINATIONS_KEY } from '../queries/useVaccinations';
 
+// Hook to create a new vaccination record (Post request)
 export const useCreateVaccination = () => {
   const qc = useQueryClient();
   return useMutation({
@@ -16,6 +17,8 @@ export const useCreateVaccination = () => {
   });
 };
 
+
+// Hook to update an existing vaccination record (Put request)
 export const useUpdateVaccination = () => {
   const qc = useQueryClient();
   return useMutation({
@@ -27,6 +30,8 @@ export const useUpdateVaccination = () => {
   });
 };
 
+
+// Hook to delete a vaccination record (Delete request)
 export const useDeleteVaccination = () => {
   const qc = useQueryClient();
   return useMutation({
