@@ -7,6 +7,7 @@ Flow of execution
 import React from 'react';
 // useNavigate is a React Router hook that lets us change pages using JavaScript
 import { useNavigate } from 'react-router-dom';
+import { useAuthStore } from '../../stores/authStore';
 import { formatCurrency } from '../../utils/helpers';
 
 const PetCard = (props) => {
@@ -14,10 +15,17 @@ const PetCard = (props) => {
   
   // Initialize the navigate function
   const navigate = useNavigate();
+  const { role } = useAuthStore();
 
   // Function to handle clicking the whole card
   const handleCardClick = () => {
-    navigate(`/pets/${pet.id}`); // Send user to the pet details page
+    const prefix =
+      role === "Customer"
+        ? "/customer"
+        : role === "Supplier"
+        ? "/supplier"
+        : "";
+    navigate(`${prefix}/pets/${pet.id}`);
   };
 
   // Function to handle clicking the buy button
@@ -92,5 +100,3 @@ const PetCard = (props) => {
 };
 
 export default PetCard;
-
-
