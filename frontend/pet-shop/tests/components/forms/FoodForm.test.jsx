@@ -43,10 +43,8 @@ describe('FoodForm Component', () => {
     vi.clearAllMocks();
   });
 
-  // ---------------------------------------------------------
-  // Test Case 1
-  // Check whether all form fields are rendered properly
-  // ---------------------------------------------------------
+
+  // Test Case 1 (Check whether all form fields are rendered properly)
   it('renders all form fields successfully', () => {
 
     // Render the FoodForm component
@@ -68,10 +66,8 @@ describe('FoodForm Component', () => {
     expect(document.querySelector('[name="price"]')).toBeInTheDocument();
   });
 
-  // ---------------------------------------------------------
-  // Test Case 2
-  // Check whether validation errors are shown
-  // ---------------------------------------------------------
+
+  // Test Case 2 (Check whether validation errors are shown)
   it('displays validation errors when touched', () => {
 
     // Create fake Formik data with validation errors
@@ -104,11 +100,9 @@ describe('FoodForm Component', () => {
       .toHaveClass('is-invalid');
   });
 
-  // ---------------------------------------------------------
   // Test Case 3
   // Check whether handleChange gets called
   // when user changes dropdown value
-  // ---------------------------------------------------------
   it('calls handleChange on select change', () => {
 
     // Create fake Formik object

@@ -52,10 +52,11 @@ describe('TransactionTable Component', () => {
   });
 
   it('calls openEdit correctly', () => {
-    render(<TransactionTable data={mockData} openEdit={mockOpenEdit} />);
-    const editButton = document.querySelectorAll('.bi-pencil')[0].closest('button');
-    fireEvent.click(editButton);
-    expect(mockOpenEdit).toHaveBeenCalledWith(mockData[0]);
+  render(<TransactionTable data={mockData} customers={mockCustomers} pets={mockPets} openEdit={mockOpenEdit} adminView={true} /> );
+  const editButtons = screen.getAllByRole('button');
+  fireEvent.click(editButtons[0]);
+  expect(mockOpenEdit).toHaveBeenCalledTimes(1);
+  expect(mockOpenEdit).toHaveBeenCalledWith(mockData[1]);
   });
 });
  
