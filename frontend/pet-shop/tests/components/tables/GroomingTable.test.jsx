@@ -3,23 +3,28 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import GroomingTable from '../../../src/components/tables/GroomingTable';
 
+// Mock the helper function used in the table
 vi.mock('../../../src/utils/helpers', () => ({
   formatCurrency: (d) => `$${d}`,
 }));
 
 describe('GroomingTable Component', () => {
+  // Sample grooming service data for testing
   const mockData = [
     { id: 1, name: 'Bath', price: 20, available: true },
     { id: 2, name: 'Haircut', price: 30, available: false },
   ];
 
+  // Mock callback functions
   const mockOpenEdit = vi.fn();
   const mockSetDeleteId = vi.fn();
 
+  // Reset mocks before each test
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
+  // Verify table data and status badges are displayed
   it('renders columns, data, and status badges correctly', () => {
     render(<GroomingTable data={mockData} />);
     expect(screen.getByText('Bath')).toBeInTheDocument();
@@ -28,6 +33,7 @@ describe('GroomingTable Component', () => {
     expect(screen.getByText('Unavailable')).toBeInTheDocument();
   });
 
+  // Verify edit and delete actions work correctly
   it('calls openEdit and setDeleteId correctly', () => {
     render(<GroomingTable data={mockData} openEdit={mockOpenEdit} setDeleteId={mockSetDeleteId} />);
     const editButtons = document.querySelectorAll('.bi-pencil');
@@ -39,4 +45,3 @@ describe('GroomingTable Component', () => {
     expect(mockSetDeleteId).toHaveBeenCalledWith(2);
   });
 });
- 
