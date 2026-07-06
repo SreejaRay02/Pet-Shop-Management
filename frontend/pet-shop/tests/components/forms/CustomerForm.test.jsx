@@ -3,6 +3,13 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import CustomerForm from "../../../src/components/forms/CustomerForm";
 
+vi.mock("../../../src/hooks/mutations/useAddressMutations", () => ({
+	useCreateAddress: () => ({
+		mutateAsync: vi.fn(),
+		isPending: false,
+	}),
+}));
+
 describe("CustomerForm Component", () => {
 	const mockAddresses = [
 		{ id: 1, street: "123 Main St", city: "NY" },

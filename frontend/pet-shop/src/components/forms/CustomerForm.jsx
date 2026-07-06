@@ -1,10 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { useFormik } from "formik";
+import FormModal from "../dialogs/FormModal";
+import AddressForm from "./AddressForm";
+import { addressSchema } from "../../validations/schemas";
+import { useCreateAddress } from "../../hooks/mutations/useAddressMutations";
 
 export default function CustomerForm({
 	formik,
 	addresses,
 	emailEditable = true,
 }) {
+	const [modalOpen, setModalOpen] = useState(false);
+	const [newAddressAdded, setNewAddressAdded] = useState(false);
+	const create = useCreateAddress();
+
+	const addressFormik = useFormik({
+		initialValues: {
+			street: "",
+			city: "",
+			state: "",
+			zip_code: "",
+		},
+		validationSchema: addressSchema,
+		onSubmit: async (values) => {
+			try {
+				const newAddress = await create.mutateAsync(values);
+				if (newAddress && newAddress.id) {
+					formik.setFieldValue("address_id", newAddress.id);
+					setNewAddressAdded(true);
+				}
+				setModalOpen(false);
+				addressFormik.resetForm();
+			} catch (err) {
+				console.error(err);
+			}
+		},
+	});
+
 	return (
 		<div className="row g-3">
 			<div className="col-6">
@@ -102,34 +134,68 @@ export default function CustomerForm({
 			<div className="col-12">
 				<div className="mb-3">
 					<label className="form-label">Address</label>
-					<select
-						className={` ${`form-select ${formik.touched.address_id && !!formik.errors.address_id ? "is-invalid" : ""}`}`.trim()}
-						name="address_id"
-						value={formik.values.address_id || ""}
-						onChange={(e) =>
-							formik.setFieldValue(
-								"address_id",
-								!!e.target.value
-									? Number(e.target.value)
-									: null,
-							)
-						}
-						onBlur={formik.handleBlur}
-						size="sm"
-					>
-						<option value="">None</option>
-						{addresses.map((a) => (
-							<option key={a.id} value={a.id}>
-								{a.street}, {a.city}
+					<div className="input-group input-group-sm">
+						<select
+							className={`form-select ${formik.touched.address_id && !!formik.errors.address_id ? "is-invalid" : ""}`}
+							name="address_id"
+							value={formik.values.address_id || ""}
+							onChange={(e) =>
+								formik.setFieldValue(
+									"address_id",
+									!!e.target.value
+										? Number(e.target.value)
+										: "",
+								)
+							}
+							onBlur={formik.handleBlur}
+							disabled={newAddressAdded}
+						>
+							<option value="" disabled>
+								Select Address
 							</option>
-						))}
-					</select>
-
-					<div className="invalid-feedback">
-						{formik.touched.address_id && formik.errors.address_id}
+							{addresses.map((a) => (
+								<option key={a.id} value={a.id}>
+									{a.street}, {a.city}
+								</option>
+							))}
+						</select>
+						{!newAddressAdded && (
+							<button
+								type="button"
+								className="btn btn-outline-primary"
+								onClick={() => setModalOpen(true)}
+							>
+								<i className="bi bi-plus-lg"></i> Add New
+								Address
+							</button>
+						)}
 					</div>
+					{formik.touched.address_id && formik.errors.address_id && (
+						<div
+							className="text-danger mt-1"
+							style={{ fontSize: "0.875em" }}
+						>
+							{formik.errors.address_id}
+						</div>
+					)}
 				</div>
 			</div>
+
+			<FormModal
+				asForm={false}
+				open={modalOpen}
+				onClose={() => {
+					setModalOpen(false);
+					addressFormik.resetForm();
+					addressFormik.setTouched({});
+					addressFormik.setErrors({});
+				}}
+				title="Add Address"
+				onSubmit={addressFormik.handleSubmit}
+				loading={create.isPending}
+			>
+				<AddressForm formik={addressFormik} />
+			</FormModal>
 		</div>
 	);
 }
