@@ -3,23 +3,28 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import VaccinationTable from '../../../src/components/tables/VaccinationTable';
 
+// Mock the helper function used in the table
 vi.mock('../../../src/utils/helpers', () => ({
   formatCurrency: (d) => `$${d}`,
 }));
 
 describe('VaccinationTable Component', () => {
+  // Sample vaccination data for testing
   const mockData = [
     { id: 1, name: 'Rabies', price: 15, available: true },
     { id: 2, name: 'Flu', price: 25, available: false },
   ];
 
+  // Mock callback functions
   const mockOpenEdit = vi.fn();
   const mockSetDeleteId = vi.fn();
 
+  // Reset mocks before each test
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
+  // Verify table data and status badges are displayed
   it('renders columns, data, and status badges correctly', () => {
     render(<VaccinationTable data={mockData} />);
     expect(screen.getByText('Rabies')).toBeInTheDocument();
@@ -28,6 +33,7 @@ describe('VaccinationTable Component', () => {
     expect(screen.getByText('Unavailable')).toBeInTheDocument();
   });
 
+  // Verify edit and delete actions work correctly
   it('calls openEdit and setDeleteId correctly', () => {
     render(<VaccinationTable data={mockData} openEdit={mockOpenEdit} setDeleteId={mockSetDeleteId} />);
     const editButtons = document.querySelectorAll('.bi-pencil');

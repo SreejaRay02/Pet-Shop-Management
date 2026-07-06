@@ -23,6 +23,8 @@ describe('StatCard Component', () => {
   // Check if the card renders with the required props
   it('renders correctly with required props', () => {
     render(<StatCard {...defaultProps} />);
+    
+    // Verifies that the title is displayed on the screen.
     expect(screen.getByText('Total Sales')).toBeInTheDocument();
     expect(screen.getByText('1,234')).toBeInTheDocument();
   });

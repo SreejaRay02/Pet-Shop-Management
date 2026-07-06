@@ -4,19 +4,31 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import VaccinationForm from '../../../src/components/forms/VaccinationForm';
 
 describe('VaccinationForm Component', () => {
+  // Create a mock Formik object
   const getMockFormik = (overrides = {}) => ({
+    // Default form values
     values: {},
+
+    // Tracks touched fields
     touched: {},
+
+    // Holds validation errors
     errors: {},
+
+    // Mock Formik handlers
     handleChange: vi.fn(),
     handleBlur: vi.fn(),
+
+    // Allow custom values for different test cases
     ...overrides,
   });
 
+  // Reset mocks before each test
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
+  // Verify all form fields are rendered
   it('renders all form fields successfully', () => {
     render(<VaccinationForm formik={getMockFormik()} />);
     
@@ -26,6 +38,7 @@ describe('VaccinationForm Component', () => {
     expect(document.querySelector('[name="available"]')).toBeInTheDocument();
   });
 
+  // Verify validation errors are displayed
   it('displays validation errors when touched', () => {
     const formik = getMockFormik({
       touched: { name: true, price: true },
@@ -37,6 +50,7 @@ describe('VaccinationForm Component', () => {
     expect(document.querySelector('[name="name"]')).toHaveClass('is-invalid');
   });
 
+  // Verify checkbox state and change event
   it('handles checkbox toggle', () => {
     const formik = getMockFormik({
       values: { available: true },
@@ -50,4 +64,3 @@ describe('VaccinationForm Component', () => {
     expect(formik.handleChange).toHaveBeenCalled();
   });
 });
- 
