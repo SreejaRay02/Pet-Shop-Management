@@ -27,7 +27,7 @@ export const customerSchema = yup.object({
   last_name: yup.string().required('Last name is required'),
   email: yup.string().email('Invalid email').required('Email is required'),
   phone_number: yup.string().required('Phone number is required'),
-  address_id: yup.number().nullable(),
+  address_id: yup.number().required('Address is required'),
 });
 
 export const supplierSchema = yup.object({
@@ -89,4 +89,3 @@ export const transactionSchema = yup.object({
 export const categorySchema = yup.object({
   name: yup.string().required('Category name is required'),
 });
-
