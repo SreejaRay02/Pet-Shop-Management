@@ -8,7 +8,6 @@ const CustomerTable = ({ data, isLoading, refetch, openEdit, setDeleteId }) => {
 			{ field: "first_name", headerName: "First Name", sortable: true },
 			{ field: "last_name", headerName: "Last Name", sortable: true },
 			{ field: "email", headerName: "Email", sortable: true },
-
 			{ field: "phone_number", headerName: "Phone" },
 			{
 				field: "actions",
