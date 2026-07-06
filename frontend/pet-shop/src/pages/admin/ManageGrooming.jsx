@@ -13,11 +13,13 @@ import { groomingSchema } from '../../validations/schemas';
 import GroomingTable from '../../components/tables/GroomingTable';
 import GroomingForm from '../../components/forms/GroomingForm';
 
-
 export default function ManageGrooming() {
+
+  // Alert messages
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Clear alerts automatically after a few seconds
   useEffect(() => {
     if (successMessage || errorMessage) {
       const t = setTimeout(() => {
@@ -28,15 +30,20 @@ export default function ManageGrooming() {
     }
   }, [successMessage, errorMessage]);
 
+  // Manage modal and selected items
   const [modalOpen, setModalOpen] = useState(false);
   const [editItem, setEditItem] = useState(null);
   const [deleteId, setDeleteId] = useState(null);
 
+  // Fetch all grooming services
   const { data = [], isLoading, refetch } = useGroomingServices();
+
+  // Mutation hooks
   const create = useCreateGroomingService();
   const update = useUpdateGroomingService();
   const remove = useDeleteGroomingService();
 
+  // Formik configuration
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -44,43 +51,66 @@ export default function ManageGrooming() {
       price: '',
       available: true
     },
+
     validationSchema: groomingSchema,
+
+    // Handle both add and edit operations
     onSubmit: async (values) => {
       try {
         if (editItem) {
-          await update.mutateAsync({ id: editItem.id, data: values });
+          await update.mutateAsync({
+            id: editItem.id,
+            data: values
+          });
         } else {
           await create.mutateAsync(values);
         }
+
         setModalOpen(false);
         setSuccessMessage("Operation successful!");
       } catch (error) {
+        // Show an alert if the API request fails
         window.alert("API Error: " + (error.message || "Unknown error"));
         console.error("Form submit error", error);
       }
     }
   });
 
-  const { resetForm, setValues, setTouched, handleSubmit } = formik;
+  // Extract commonly used Formik functions
+  const { resetForm, setValues, setTouched, handleSubmit} = formik;
 
-  const openCreate = useCallback(() => { 
+  // Open the form to add a new service
+  const openCreate = useCallback(() => {
     resetForm();
-    setEditItem(null); 
-    setModalOpen(true); 
+    setEditItem(null);
+    setModalOpen(true);
   }, [resetForm]);
-  
-  const openEdit = useCallback((item) => { 
-    setValues(item); 
-    setTouched({}); 
-    setEditItem(item); 
-    setModalOpen(true); 
+
+  // Open the form with existing service details
+  const openEdit = useCallback((item) => {
+    setValues(item);
+    setTouched({});
+    setEditItem(item);
+    setModalOpen(true);
   }, [setValues, setTouched]);
 
   return (
-    <div className="container p-0" fluid >
+    <div className="container p-0" fluid>
 
-      {successMessage && <div className="alert alert-success m-3" >{successMessage}</div>}
-      {errorMessage && <div className="alert alert-danger m-3" >{errorMessage}</div>}
+      {/* Success and error alerts */}
+      {successMessage && (
+        <div className="alert alert-success m-3">
+          {successMessage}
+        </div>
+      )}
+
+      {errorMessage && (
+        <div className="alert alert-danger m-3">
+          {errorMessage}
+        </div>
+      )}
+
+      {/* Page heading */}
       <PageHeader
         title="Manage Grooming Services"
         subtitle={`${data.length} services`}
@@ -89,8 +119,16 @@ export default function ManageGrooming() {
         actionIcon="plus-lg"
       />
 
-      <GroomingTable data={data} isLoading={isLoading} refetch={refetch} openEdit={openEdit} setDeleteId={setDeleteId} />
+      {/* Grooming services table */}
+      <GroomingTable
+        data={data}
+        isLoading={isLoading}
+        refetch={refetch}
+        openEdit={openEdit}
+        setDeleteId={setDeleteId}
+      />
 
+      {/* Add/Edit service form */}
       <FormModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
@@ -101,10 +139,14 @@ export default function ManageGrooming() {
         <GroomingForm formik={formik} />
       </FormModal>
 
+      {/* Delete confirmation dialog */}
       <ConfirmDialog
         open={!!deleteId}
         onClose={() => setDeleteId(null)}
-        onConfirm={() => { remove.mutate(deleteId); setDeleteId(null); }}
+        onConfirm={() => {
+          remove.mutate(deleteId);
+          setDeleteId(null);
+        }}
         title="Delete Service"
         message="Are you sure you want to delete this grooming service?"
         loading={remove.isPending}
@@ -112,4 +154,3 @@ export default function ManageGrooming() {
     </div>
   );
 }
-
